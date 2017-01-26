@@ -9,9 +9,9 @@
     >
 
     <RadioGroup
-        android:id="@+id/main_bottom_rg"
+        android:id="@+id/main_rg"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@android:color/white"
         android:orientation="horizontal">
@@ -57,14 +57,14 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_above="@id/main_bottom_rg"
+        android:layout_above="@id/main_rg"
         android:background="#d5d4d4"
         ></ImageView>
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/main_noscroll_viewpager"
+        android:id="@+id/main_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/main_bottom_rg"
+        android:layout_above="@+id/main_rg"
         android:layout_alignParentTop="true"/>
 </RelativeLayout>
