@@ -3,8 +3,15 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-    <TextView
-        android:text="第一个fragment"
+    <com.dg.user008.crazyandroid.widget.PagerSlidingTabStrip
+        android:id="@+id/psts_first"
+        android:layout_width="match_parent"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginBottom="5dp"
+        android:layout_height="wrap_content"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_first"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

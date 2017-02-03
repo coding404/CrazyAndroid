@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -15,6 +14,7 @@ import com.dg.user008.crazyandroid.fragment.FirstFragment;
 import com.dg.user008.crazyandroid.fragment.FourFragment;
 import com.dg.user008.crazyandroid.fragment.SecondFragment;
 import com.dg.user008.crazyandroid.fragment.ThirdFragment;
+import com.dg.user008.crazyandroid.widget.NoScrollViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ import java.util.List;
 public class MainActivity extends FragmentActivity implements RadioGroup.OnCheckedChangeListener{
     private List<Fragment> fragments;
     private int selected;
-    private ViewPager mViewPager;
+    private NoScrollViewPager mViewPager;
     private RadioGroup mRadioGroup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
     }
 
     private void initView() {
-        mViewPager= (ViewPager) findViewById(R.id.main_viewpager);
+        mViewPager= (NoScrollViewPager) findViewById(R.id.main_viewpager);
         mRadioGroup= (RadioGroup) findViewById(R.id.main_rg);
         initFragment();
     }

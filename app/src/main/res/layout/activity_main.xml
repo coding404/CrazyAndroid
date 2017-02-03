@@ -61,7 +61,7 @@
         android:background="#d5d4d4"
         ></ImageView>
 
-    <android.support.v4.view.ViewPager
+    <com.dg.user008.crazyandroid.widget.NoScrollViewPager
         android:id="@+id/main_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
