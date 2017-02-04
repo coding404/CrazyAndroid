@@ -1,0 +1,215 @@
+{
+  "chapters": [
+    {
+      "chapterName": "2.1界面编程与视图(View)组件",
+      "paragraphs": [
+        {
+          "paragraphName": "用编程的方式开发UI界面"
+        },
+        {
+          "paragraphName": "简单图片浏览器"
+        },
+        {
+          "paragraphName": "跟随手指的小球"
+        }
+      ]
+    },
+    {
+      "chapterName": "2.2第一组UI组件，布局管理器",
+      "paragraphs": [
+        {
+          "paragraphName": "丰富的表格布局"
+        },
+        {
+          "paragraphName": "霓虹灯效果"
+        },
+        {
+          "paragraphName": "梅花布局效果"
+        },
+        {
+          "paragraphName": "计算器界面"
+        },
+        {
+          "paragraphName": "登录界面"
+        }
+      ]
+    },
+    {
+      "chapterName": "2.3第2组UI组件，TextView及其子类",
+      "paragraphs": [
+        {
+          "paragraphName": "不同颜色、字体、带连接的文本"
+        },
+        {
+          "paragraphName": "圆角边框，渐变背景的TextView"
+        },
+        {
+          "paragraphName": "用户友好的输入界面"
+        },
+        {
+          "paragraphName": "按钮，圆形按钮，带文字的图片的按钮"
+        },
+        {
+          "paragraphName": "利用单选钮，复选框获取用户信息"
+        },
+        {
+          "paragraphName": "动态控制布局"
+        },
+        {
+          "paragraphName": "手机里的“劳力士”"
+        }
+      ]
+    },
+    {
+      "chapterName": "2.4第3组UI组件，ImageView及其子类",
+      "paragraphs": [
+        {
+          "paragraphName": "图片浏览器"
+        },
+        {
+          "paragraphName": "强大的图片按钮"
+        },
+        {
+          "paragraphName": "使用QuickContactBadge关联联系人"
+        }
+      ]
+    },
+    {
+      "chapterName": "2.5第4组UI组件，AdapterView及其子类",
+      "paragraphs": [
+        {
+          "paragraphName": "改变分隔条，基于数组的ListView"
+        },
+        {
+          "paragraphName": "使用ArrayAdapter创建ListView"
+        },
+        {
+          "paragraphName": "基于ListActivity实现列表"
+        },
+        {
+          "paragraphName": "使用SImpleAdapter创建listView"
+        },
+        {
+          "paragraphName": "扩建BaseAdapter实现不存储列表项的ListView"
+        },
+        {
+          "paragraphName": "带预览的图片浏览器"
+        },
+        {
+          "paragraphName": "让用户选择"
+        },
+        {
+          "paragraphName": "自动播放的图片库"
+        },
+        {
+          "paragraphName": "叠在一起的图片"
+        }
+      ]
+    },
+    {
+      "chapterName": "2.6第5组UI组件，ProgressBar及其子类",
+      "paragraphs": [
+        {
+          "paragraphName": "显示在标题上的进度条"
+        },
+        {
+          "paragraphName": "通过拖动滑块来改变图片的透明度"
+        },
+        {
+          "paragraphName": "通过星级改变图片的透明度"
+        }
+      ]
+    },
+    {
+      "chapterName": "2.7第6组UI组件，ViewAnimator及其子类",
+      "paragraphs": [
+        {
+          "paragraphName": "仿Android系统Launcher界面"
+        },
+        {
+          "paragraphName": "支持动画的图片浏览器"
+        },
+        {
+          "paragraphName": "自动播放的图片库"
+        }
+      ]
+    },
+    {
+      "chapterName": "2.8各种杂项组件",
+      "paragraphs": [
+        {
+          "paragraphName": "带图片的消息提示"
+        },
+        {
+          "paragraphName": "选择您的生日"
+        },
+        {
+          "paragraphName": "用户选择日期、时间"
+        },
+        {
+          "paragraphName": "选择您意向的价格范围"
+        },
+        {
+          "paragraphName": "搜索"
+        },
+        {
+          "paragraphName": "通话记录界面"
+        },
+        {
+          "paragraphName": "可垂直和水平滚动的视图"
+        },
+        {
+          "paragraphName": "加薪通知"
+        }
+      ]
+    },
+    {
+      "chapterName": "2.9第七组UI组件，对话框",
+      "paragraphs": [
+        {
+          "paragraphName": "显示提示消息的对话框"
+        },
+        {
+          "paragraphName": "简单列表项对话框"
+        },
+        {
+          "paragraphName": "单选列表项对话框"
+        },
+        {
+          "paragraphName": "多选列表项对话框"
+        },
+        {
+          "paragraphName": "自定义列表项对话框"
+        },
+        {
+          "paragraphName": "自定义View对话框"
+        }
+      ]
+    },
+    {
+      "chapterName": "2.10菜单",
+      "paragraphs": [
+        {
+          "paragraphName": "使用XML资源文件定义菜单"
+        }
+      ]
+    },
+    {
+      "chapterName": "2.11使用活动条（ActionBar）",
+      "paragraphs": [
+        {
+          "paragraphName": "‘标题’上的时钟"
+        },
+        {
+          "paragraphName": "ActionBar结合Fragment实现Tab导航"
+        },
+        {
+          "paragraphName": "Android3.0以前的Fragment支持"
+        },
+        {
+          "paragraphName": "ActionBar结合Fragment实现下拉式导航"
+        }
+      ]
+    }
+  ]
+}

@@ -40,9 +40,10 @@ public class FirstFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_first, null);
         tabs = (PagerSlidingTabStrip) view.findViewById(R.id.psts_first);
         mPager = (ViewPager) view.findViewById(R.id.vp_first);
-        initFragments();
+        mFragments = new ArrayList<>();
         mPagerAdapter = new MyPagerAdapter(getFragmentManager(), mFragments);
         mPager.setAdapter(mPagerAdapter);
+        mPager.setOffscreenPageLimit(4);
         tabs.setViewPager(mPager);
 
         final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getResources()
@@ -60,8 +61,16 @@ public class FirstFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initFragments();
+        mPagerAdapter.notifyDataSetChanged();
+
+    }
+
     private void initFragments() {
-        mFragments = new ArrayList<>();
+
         Chapter01Fragment chapter01Fragment = new Chapter01Fragment();
         mFragments.add(chapter01Fragment);
         Chapter02Fragment chapter02Fragment = new Chapter02Fragment();
