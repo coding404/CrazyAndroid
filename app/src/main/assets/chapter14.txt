@@ -1,0 +1,34 @@
+{
+  "chapters": [
+    {
+      "chapterName": "14.1管理手机桌面",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "14.2改变手机壁纸",
+      "paragraphs": [
+        {
+          "paragraphName": "蜿蜒壁纸"
+        }
+      ]
+    },
+    {
+      "chapterName": "14.3通过程序添加快捷方式",
+      "paragraphs": [
+        {
+          "paragraphName": "让程序占领桌面"
+        }
+      ]
+    },
+    {
+      "chapterName": "14.4管理桌面控件",
+      "paragraphs": [
+        {
+          "paragraphName": "液晶时钟"
+        }
+      ]
+    }
+  ]
+}

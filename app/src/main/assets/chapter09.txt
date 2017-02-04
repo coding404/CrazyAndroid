@@ -1,0 +1,32 @@
+{
+  "chapters": [
+    {
+      "chapterName": "9.1数据共享标准：ContentProvider",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "9.2开发ContentProvider",
+      "paragraphs": [
+        {
+          "paragraphName": "使用ContentProvider共享生词本数据"
+        }
+      ]
+    },
+    {
+      "chapterName": "9.3操作系统的ContentProvider",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "9.4监听ContentProvider的数据改变",
+      "paragraphs": [
+        {
+          "paragraphName": "监听用户发出的短信"
+        }
+      ]
+    }
+  ]
+}

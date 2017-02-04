@@ -1,0 +1,43 @@
+{
+  "chapters": [
+    {
+      "chapterName": "13.1基于TCP协议的网络通信",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "13.2使用URL访问网络资源",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "13.3使用HTTP访问网络",
+      "paragraphs": [
+        {
+          "paragraphName": "多线程下载"
+        },
+        {
+          "paragraphName": "访问被保护资源"
+        }
+      ]
+    },
+    {
+      "chapterName": "13.4 Android5.0增强的WebView",
+      "paragraphs": [
+        {
+          "paragraphName": "迷你浏览器"
+        }
+      ]
+    },
+    {
+      "chapterName": "13.5使用webservice进行网络编程",
+      "paragraphs": [
+        {
+          "paragraphName": "调用基于CXF的WebService"
+        }
+      ]
+    }
+  ]
+}

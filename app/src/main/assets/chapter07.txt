@@ -1,0 +1,64 @@
+{
+  "chapters": [
+    {
+      "chapterName": "7.1使用简单图片",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "7.2绘图",
+      "paragraphs": [
+        {
+          "paragraphName": "采用双缓冲实现画图板"
+        },
+        {
+          "paragraphName": "弹球游戏"
+        }
+      ]
+    },
+    {
+      "chapterName": "7.3图形特效处理",
+      "paragraphs": [
+        {
+          "paragraphName": "移动游戏背景"
+        },
+        {
+          "paragraphName": "可揉动的图片"
+        }
+      ]
+    },
+    {
+      "chapterName": "7.4逐帧（Frame）动画",
+      "paragraphs": [
+        {
+          "paragraphName": "在指定点爆炸"
+        }
+      ]
+    },
+    {
+      "chapterName": "7.5补间(Tween)动画",
+      "paragraphs": [
+        {
+          "paragraphName": "蝴蝶飞舞"
+        }
+      ]
+    },
+    {
+      "chapterName": "7.6属性动画",
+      "paragraphs": [
+        {
+          "paragraphName": "大珠小珠落玉盘"
+        }
+      ]
+    },
+    {
+      "chapterName": "7.7使用SurfaceView实现动画",
+      "paragraphs": [
+        {
+          "paragraphName": "基于surfaceView开发示波器"
+        }
+      ]
+    }
+  ]
+}

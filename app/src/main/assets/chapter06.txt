@@ -1,0 +1,108 @@
+{
+  "chapters": [
+    {
+      "chapterName": "6.1应用资源概述",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "6.2字符串颜色尺寸资源",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "6.3数组（Array）资源",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "6.4使用Drawble资源",
+      "paragraphs": [
+        {
+          "paragraphName": "高亮显示正在输入的文本框"
+        },
+        {
+          "paragraphName": "定制拖动条的外观"
+        },
+        {
+          "paragraphName": "椭圆形渐变背景的文本框"
+        },
+        {
+          "paragraphName": "徐徐展开的风景"
+        }
+      ]
+    },
+    {
+      "chapterName": "6.5属性动画（property animator）资源",
+      "paragraphs": [
+        {
+          "paragraphName": "不断渐变的背景色"
+        }
+      ]
+    },
+    {
+      "chapterName": "6.6使用原始XML资源",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "6.7使用布局（Layout）资源",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "6.8使用菜单（menu）资源",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "6.9样式（Style）和主题（Theme）资源",
+      "paragraphs": [
+        {
+          "paragraphName": "给所有窗口添加边框、背景"
+        }
+      ]
+    },
+    {
+      "chapterName": "6.10属性（Attribute）资源",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "6.11使用原始资源",
+      "paragraphs": [
+        {
+          "paragraphName": "‘标题’上的时钟"
+        },
+        {
+          "paragraphName": "ActionBar结合Fragment实现Tab导航"
+        },
+        {
+          "paragraphName": "Android3.0以前的Fragment支持"
+        },
+        {
+          "paragraphName": "ActionBar结合Fragment实现下拉式导航"
+        }
+      ]
+    },
+    {
+      "chapterName": "6.12国际化和资源自适配",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "6.13自适应不同屏幕的资源",
+      "paragraphs": [
+
+      ]
+    }
+  ]
+}

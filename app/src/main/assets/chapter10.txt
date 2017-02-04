@@ -1,0 +1,76 @@
+{
+  "chapters": [
+    {
+      "chapterName": "10.1Service简介",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "10.2电话管理器TelephonyManager",
+      "paragraphs": [
+        {
+          "paragraphName": "获取网络和SIM卡信息"
+        },
+        {
+          "paragraphName": "监听手机来电"
+        }
+      ]
+    },
+    {
+      "chapterName": "10.3短信管理器（SmsManager）",
+      "paragraphs": [
+        {
+          "paragraphName": "发送短信"
+        },
+        {
+          "paragraphName": "短信群发"
+        }
+      ]
+    },
+    {
+      "chapterName": "10.4音频管理器（AudioManager）",
+      "paragraphs": [
+        {
+          "paragraphName": "使用AudioManager控制手机音频"
+        }
+      ]
+    },
+    {
+      "chapterName": "10.5震动器（Vibrator）",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "10.6手机闹铃服务（AlermManager）",
+      "paragraphs": [
+        {
+          "paragraphName": "定时更换壁纸"
+        }
+      ]
+    },
+    {
+      "chapterName": "10.7接收广播消息",
+      "paragraphs": [
+        {
+          "paragraphName": "基于service的音乐播放器"
+        }
+      ]
+    },
+    {
+      "chapterName": "10.8接收系统广播消息",
+      "paragraphs": [
+        {
+          "paragraphName": "开机自动运行的Service"
+        },
+        {
+          "paragraphName": "短信提醒"
+        },
+        {
+          "paragraphName": "手机电量提示"
+        }
+      ]
+    }
+  ]
+}

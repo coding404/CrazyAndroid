@@ -43,7 +43,7 @@ public class FirstFragment extends Fragment {
         mFragments = new ArrayList<>();
         mPagerAdapter = new MyPagerAdapter(getFragmentManager(), mFragments);
         mPager.setAdapter(mPagerAdapter);
-        mPager.setOffscreenPageLimit(4);
+        mPager.setOffscreenPageLimit(8);
         tabs.setViewPager(mPager);
 
         final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getResources()

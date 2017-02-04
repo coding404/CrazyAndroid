@@ -1,0 +1,54 @@
+{
+  "chapters": [
+    {
+      "chapterName": "3.1Android事件处理概述",
+      "paragraphs": []
+    },
+    {
+      "chapterName": "3.2基于监听的事件处理",
+      "paragraphs": [
+        {
+          "paragraphName": "控制飞机移动"
+        }
+      ]
+    },
+    {
+      "chapterName": "3.3基于回调的事件处理",
+      "paragraphs": [
+        {
+          "paragraphName": "通过回调实现跟随手指的小球"
+        }
+      ]
+    },
+    {
+      "chapterName": "3.4响应系统设置的事件",
+      "paragraphs": [
+        {
+          "paragraphName": "获取系统设备状态"
+        },
+        {
+          "paragraphName": "监听屏幕方向的改变"
+        }
+      ]
+    },
+    {
+      "chapterName": "3.5Handler消息传递机制",
+      "paragraphs": [
+        {
+          "paragraphName": "自动播放动画"
+        },
+        {
+          "paragraphName": "使用新线程计算质数"
+        }
+      ]
+    },
+    {
+      "chapterName": "3.6异步任务",
+      "paragraphs": [
+        {
+          "paragraphName": "使用异步任务执行下载"
+        }
+      ]
+    }
+  ]
+}

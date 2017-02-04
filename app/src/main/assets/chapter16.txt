@@ -1,0 +1,28 @@
+{
+  "chapters": [
+    {
+      "chapterName": "16.1支持GPS的核心API",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "16.2获取LocationProvider",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "16.3获取定位信息",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "16.4临近警告",
+      "paragraphs": [
+
+      ]
+    }
+  ]
+}

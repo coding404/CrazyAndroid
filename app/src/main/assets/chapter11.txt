@@ -1,0 +1,37 @@
+{
+  "chapters": [
+    {
+      "chapterName": "11.1音频和视频的播放",
+      "paragraphs": [
+        {
+          "paragraphName": "音乐的示波器、均衡、重低音和音场"
+        }
+      ]
+    },
+    {
+      "chapterName": "11.2使用MediaRecorder录制音频",
+      "paragraphs": [
+        {
+          "paragraphName": "录制音乐"
+        }
+      ]
+    },
+    {
+      "chapterName": "11.3控制摄像头拍照",
+      "paragraphs": [
+        {
+          "paragraphName": "拍照时自动对焦"
+        },
+        {
+          "paragraphName": "录制生活短片"
+        }
+      ]
+    },
+    {
+      "chapterName": "11.4Android5.0新增的屏幕捕捉",
+      "paragraphs": [
+
+      ]
+    }
+  ]
+}

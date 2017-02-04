@@ -1,0 +1,56 @@
+{
+  "chapters": [
+    {
+      "chapterName": "4.1建立、配置和使用activity",
+      "paragraphs": [
+        {
+          "paragraphName": "用LauncherActivity开发启动Activity的列表"
+        },
+        {
+          "paragraphName": "使用ExpandableListActivity实现可展开的Activity"
+        },
+        {
+          "paragraphName": "PreferenceActivity结合PreferenceFragment实现参数设置界面"
+        },
+        {
+          "paragraphName": "用第二个activity处理注册信息"
+        },
+        {
+          "paragraphName": "用第二个activity让用户选择信息"
+        }
+      ]
+    },
+    {
+      "chapterName": "4.2activity的回调机制",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "4.3activity的生命周期与加载模式",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "4.4Fragment详解",
+      "paragraphs": [
+        {
+          "paragraphName": "开发显示图书详情的Fragment"
+        },
+        {
+          "paragraphName": "创建ListFragment"
+        },
+        {
+          "paragraphName": "开发兼顾屏幕分辨率的应用"
+        }
+      ]
+    },
+    {
+      "chapterName": "4.5Fragment的生命周期",
+      "paragraphs": [
+
+      ]
+    }
+  ]
+}

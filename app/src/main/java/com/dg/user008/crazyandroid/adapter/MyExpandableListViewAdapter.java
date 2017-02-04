@@ -72,7 +72,13 @@ public class MyExpandableListViewAdapter extends BaseExpandableListAdapter {
         }
         CatalogBean.ChaptersBean chaptersBean = mBeen.get(groupPosition);
         groupHolder.mViewChapter.setText(chaptersBean.getChapterName());
+       /* if (chaptersBean.getParagraphs()!=null){
+            groupHolder.mViewTotal.setText(chaptersBean.getParagraphs().size()+"");
+        }else {
+            groupHolder.mViewTotal.setText(0+"");
+        }*/
         groupHolder.mViewTotal.setText(chaptersBean.getParagraphs().size()+"");
+
         return convertView;
     }
 

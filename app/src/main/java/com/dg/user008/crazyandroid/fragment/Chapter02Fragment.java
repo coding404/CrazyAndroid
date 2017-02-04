@@ -32,7 +32,7 @@ public class Chapter02Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chape02, null);
-        mElv_chapter02 = (ExpandableListView) view.findViewById(R.id.expendlist);
+        mElv_chapter02 = (ExpandableListView) view.findViewById(R.id.expendlist_chapter02);
         return view;
     }
 

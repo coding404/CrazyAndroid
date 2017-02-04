@@ -4,8 +4,10 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <TextView
+    <ExpandableListView
+        android:id="@+id/expendlist_chapter07"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="这是第7章"/>
+        android:cacheColorHint="#00000000">
+    </ExpandableListView>
 </LinearLayout>

@@ -1,0 +1,30 @@
+{
+  "chapters": [
+    {
+      "chapterName": "5.1Intent对象简述",
+      "paragraphs": [
+
+      ]
+    },
+    {
+      "chapterName": "5.2Intent属性及intent-filter配置",
+      "paragraphs": [
+        {
+          "paragraphName": "查看并获取联系人电话"
+        },
+        {
+          "paragraphName": "返回系统Home桌面"
+        },
+        {
+          "paragraphName": "使用Action,Data属性启动系统Activity"
+        }
+      ]
+    },
+    {
+      "chapterName": "5.3使用Intent创建Tab页",
+      "paragraphs": [
+
+      ]
+    }
+  ]
+}
