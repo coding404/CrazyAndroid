@@ -1,5 +1,6 @@
 package com.dg.user008.crazyandroid.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,9 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
 
 import com.dg.user008.crazyandroid.R;
+import com.dg.user008.crazyandroid.activity.Demo020102Activity;
+import com.dg.user008.crazyandroid.activity.DemoOne020101Activity;
 import com.dg.user008.crazyandroid.activity.FileUtil;
 import com.dg.user008.crazyandroid.adapter.MyExpandableListViewAdapter;
 import com.dg.user008.crazyandroid.bean.CatalogBean;
@@ -46,8 +48,8 @@ public class Chapter02Fragment extends Fragment {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 //界面跳转
-              //  JumpActivity(groupPosition,childPosition);
-                Toast.makeText(getContext(),"groupPosition="+groupPosition+",childPosition="+childPosition,Toast.LENGTH_SHORT).show();
+                JumpActivity(groupPosition,childPosition);
+              //  Toast.makeText(getContext(),"groupPosition="+groupPosition+",childPosition="+childPosition,Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
@@ -58,10 +60,12 @@ public class Chapter02Fragment extends Fragment {
         switch (groupPosition){
             case 0:
                 if (childPosition==0){
-
+                    Intent intent0000=new Intent(getContext(), DemoOne020101Activity.class);
+                    startActivity(intent0000);
 
                 }else if (childPosition==1){
-
+                    Intent intent0001 =new Intent(getContext(), Demo020102Activity.class);
+                    startActivity(intent0001);
 
                 }else if(childPosition==2){
 

@@ -1,25 +1,24 @@
 package com.dg.user008.crazyandroid.fragment;
 
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.dg.user008.crazyandroid.R;
 import com.dg.user008.crazyandroid.adapter.MyPagerAdapter;
+import com.dg.user008.crazyandroid.utils.MyUtils;
 import com.dg.user008.crazyandroid.widget.PagerSlidingTabStrip;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Created by liushu on 2017/1/26.
@@ -27,37 +26,31 @@ import java.util.List;
 
 public class FirstFragment extends Fragment {
 
-    private PagerSlidingTabStrip tabs;
+    private PagerSlidingTabStrip ta111bs;
     private ViewPager mPager;
     private MyPagerAdapter mPagerAdapter;
     private Drawable oldBackground = null;
     private int currentColor;
     private List<Fragment> mFragments;
+    private TabLayout mTabLayout;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_first, null);
-        tabs = (PagerSlidingTabStrip) view.findViewById(R.id.psts_first);
+
         mPager = (ViewPager) view.findViewById(R.id.vp_first);
+        mTabLayout= (TabLayout) view.findViewById(R.id.tab_layout);
         mFragments = new ArrayList<>();
-        mPagerAdapter = new MyPagerAdapter(getFragmentManager(), mFragments);
+        mPagerAdapter = new MyPagerAdapter(getChildFragmentManager(), mFragments);
         mPager.setAdapter(mPagerAdapter);
         mPager.setOffscreenPageLimit(8);
-        tabs.setViewPager(mPager);
-
+        mTabLayout.setupWithViewPager(mPager);
+        MyUtils.dynamicSetTabLayoutMode(mTabLayout);
         final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getResources()
                 .getDisplayMetrics());
         mPager.setPageMargin(pageMargin);
         mPager.setCurrentItem(0);
-        changeColor(ContextCompat.getColor(getContext(), R.color.green));
-
-        tabs.setOnTabReselectedListener(new PagerSlidingTabStrip.OnTabReselectedListener() {
-            @Override
-            public void onTabReselected(int position) {
-                Toast.makeText(getContext(), "Tab reselected: " + position, Toast.LENGTH_SHORT).show();
-            }
-        });
         return view;
     }
 
@@ -103,15 +96,6 @@ public class FirstFragment extends Fragment {
         mFragments.add(chapter15Fragment);
         Chapter16Fragment chapter16Fragment = new Chapter16Fragment();
         mFragments.add(chapter16Fragment);
-    }
-
-    private void changeColor(int newColor) {
-        tabs.setBackgroundColor(newColor);
-        Drawable colorDrawable = new ColorDrawable(newColor);
-        Drawable bottomDrawable = new ColorDrawable(ContextCompat.getColor(getContext(), android.R.color.transparent));
-        LayerDrawable ld = new LayerDrawable(new Drawable[]{colorDrawable, bottomDrawable});
-        oldBackground = ld;
-        currentColor = newColor;
     }
 
 
