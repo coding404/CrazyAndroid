@@ -9,4 +9,11 @@
     <color name="green">#689F38</color>
     <color name="greenDark">#3E5F22</color>
     <color name="banana">#FFCC00</color>
+
+    <color name="color01">#00F</color>
+    <color name="color02">#0F0</color>
+    <color name="color03">#F00</color>
+    <color name="color04">#FF0</color>
+    <color name="color05">#0FF</color>
+    <color name="color06">#F0F</color>
 </resources>

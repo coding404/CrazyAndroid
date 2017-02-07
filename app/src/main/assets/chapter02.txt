@@ -38,7 +38,7 @@
       "chapterName": "2.3第2组UI组件，TextView及其子类",
       "paragraphs": [
         {
-          "paragraphName": "不同颜色、字体、带连接的文本"
+          "paragraphName": "不同颜色、字体、带链接的文本"
         },
         {
           "paragraphName": "圆角边框，渐变背景的TextView"

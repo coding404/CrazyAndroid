@@ -17,8 +17,20 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.DemoOne020101Activity"/>
+        <activity android:name=".activity.Demo020101Activity"/>
         <activity android:name=".activity.Demo020102Activity">
+        </activity>
+        <activity android:name=".activity.Demo020103Activity">
+        </activity>
+        <activity android:name=".activity.Demo020201Activity">
+        </activity>
+        <activity android:name=".activity.Demo020202Activity">
+        </activity>
+        <activity android:name=".activity.Demo020203Activity">
+        </activity>
+        <activity android:name=".activity.Demo020204Activity">
+        </activity>
+        <activity android:name=".activity.Demo020205Activity">
         </activity>
     </application>
 
