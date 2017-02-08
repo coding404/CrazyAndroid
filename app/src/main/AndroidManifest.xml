@@ -32,6 +32,20 @@
         </activity>
         <activity android:name=".activity.Demo020205Activity">
         </activity>
+        <activity android:name=".activity.Demo020301Activity">
+        </activity>
+        <activity android:name=".activity.Demo020302Activity">
+        </activity>
+        <activity android:name=".activity.Demo020303Activity">
+        </activity>
+        <activity android:name=".activity.Demo020304Activity">
+        </activity>
+        <activity android:name=".activity.Demo020305Activity">
+        </activity>
+        <activity android:name=".activity.Demo020306Activity">
+        </activity>
+        <activity android:name=".activity.Demo020307Activity">
+        </activity>
     </application>
 
 </manifest>

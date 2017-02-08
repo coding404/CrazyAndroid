@@ -18,6 +18,13 @@ import com.dg.user008.crazyandroid.activity.Demo020202Activity;
 import com.dg.user008.crazyandroid.activity.Demo020203Activity;
 import com.dg.user008.crazyandroid.activity.Demo020204Activity;
 import com.dg.user008.crazyandroid.activity.Demo020205Activity;
+import com.dg.user008.crazyandroid.activity.Demo020301Activity;
+import com.dg.user008.crazyandroid.activity.Demo020302Activity;
+import com.dg.user008.crazyandroid.activity.Demo020303Activity;
+import com.dg.user008.crazyandroid.activity.Demo020304Activity;
+import com.dg.user008.crazyandroid.activity.Demo020305Activity;
+import com.dg.user008.crazyandroid.activity.Demo020306Activity;
+import com.dg.user008.crazyandroid.activity.Demo020307Activity;
 import com.dg.user008.crazyandroid.activity.FileUtil;
 import com.dg.user008.crazyandroid.adapter.MyExpandableListViewAdapter;
 import com.dg.user008.crazyandroid.bean.CatalogBean;
@@ -100,39 +107,47 @@ public class Chapter02Fragment extends Fragment {
 
                 } else if (childPosition == 3) {
                     //计算器界面
-                    Intent intent0103 =new Intent(getContext(), Demo020204Activity.class);
+                    Intent intent0103 = new Intent(getContext(), Demo020204Activity.class);
                     startActivity(intent0103);
 
 
                 } else if (childPosition == 4) {
                     //登录界面
-                    Intent intent0104 =new Intent(getContext(), Demo020205Activity.class);
+                    Intent intent0104 = new Intent(getContext(), Demo020205Activity.class);
                     startActivity(intent0104);
 
                 }
                 break;
             case 2:
                 if (childPosition == 0) {
-
+                    //不同颜色、字体、带链接的文本
+                    Intent intent0200 = new Intent(getContext(), Demo020301Activity.class);
+                    startActivity(intent0200);
 
                 } else if (childPosition == 1) {
-
-
+                    //圆角边框、渐变背景的textview
+                    Intent intent0201 = new Intent(getContext(), Demo020302Activity.class);
+                    startActivity(intent0201);
                 } else if (childPosition == 2) {
-
-
+                    //用户友好的输入界面
+                    Intent intent0202 = new Intent(getContext(), Demo020303Activity.class);
+                    startActivity(intent0202);
                 } else if (childPosition == 3) {
-
-
+                    //按钮，圆形按钮，带文字的图片按钮
+                    Intent intent0203 = new Intent(getContext(), Demo020304Activity.class);
+                    startActivity(intent0203);
                 } else if (childPosition == 4) {
-
-
+                    //利用单选框，复选框获取用户信息
+                    Intent intent0204 = new Intent(getContext(), Demo020305Activity.class);
+                    startActivity(intent0204);
                 } else if (childPosition == 5) {
-
-
+                    //动态控制布局
+                    Intent intent0205 = new Intent(getContext(), Demo020306Activity.class);
+                    startActivity(intent0205);
                 } else if (childPosition == 6) {
-
-
+                    //手机里的“劳力士”
+                    Intent intent0206=new Intent(getContext(), Demo020307Activity.class);
+                    startActivity(intent0206);
                 }
                 break;
             case 3:
