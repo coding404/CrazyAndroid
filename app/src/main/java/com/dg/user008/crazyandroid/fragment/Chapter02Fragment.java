@@ -25,6 +25,24 @@ import com.dg.user008.crazyandroid.activity.Demo020304Activity;
 import com.dg.user008.crazyandroid.activity.Demo020305Activity;
 import com.dg.user008.crazyandroid.activity.Demo020306Activity;
 import com.dg.user008.crazyandroid.activity.Demo020307Activity;
+import com.dg.user008.crazyandroid.activity.Demo020401Activity;
+import com.dg.user008.crazyandroid.activity.Demo020402Activity;
+import com.dg.user008.crazyandroid.activity.Demo020403Activity;
+import com.dg.user008.crazyandroid.activity.Demo020501Activity;
+import com.dg.user008.crazyandroid.activity.Demo020502Activity;
+import com.dg.user008.crazyandroid.activity.Demo020503Activity;
+import com.dg.user008.crazyandroid.activity.Demo020504Activity;
+import com.dg.user008.crazyandroid.activity.Demo020505Activity;
+import com.dg.user008.crazyandroid.activity.Demo020506Activity;
+import com.dg.user008.crazyandroid.activity.Demo020507Activity;
+import com.dg.user008.crazyandroid.activity.Demo020508Activity;
+import com.dg.user008.crazyandroid.activity.Demo020509Activity;
+import com.dg.user008.crazyandroid.activity.Demo020600Activity;
+import com.dg.user008.crazyandroid.activity.Demo020700Activity;
+import com.dg.user008.crazyandroid.activity.Demo020800Activity;
+import com.dg.user008.crazyandroid.activity.Demo020900Activity;
+import com.dg.user008.crazyandroid.activity.Demo021000Activity;
+import com.dg.user008.crazyandroid.activity.Demo021100Activity;
 import com.dg.user008.crazyandroid.activity.FileUtil;
 import com.dg.user008.crazyandroid.adapter.MyExpandableListViewAdapter;
 import com.dg.user008.crazyandroid.bean.CatalogBean;
@@ -146,144 +164,119 @@ public class Chapter02Fragment extends Fragment {
                     startActivity(intent0205);
                 } else if (childPosition == 6) {
                     //手机里的“劳力士”
-                    Intent intent0206=new Intent(getContext(), Demo020307Activity.class);
+                    Intent intent0206 = new Intent(getContext(), Demo020307Activity.class);
                     startActivity(intent0206);
                 }
                 break;
             case 3:
                 if (childPosition == 0) {
-
+                    //图片浏览器
+                    Intent intent0300 = new Intent(getContext(), Demo020401Activity.class);
+                    startActivity(intent0300);
 
                 } else if (childPosition == 1) {
-
+                    //强大的图片按钮
+                    Intent intent0301 = new Intent(getContext(), Demo020402Activity.class);
+                    startActivity(intent0301);
 
                 } else if (childPosition == 2) {
-
-
+                    //使用QuickContactBadge关联联系人
+                    Intent intent0302 = new Intent(getContext(), Demo020403Activity.class);
+                    startActivity(intent0302);
                 }
                 break;
             case 4:
                 if (childPosition == 0) {
-
+                    //改变分隔条，基于数组的ListView
+                    Intent intent0400 = new Intent(getContext(), Demo020501Activity.class);
+                    startActivity(intent0400);
 
                 } else if (childPosition == 1) {
-
+                    //使用ArrayAdapter创建ListView
+                    Intent intent0401 = new Intent(getContext(), Demo020502Activity.class);
+                    startActivity(intent0401);
 
                 } else if (childPosition == 2) {
-
+                    //基于ListActivity实现列表
+                    Intent intent0402 = new Intent(getContext(), Demo020503Activity.class);
+                    startActivity(intent0402);
 
                 } else if (childPosition == 3) {
-
+                    //使用SimpleAdapter创建ListView
+                    Intent intent0403 = new Intent(getContext(), Demo020504Activity.class);
+                    startActivity(intent0403);
 
                 } else if (childPosition == 4) {
-
+                    //扩建BasseAdapter实现不存储列表项的ListView
+                    Intent intent0404 = new Intent(getContext(), Demo020505Activity.class);
+                    startActivity(intent0404);
 
                 } else if (childPosition == 5) {
-
+                    //带预览的图片浏览器
+                    Intent intent0405 = new Intent(getContext(), Demo020506Activity.class);
+                    startActivity(intent0405);
 
                 } else if (childPosition == 6) {
-
+                    //让用户选择
+                    Intent intent0406 = new Intent(getContext(), Demo020507Activity.class);
+                    startActivity(intent0406);
 
                 } else if (childPosition == 7) {
+                    //自动播放的图片库
+                    Intent intent0407 = new Intent(getContext(), Demo020508Activity.class);
+                    startActivity(intent0407);
 
 
                 } else if (childPosition == 8) {
-
+                    //叠在一起的图片
+                    Intent intent0408 = new Intent(getContext(), Demo020509Activity.class);
+                    startActivity(intent0408);
 
                 }
                 break;
             case 5:
-                if (childPosition == 0) {
+                //ProgressBar及其子类
+                Intent intent0500 = new Intent(getContext(), Demo020600Activity.class);
+                intent0500.putExtra("groupPosition", groupPosition);
+                intent0500.putExtra("childPosition", childPosition);
+                startActivity(intent0500);
 
 
-                } else if (childPosition == 1) {
-
-
-                } else if (childPosition == 2) {
-
-
-                }
                 break;
             case 6:
-                if (childPosition == 0) {
-
-
-                } else if (childPosition == 1) {
-
-
-                } else if (childPosition == 2) {
-
-
-                }
+                //ViewAnimator及其子类
+                Intent intent0600 = new Intent(getContext(), Demo020700Activity.class);
+                intent0600.putExtra("groupPosition", groupPosition);
+                intent0600.putExtra("childPosition", childPosition);
+                startActivity(intent0600);
                 break;
             case 7:
-                if (childPosition == 0) {
-
-
-                } else if (childPosition == 1) {
-
-
-                } else if (childPosition == 2) {
-
-
-                } else if (childPosition == 3) {
-
-
-                } else if (childPosition == 4) {
-
-
-                } else if (childPosition == 5) {
-
-
-                } else if (childPosition == 6) {
-
-
-                } else if (childPosition == 7) {
-
-
-                }
+                //各种杂项组件
+                Intent intent0700 = new Intent(getContext(), Demo020800Activity.class);
+                intent0700.putExtra("groupPosition", groupPosition);
+                intent0700.putExtra("childPosition", childPosition);
+                startActivity(intent0700);
                 break;
             case 8:
-                if (childPosition == 0) {
-
-
-                } else if (childPosition == 1) {
-
-
-                } else if (childPosition == 2) {
-
-
-                } else if (childPosition == 3) {
-
-
-                } else if (childPosition == 4) {
-
-
-                } else if (childPosition == 5) {
-
-
-                }
+                //UI组件，对话框
+                Intent intent0800 = new Intent(getContext(), Demo020900Activity.class);
+                intent0800.putExtra("groupPosition", groupPosition);
+                intent0800.putExtra("childPosition", childPosition);
+                startActivity(intent0800);
                 break;
             case 9:
-                if (childPosition == 0) {
-
-
-                }
+                //菜单
+                Intent intent0900 = new Intent(getContext(), Demo021000Activity.class);
+                intent0900.putExtra("groupPosition", groupPosition);
+                intent0900.putExtra("childPosition", childPosition);
+                startActivity(intent0900);
                 break;
             case 10:
-                if (childPosition == 0) {
-
-
-                } else if (childPosition == 1) {
-
-
-                } else if (childPosition == 2) {
-
-
-                } else if (childPosition == 3) {
-
-
-                }
+                //使用活动条（ActionBar）
+                Intent intent1000 = new Intent(getContext(), Demo021100Activity.class);
+                intent1000.putExtra("groupPosition", groupPosition);
+                intent1000.putExtra("childPosition", childPosition);
+                startActivity(intent1000);
                 break;
             default:
                 break;

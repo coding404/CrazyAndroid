@@ -46,6 +46,42 @@
         </activity>
         <activity android:name=".activity.Demo020307Activity">
         </activity>
+        <activity android:name=".activity.Demo020401Activity">
+        </activity>
+        <activity android:name=".activity.Demo020402Activity">
+        </activity>
+        <activity android:name=".activity.Demo020403Activity">
+        </activity>
+        <activity android:name=".activity.Demo020501Activity">
+        </activity>
+        <activity android:name=".activity.Demo020502Activity">
+        </activity>
+        <activity android:name=".activity.Demo020503Activity">
+        </activity>
+        <activity android:name=".activity.Demo020504Activity">
+        </activity>
+        <activity android:name=".activity.Demo020505Activity">
+        </activity>
+        <activity android:name=".activity.Demo020506Activity">
+        </activity>
+        <activity android:name=".activity.Demo020507Activity">
+        </activity>
+        <activity android:name=".activity.Demo020508Activity">
+        </activity>
+        <activity android:name=".activity.Demo020509Activity">
+        </activity>
+        <activity android:name=".activity.Demo020600Activity">
+        </activity>
+        <activity android:name=".activity.Demo020700Activity">
+        </activity>
+        <activity android:name=".activity.Demo020800Activity">
+        </activity>
+        <activity android:name=".activity.Demo020900Activity">
+        </activity>
+        <activity android:name=".activity.Demo021000Activity">
+        </activity>
+        <activity android:name=".activity.Demo021100Activity">
+        </activity>
     </application>
 
 </manifest>
