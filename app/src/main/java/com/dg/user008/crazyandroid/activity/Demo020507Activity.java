@@ -1,11 +1,11 @@
 package com.dg.user008.crazyandroid.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import com.dg.user008.crazyandroid.R;
 
-public class Demo020507Activity extends AppCompatActivity {
+public class Demo020507Activity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
