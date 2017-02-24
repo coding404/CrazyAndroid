@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.dg.user008.crazyandroid">
-
+    <!-- 添加操作闪光灯的权限 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <!-- 添加操作振动器的权限 -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <application
         android:name=".app.AppApplication"
         android:allowBackup="true"
@@ -81,6 +84,8 @@
         <activity android:name=".activity.Demo021000Activity">
         </activity>
         <activity android:name=".activity.Demo021100Activity">
+        </activity>
+        <activity android:name=".activity.OtherActivity">
         </activity>
     </application>
 

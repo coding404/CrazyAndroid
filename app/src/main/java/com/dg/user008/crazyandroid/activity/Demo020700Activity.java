@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 import android.widget.ViewSwitcher;
 
 import com.dg.user008.crazyandroid.R;
@@ -46,11 +47,21 @@ public class Demo020700Activity extends AppCompatActivity {
     LinearLayout mLlTest02;
     @Bind(R.id.gl_test)
     GridView mGlTest;
+    @Bind(R.id.vf_test)
+    ViewFlipper mVfTest;
+    @Bind(R.id.btn_pre02)
+    Button mBtnPre02;
+    @Bind(R.id.btn_auto02)
+    Button mBtnAuto02;
+    @Bind(R.id.btn_next02)
+    Button mBtnNext02;
+    @Bind(R.id.rv_test03)
+    RelativeLayout mRvTest03;
     private int mGroupPosition;
     private int mChildPosition;
     private static int NUMBER_PER_SCREEN = 12;
 
-    @OnClick({R.id.btn_prev, R.id.btn_next})
+    @OnClick({R.id.btn_prev, R.id.btn_next,R.id.btn_pre02, R.id.btn_auto02, R.id.btn_next02})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_prev:
@@ -58,6 +69,25 @@ public class Demo020700Activity extends AppCompatActivity {
                 break;
             case R.id.btn_next:
                 next();
+                break;
+            case R.id.btn_pre02:
+                mVfTest.setInAnimation(this,R.anim.slide_in_right);
+                mVfTest.setOutAnimation(this,R.anim.slide_out_left);
+                mVfTest.showPrevious();
+                mVfTest.stopFlipping();
+
+                break;
+            case R.id.btn_auto02:
+                mVfTest.setInAnimation(this,R.anim.slide_in_left);
+                mVfTest.setOutAnimation(this,R.anim.slide_out_right);
+                mVfTest.startFlipping();
+                break;
+            case R.id.btn_next02:
+                mVfTest.setInAnimation(this,R.anim.slide_in_left);
+                mVfTest.setOutAnimation(this,R.anim.slide_out_right);
+                mVfTest.showNext();
+                mVfTest.stopFlipping();
+
                 break;
         }
     }
@@ -97,6 +127,7 @@ public class Demo020700Activity extends AppCompatActivity {
                 initData1();
                 break;
             case 2:
+                mRvTest03.setVisibility(View.VISIBLE);
                 initData2();
                 break;
             default:
@@ -176,6 +207,9 @@ public class Demo020700Activity extends AppCompatActivity {
     }
 
     private void initData2() {
+
+
+
 
     }
 
