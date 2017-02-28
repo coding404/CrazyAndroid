@@ -10,9 +10,9 @@ import android.widget.ExpandableListView;
 import android.widget.Toast;
 
 import com.dg.user008.crazyandroid.R;
-import com.dg.user008.crazyandroid.activity.FileUtil;
 import com.dg.user008.crazyandroid.adapter.MyExpandableListViewAdapter;
 import com.dg.user008.crazyandroid.bean.CatalogBean;
+import com.dg.user008.crazyandroid.utils.FileUtil;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;

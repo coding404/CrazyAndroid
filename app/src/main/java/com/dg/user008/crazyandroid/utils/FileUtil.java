@@ -1,4 +1,4 @@
-package com.dg.user008.crazyandroid.activity;
+package com.dg.user008.crazyandroid.utils;
 
 import android.content.Context;
 

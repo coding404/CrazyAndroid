@@ -43,9 +43,9 @@ import com.dg.user008.crazyandroid.activity.Demo020800Activity;
 import com.dg.user008.crazyandroid.activity.Demo020900Activity;
 import com.dg.user008.crazyandroid.activity.Demo021000Activity;
 import com.dg.user008.crazyandroid.activity.Demo021100Activity;
-import com.dg.user008.crazyandroid.activity.FileUtil;
 import com.dg.user008.crazyandroid.adapter.MyExpandableListViewAdapter;
 import com.dg.user008.crazyandroid.bean.CatalogBean;
+import com.dg.user008.crazyandroid.utils.FileUtil;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;

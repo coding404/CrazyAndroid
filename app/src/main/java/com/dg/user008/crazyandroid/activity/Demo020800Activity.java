@@ -249,7 +249,7 @@ public class Demo020800Activity extends AppCompatActivity {
         mYear = instance.get(Calendar.YEAR);
         mMonth = instance.get(Calendar.MONTH);
         mDay = instance.get(Calendar.DAY_OF_MONTH);
-        mHour = instance.get(Calendar.HOUR_OF_DAY);
+        mHour = instance.get(Calendar.AM_PM);
         mMinute = instance.get(Calendar.MINUTE);
         mDatePicker.init(mYear, mMonth, mDay, new DatePicker.OnDateChangedListener() {
             @Override
