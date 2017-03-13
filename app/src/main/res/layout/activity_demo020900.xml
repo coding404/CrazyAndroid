@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_demo020900"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dg.user008.crazyandroid.activity.Demo020900Activity">
+
+    <LinearLayout
+        android:id="@+id/ll020900_test0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_show_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="显示提示消息的对话框"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll020900_test1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_simple_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="简单列表项对话框"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll020900_test2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_onechioce_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="单选列表项对话框"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll020900_test3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_morechioce_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="多选列表项对话框"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll020900_test4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_custom_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义列表项对话框"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll020900_test5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_custom_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义view对话框"/>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_demo020402"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dg.user008.crazyandroid.activity.Demo020402Activity">
+
+    <ImageView
+        android:id="@+id/iv_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/blue"/>
+
+    <ImageView
+        android:id="@+id/iv_special"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_normal"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/image_selector01"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_special"
+        android:orientation="horizontal">
+
+        <ZoomButton
+            android:id="@+id/zb_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+
+        <ZoomButton
+            android:layout_marginLeft="20dp"
+            android:id="@+id/zb_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

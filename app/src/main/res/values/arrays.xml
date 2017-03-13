@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="books">
+        <item >疯狂Android</item>
+        <item >疯狂Java</item>
+        <item >疯狂XML</item>
+        <item >呵呵哈哈哈</item>
+    </array>
+
+
+
+</resources>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_demo020600"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dg.user008.crazyandroid.activity.Demo020600Activity">
+
+    <LinearLayout
+        android:id="@+id/ll_progressbardemo01"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                style="@android:style/Widget.Holo.ProgressBar.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ProgressBar
+                style="@android:style/Widget.Holo.ProgressBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="带进度的进度条："/>
+
+        <ProgressBar
+            android:id="@+id/pb_01"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"/>
+
+        <ProgressBar
+            android:id="@+id/pb_02"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progressDrawable="@drawable/my_bar"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_progressbardemo02"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_lijiang"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:src="@drawable/lijiang"/>
+
+        <SeekBar
+            android:id="@+id/seekb_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="255"
+            android:progress="255"
+            android:thumb="@mipmap/ic_launcher"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_progressbardemo03"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_lijiang02"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:src="@drawable/lijiang"/>
+
+        <RatingBar
+            android:id="@+id/rb_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:max="255"
+            android:numStars="5"
+            android:rating="1"
+            android:stepSize="0.5"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_demo020301"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.dg.user008.crazyandroid.activity.Demo020301Activity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@mipmap/ic_launcher"
+        android:drawableRight="@mipmap/ic_launcher"
+        android:text="我爱Java"
+        android:textSize="20pt"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="我爱Java我爱Java我爱Java我爱Javaasdfsddsds我爱Java我爱Java我爱Java我爱Java我爱Java111111"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="email|phone"
+        android:maxLines="1"
+        android:text="邮箱是1111111.@qq.com，电话是22222211111"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shadowColor="#00f"
+        android:shadowDx="17."
+        android:shadowDy="-7."
+        android:shadowRadius="10."
+        android:text="测试文字"
+        android:textColor="#f00"
+        android:textSize="17pt"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入密码"
+        android:inputType="textPassword"/>
+
+    <CheckedTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkMark="@mipmap/ic_launcher"
+        android:text="可勾选的对话框"/>
+
+</LinearLayout>

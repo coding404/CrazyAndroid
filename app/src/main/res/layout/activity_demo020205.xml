@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_demo020205"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dg.user008.crazyandroid.activity.Demo020205Activity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="20dp"
+        android:layout_y="20dp"
+        android:text="用户名："/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="80dp"
+        android:layout_y="15dp"
+        android:width="200dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="20dp"
+        android:layout_y="80dp"
+        android:text="密  码："/>
+
+    <EditText
+        android:layout_x="80dp"
+        android:layout_y="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"/>
+    <Button
+        android:layout_x="150dp"
+        android:layout_y="150dp"
+        android:text="登录"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</AbsoluteLayout>
