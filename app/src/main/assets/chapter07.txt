@@ -9,6 +9,12 @@
     {
       "chapterName": "7.2绘图",
       "paragraphs": [
+       {
+                "paragraphName": "Android绘图基础"
+              },
+              {
+                              "paragraphName": "Path类"
+                            },
         {
           "paragraphName": "采用双缓冲实现画图板"
         },

@@ -16,4 +16,6 @@
     <color name="color04">#FF0</color>
     <color name="color05">#0FF</color>
     <color name="color06">#F0F</color>
+
+    <drawable name="toolbar_bg">#30000000</drawable>
 </resources>
