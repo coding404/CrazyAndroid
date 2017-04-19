@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.dg.user008.crazyandroid.activity.Demo020306Activity">
+    tools:context="com.liushu.crazyandroid.activity.Demo020306Activity">
 
     <ToggleButton
         android:id="@+id/tb_test"

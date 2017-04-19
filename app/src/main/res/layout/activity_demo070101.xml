@@ -5,9 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dg.user008.crazyandroid.activity.Demo070101Activity">
+    tools:context="com.liushu.crazyandroid.activity.Demo070101Activity">
 
-    <com.dg.user008.crazyandroid.widget.SimplePathView
+    <com.liushu.crazyandroid.widget.SimplePathView
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </LinearLayout>

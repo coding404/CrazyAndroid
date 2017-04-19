@@ -5,6 +5,6 @@
     android:id="@+id/activity_demo020504"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dg.user008.crazyandroid.activity.Demo020504Activity">
+    tools:context="com.liushu.crazyandroid.activity.Demo020504Activity">
 
 </ListView>

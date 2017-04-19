@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    android:orientation="horizontal"
-    tools:context="com.dg.user008.crazyandroid.activity.Demo020403Activity">
+    tools:context="com.liushu.crazyandroid.activity.Demo020403Activity">
     <QuickContactBadge
         android:id="@+id/qcb_test"
         android:src="@mipmap/ic_launcher"

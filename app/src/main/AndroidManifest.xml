@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.dg.user008.crazyandroid">
+          package="com.liushu.crazyandroid">
 
     <!-- 添加操作闪光灯的权限 -->
     <uses-permission android:name="android.permission.FLASHLIGHT"/>
@@ -15,85 +15,157 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".ui.main.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Demo020101Activity"/>
-        <activity android:name=".activity.Demo020102Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020101Activity"/>
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020102Activity">
         </activity>
-        <activity android:name=".activity.Demo020103Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020103Activity">
         </activity>
-        <activity android:name=".activity.Demo020201Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020201Activity">
         </activity>
-        <activity android:name=".activity.Demo020202Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020202Activity">
         </activity>
-        <activity android:name=".activity.Demo020203Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020203Activity">
         </activity>
-        <activity android:name=".activity.Demo020204Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020204Activity">
         </activity>
-        <activity android:name=".activity.Demo020205Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020205Activity">
         </activity>
-        <activity android:name=".activity.Demo020301Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020301Activity">
         </activity>
-        <activity android:name=".activity.Demo020302Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020302Activity">
         </activity>
-        <activity android:name=".activity.Demo020303Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020303Activity">
         </activity>
-        <activity android:name=".activity.Demo020304Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020304Activity">
         </activity>
-        <activity android:name=".activity.Demo020305Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020305Activity">
         </activity>
-        <activity android:name=".activity.Demo020306Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020306Activity">
         </activity>
-        <activity android:name=".activity.Demo020307Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020307Activity">
         </activity>
-        <activity android:name=".activity.Demo020401Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020401Activity">
         </activity>
-        <activity android:name=".activity.Demo020402Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020402Activity">
         </activity>
-        <activity android:name=".activity.Demo020403Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020403Activity">
         </activity>
-        <activity android:name=".activity.Demo020501Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020501Activity">
         </activity>
-        <activity android:name=".activity.Demo020502Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020502Activity">
         </activity>
-        <activity android:name=".activity.Demo020503Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020503Activity">
         </activity>
-        <activity android:name=".activity.Demo020504Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020504Activity">
         </activity>
-        <activity android:name=".activity.Demo020505Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020505Activity">
         </activity>
-        <activity android:name=".activity.Demo020506Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020506Activity">
         </activity>
-        <activity android:name=".activity.Demo020507Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020507Activity">
         </activity>
-        <activity android:name=".activity.Demo020508Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020508Activity">
         </activity>
-        <activity android:name=".activity.Demo020509Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020509Activity">
         </activity>
-        <activity android:name=".activity.Demo020600Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020600Activity">
         </activity>
-        <activity android:name=".activity.Demo020700Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020700Activity">
         </activity>
-        <activity android:name=".activity.Demo020800Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020800Activity">
         </activity>
-        <activity android:name=".activity.Demo020900Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020900Activity">
         </activity>
-        <activity android:name=".activity.Demo021000Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo021000Activity">
         </activity>
-        <activity android:name=".activity.Demo021100Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo021100Activity">
         </activity>
-        <activity android:name=".activity.OtherActivity">
+        <activity android:name=".ui.stage01.chapter02.activity.OtherActivity">
         </activity>
-        <activity android:name=".activity.Demo070100Activity">
+        <activity android:name=".ui.stage01.chapter07.activity.Demo070100Activity">
         </activity>
-        <activity android:name=".activity.Demo070101Activity">
+        <activity android:name=".ui.stage01.chapter07.activity.Demo070101Activity">
         </activity>
-        <activity android:name=".activity.Demo070102Activity">
+        <activity android:name=".ui.stage01.chapter07.activity.Demo070102Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter07.activity.Demo070103Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter07.activity.Demo070200Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter07.activity.Demo070201Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter07.activity.Demo070300Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter07.activity.Demo070400Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter07.activity.Demo070500Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter07.activity.Demo070600Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter08.activity.Demo080000Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter08.activity.Demo080100Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter08.activity.Demo080200Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter08.activity.Demo080300Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter09.activity.Demo090100Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter09.activity.Demo090300Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter10.activity.Demo100100Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter10.activity.Demo100101Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter10.activity.Demo100200Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter10.activity.Demo100201Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter10.activity.Demo100300Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter10.activity.Demo100500Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter10.activity.Demo100600Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter10.activity.Demo100700Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter10.activity.Demo100701Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter10.activity.Demo100702Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter11.activity.Demo110000Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter11.activity.Demo110100Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter11.activity.Demo110200Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter11.activity.Demo110201Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter13.activity.Demo130200Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter13.activity.Demo130201Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter13.activity.Demo130300Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter13.activity.Demo130400Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter14.activity.Demo140100Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter14.activity.Demo140200Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter14.activity.Demo140300Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter15.activity.Demo150200Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter15.activity.Demo150201Activity">
         </activity>
     </application>
 

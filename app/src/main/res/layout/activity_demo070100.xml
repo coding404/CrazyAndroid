@@ -5,9 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dg.user008.crazyandroid.activity.Demo070100Activity">
+    tools:context="com.liushu.crazyandroid.activity.Demo070100Activity">
 
-    <com.dg.user008.crazyandroid.widget.SimpleView
+    <com.liushu.crazyandroid.widget.SimpleView
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

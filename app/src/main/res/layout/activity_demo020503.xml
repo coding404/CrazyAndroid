@@ -9,6 +9,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.dg.user008.crazyandroid.activity.Demo020503Activity">
+    tools:context="com.liushu.crazyandroid.activity.Demo020503Activity">
 
 </RelativeLayout>

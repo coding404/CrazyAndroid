@@ -7,6 +7,6 @@
     android:layout_height="match_parent"
     android:background="@color/orange"
     android:orientation="vertical"
-    tools:context="com.dg.user008.crazyandroid.activity.Demo020102Activity">
+    tools:context="com.liushu.crazyandroid.activity.Demo020102Activity">
 
 </LinearLayout>

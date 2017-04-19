@@ -8,7 +8,7 @@ android {
     compileSdkVersion 23
     buildToolsVersion '25.0.0'
     defaultConfig {
-        applicationId "com.dg.user008.crazyandroid"
+        applicationId "com.liushu.crazyandroid"
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 5

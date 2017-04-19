@@ -6,7 +6,7 @@
     android:orientation="vertical"
     >
 
-    <com.dg.user008.crazyandroid.widget.DrawPlantView
+    <com.liushu.crazyandroid.widget.DrawPlantView
         android:id="@+id/palette"
         android:layout_width="match_parent"
         android:layout_height="0dp"
