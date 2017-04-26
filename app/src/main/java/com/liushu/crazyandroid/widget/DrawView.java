@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -33,6 +34,7 @@ public class DrawView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
+
         super.onDraw(canvas);
         mPaint.setColor(Color.BLUE);
         canvas.drawCircle(currentX,currentY,15,mPaint);
@@ -45,5 +47,12 @@ public class DrawView extends View {
         currentY=event.getY();
         invalidate();
         return true;
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+
+        Log.e("22222222","2222222222");
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 }

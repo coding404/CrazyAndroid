@@ -34,7 +34,6 @@ public class Demo020307Activity extends AppCompatActivity {
                 if (SystemClock.elapsedRealtime() - chronometer.getBase() > 20 * 1000) {
                     mChronometer.stop();
                     mButton.setClickable(true);
-
                 }
             }
         });
