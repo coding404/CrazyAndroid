@@ -20,8 +20,12 @@ import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070102Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070103Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070200Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070201Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070202Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070300Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070301Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070400Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070401Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070402Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070500Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070600Activity;
 import com.liushu.crazyandroid.utils.FileUtil;
@@ -108,20 +112,38 @@ public class Chapter07Fragment extends Fragment {
                     Intent intent = new Intent(getContext(), Demo070201Activity.class);
                     startActivity(intent);
 
+                } else if (childPosition == 2) {
+                    //使用shader填充图形
+                    Intent intent = new Intent(getContext(), Demo070202Activity.class);
+                    startActivity(intent);
                 }
                 break;
             case 3:
                 if (childPosition == 0) {
-                    //在指定点爆炸
+                    //animationDrawable与逐帧动画
                     Intent intent = new Intent(getContext(), Demo070300Activity.class);
+                    startActivity(intent);
+
+                } else if (childPosition == 1) {
+
+                    //在指定点爆炸
+                    Intent intent = new Intent(getContext(), Demo070301Activity.class);
                     startActivity(intent);
 
                 }
                 break;
             case 4:
                 if (childPosition == 0) {
-                    //蝴蝶飞舞
+                    //位置、大小、旋转度、透明度改变的补间动画
                     Intent intent = new Intent(getContext(), Demo070400Activity.class);
+                    startActivity(intent);
+                } else if (childPosition == 1) {
+                    //蝴蝶飞舞
+                    Intent intent = new Intent(getContext(), Demo070401Activity.class);
+                    startActivity(intent);
+                }else if (childPosition ==2) {
+                    //自定义补间动画
+                    Intent intent = new Intent(getContext(), Demo070402Activity.class);
                     startActivity(intent);
                 }
                 break;

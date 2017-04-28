@@ -167,6 +167,14 @@
         </activity>
         <activity android:name=".ui.stage01.chapter15.activity.Demo150201Activity">
         </activity>
+        <activity android:name=".ui.stage01.chapter07.activity.Demo070202Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter07.activity.Demo070301Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter07.activity.Demo070401Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter07.activity.Demo070402Activity">
+        </activity>
     </application>
 
 </manifest>

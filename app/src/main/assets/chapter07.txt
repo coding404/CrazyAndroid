@@ -31,12 +31,18 @@
         },
         {
           "paragraphName": "可揉动的图片"
-        }
+        },
+                 {
+                   "paragraphName": "使用shader填充图形"
+                 }
       ]
     },
     {
       "chapterName": "7.4逐帧（Frame）动画",
       "paragraphs": [
+      {
+                "paragraphName": "animationDrawable与逐帧动画"
+              },
         {
           "paragraphName": "在指定点爆炸"
         }
@@ -46,8 +52,12 @@
       "chapterName": "7.5补间(Tween)动画",
       "paragraphs": [
         {
-          "paragraphName": "蝴蝶飞舞"
-        }
+          "paragraphName": "位置、大小、旋转度、透明度改变的补间动画"
+        },{
+                    "paragraphName": "蝴蝶飞舞"
+                  },{
+                                       "paragraphName": "自定义补间动画"
+                                     }
       ]
     },
     {
