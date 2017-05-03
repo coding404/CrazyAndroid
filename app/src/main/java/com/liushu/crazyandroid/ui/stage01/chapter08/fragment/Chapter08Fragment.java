@@ -16,6 +16,7 @@ import com.liushu.crazyandroid.adapter.MyExpandableListViewAdapter;
 import com.liushu.crazyandroid.bean.CatalogBean;
 import com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080000Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080100Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080101Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080200Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080300Activity;
 import com.liushu.crazyandroid.utils.FileUtil;
@@ -51,7 +52,6 @@ public class Chapter08Fragment extends Fragment {
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 //界面跳转
                 JumpActivity(groupPosition, childPosition);
-              //  Toast.makeText(getContext(), "groupPosition=" + groupPosition + ",childPosition=" + childPosition, Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
@@ -63,16 +63,20 @@ public class Chapter08Fragment extends Fragment {
             case 0:
                 if (childPosition == 0) {
                     //记录应用程序的使用次数
-                    ToastUitl.showShort("记录应用程序的使用次数");
                     Intent intent = new Intent(getContext(), Demo080000Activity.class);
                     startActivity(intent);
                 }
                 break;
             case 1:
                 if (childPosition == 0) {
+                    //读取SD卡上的文件
+                    Intent intent = new Intent(getContext(), Demo080100Activity.class);
+                    startActivity(intent);
+
+                }else if (childPosition == 1) {
                     //SD卡文件浏览器
                     ToastUitl.showShort("SD卡文件浏览器");
-                    Intent intent = new Intent(getContext(), Demo080100Activity.class);
+                    Intent intent = new Intent(getContext(), Demo080101Activity.class);
                     startActivity(intent);
 
                 }

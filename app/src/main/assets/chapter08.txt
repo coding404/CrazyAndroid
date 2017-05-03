@@ -12,8 +12,11 @@
       "chapterName": "8.2File存储",
       "paragraphs": [
         {
-          "paragraphName": "SD卡文件浏览器"
-        }
+          "paragraphName": "读取SD卡上的文件"
+        },
+         {
+                  "paragraphName": "SD卡文件浏览器"
+                }
       ]
     },
     {

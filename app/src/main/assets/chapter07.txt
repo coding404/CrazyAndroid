@@ -72,7 +72,10 @@
       "chapterName": "7.7使用SurfaceView实现动画",
       "paragraphs": [
         {
-          "paragraphName": "基于surfaceView开发示波器"
+          "paragraphName": "surfaceView的绘图机制"
+        },
+        {
+           "paragraphName": "基于surfaceView开发示波器"
         }
       ]
     }

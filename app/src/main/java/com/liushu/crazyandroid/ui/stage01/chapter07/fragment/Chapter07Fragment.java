@@ -28,6 +28,7 @@ import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070401Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070402Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070500Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070600Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070601Activity;
 import com.liushu.crazyandroid.utils.FileUtil;
 
 import java.util.ArrayList;
@@ -157,8 +158,12 @@ public class Chapter07Fragment extends Fragment {
                 break;
             case 6:
                 if (childPosition == 0) {
-                    //基于SurfaceView开发示波器
+                    //surfaceView的绘图机制
                     Intent intent = new Intent(getContext(), Demo070600Activity.class);
+                    startActivity(intent);
+                }else if (childPosition == 1) {
+                    //基于SurfaceView开发示波器
+                    Intent intent = new Intent(getContext(), Demo070601Activity.class);
                     startActivity(intent);
                 }
                 break;
