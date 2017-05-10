@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
 import com.google.gson.Gson;
-import com.jaydenxiao.common.commonutils.ToastUitl;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.adapter.MyExpandableListViewAdapter;
 import com.liushu.crazyandroid.bean.CatalogBean;
@@ -19,6 +18,10 @@ import com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080100Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080101Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080200Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080300Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080301Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080302Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080303Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080400Activity;
 import com.liushu.crazyandroid.utils.FileUtil;
 
 import java.util.ArrayList;
@@ -75,7 +78,6 @@ public class Chapter08Fragment extends Fragment {
 
                 }else if (childPosition == 1) {
                     //SD卡文件浏览器
-                    ToastUitl.showShort("SD卡文件浏览器");
                     Intent intent = new Intent(getContext(), Demo080101Activity.class);
                     startActivity(intent);
 
@@ -84,7 +86,6 @@ public class Chapter08Fragment extends Fragment {
             case 2:
                 if (childPosition == 0) {
                     //英文生词本
-                    ToastUitl.showShort("英文生词本");
                     Intent intent = new Intent(getContext(), Demo080200Activity.class);
                     startActivity(intent);
                 }
@@ -92,21 +93,29 @@ public class Chapter08Fragment extends Fragment {
             case 3:
                 if (childPosition == 0) {
                     //通过手势缩放图片
-                    ToastUitl.showShort("通过手势缩放图片");
                     Intent intent = new Intent(getContext(), Demo080300Activity.class);
                     startActivity(intent);
 
                 } else if (childPosition == 1) {
                     //通过手势实现翻页效果
-                    ToastUitl.showShort("通过手势实现翻页效果");
-                    Intent intent = new Intent(getContext(), Demo080300Activity.class);
+                    Intent intent = new Intent(getContext(), Demo080301Activity.class);
                     startActivity(intent);
 
+                }else if (childPosition==2){
+                    //添加手势
+                    Intent intent = new Intent(getContext(), Demo080302Activity.class);
+                    startActivity(intent);
+                }else if (childPosition==3){
+                    //识别手势
+                    Intent intent = new Intent(getContext(), Demo080303Activity.class);
+                    startActivity(intent);
                 }
                 break;
             case 4:
                 if (childPosition == 0) {
-
+                    //自动朗读
+                    Intent intent = new Intent(getContext(), Demo080400Activity.class);
+                    startActivity(intent);
 
                 }
                 break;

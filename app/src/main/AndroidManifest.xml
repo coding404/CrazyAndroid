@@ -12,7 +12,7 @@
     <application
         android:name=".app.AppApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/lancher1"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
@@ -180,6 +180,16 @@
         <activity android:name=".ui.stage01.chapter07.activity.Demo070601Activity">
         </activity>
         <activity android:name=".ui.stage01.chapter08.activity.Demo080101Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter08.activity.DbResultActivity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter08.activity.Demo080301Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter08.activity.Demo080302Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter08.activity.Demo080303Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter08.activity.Demo080400Activity">
         </activity>
     </application>
 

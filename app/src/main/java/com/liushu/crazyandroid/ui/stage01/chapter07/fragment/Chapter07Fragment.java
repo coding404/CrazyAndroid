@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.liushu.crazyandroid.R;
@@ -61,7 +60,7 @@ public class Chapter07Fragment extends Fragment {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 
-                Toast.makeText(getContext(), "groupPosition=" + groupPosition + ",childPosition=" + childPosition, Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(getContext(), "groupPosition=" + groupPosition + ",childPosition=" + childPosition, Toast.LENGTH_SHORT).show();
                 //界面跳转
                 JumpActivity(groupPosition, childPosition);
                 return true;
@@ -126,11 +125,9 @@ public class Chapter07Fragment extends Fragment {
                     startActivity(intent);
 
                 } else if (childPosition == 1) {
-
                     //在指定点爆炸
                     Intent intent = new Intent(getContext(), Demo070301Activity.class);
                     startActivity(intent);
-
                 }
                 break;
             case 4:

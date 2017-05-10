@@ -14,9 +14,9 @@
         {
           "paragraphName": "读取SD卡上的文件"
         },
-         {
-                  "paragraphName": "SD卡文件浏览器"
-                }
+        {
+          "paragraphName": "SD卡文件浏览器"
+        }
       ]
     },
     {
@@ -35,13 +35,21 @@
         },
         {
           "paragraphName": "通过手势实现翻页效果"
+        },
+        {
+          "paragraphName": "添加手势"
+        },
+        {
+          "paragraphName": "识别手势"
         }
       ]
     },
     {
       "chapterName": "8.5自动朗读",
       "paragraphs": [
-
+{
+          "paragraphName": "自动朗读"
+        }
       ]
     }
   ]

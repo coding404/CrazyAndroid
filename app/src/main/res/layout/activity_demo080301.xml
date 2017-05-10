@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout
-    android:orientation="vertical"
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.stage01.chapter08.activity.Demo080300Activity">
-    <ImageView
-        android:id="@+id/show"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="center"
-        />
+    android:orientation="vertical"
+    tools:context="com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080301Activity">
+    <ViewFlipper android:id="@+id/flipper"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"/>
 </LinearLayout>
