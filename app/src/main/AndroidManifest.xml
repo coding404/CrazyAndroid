@@ -191,6 +191,8 @@
         </activity>
         <activity android:name=".ui.stage01.chapter08.activity.Demo080400Activity">
         </activity>
+        <activity android:name=".ui.stage01.chapter12.activity.Demo120200Activity">
+        </activity>
     </application>
 
 </manifest>

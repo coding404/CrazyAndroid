@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.liushu.crazyandroid.activity.Demo080000Activity">
+    tools:context=".ui.stage01.chapter08.activity.Demo080000Activity">
 
     <TextView
         android:id="@+id/textView"

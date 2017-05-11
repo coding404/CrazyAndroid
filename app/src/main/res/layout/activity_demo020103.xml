@@ -5,7 +5,7 @@
     android:id="@+id/activity_demo020103"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.liushu.crazyandroid.activity.Demo020103Activity">
+    tools:context=".ui.stage01.chapter02.activity.Demo020103Activity">
     <com.liushu.crazyandroid.widget.DrawView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

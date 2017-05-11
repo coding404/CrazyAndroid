@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.liushu.crazyandroid.activity.Demo020304Activity">
+    tools:context=".ui.stage01.chapter02.activity.Demo020304Activity">
 
     <Button
         android:layout_width="match_parent"
@@ -27,5 +27,13 @@
         android:background="@drawable/background_selector01"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
+    <CheckBox
+        android:id="@+id/cb_remember"
+        style="@style/MyToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="center"
+        android:textOff=""
+        android:textOn=""/>
 </LinearLayout>

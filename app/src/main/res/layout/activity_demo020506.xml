@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.liushu.crazyandroid.activity.Demo020506Activity">
+    tools:context=".ui.stage01.chapter02.activity.Demo020506Activity">
 
     <GridView
         android:id="@+id/gv_test"

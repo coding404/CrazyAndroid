@@ -5,6 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.liushu.crazyandroid.activity.Demo130201Activity">
+    tools:context=".ui.stage01.chapter13.activity.Demo130201Activity">
 
 </android.support.constraint.ConstraintLayout>

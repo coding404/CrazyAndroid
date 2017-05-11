@@ -5,7 +5,7 @@
     android:id="@+id/activity_demo020600"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.liushu.crazyandroid.activity.Demo020600Activity">
+    tools:context=".ui.stage01.chapter02.activity.Demo020600Activity">
 
     <LinearLayout
         android:id="@+id/ll_progressbardemo01"

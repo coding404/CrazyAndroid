@@ -5,7 +5,7 @@
     android:id="@+id/activity_demo020501"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.liushu.crazyandroid.activity.Demo020501Activity">
+    tools:context=".ui.stage01.chapter02.activity.Demo020501Activity">
     <ListView
         android:dividerHeight="10dp"
         android:entries="@array/books"
