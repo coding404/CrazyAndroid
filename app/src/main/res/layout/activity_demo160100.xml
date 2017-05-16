@@ -5,11 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.stage01.chapter15.activity.Demo150200Activity">
-    <ImageView
-        android:id="@+id/znzImage"
+    android:orientation="vertical"
+    tools:context="com.liushu.crazyandroid.ui.stage01.chapter16.activity.Demo160100Activity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="所有可用列表"
+        />
+
+    <ListView
+        android:id="@+id/providers"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitCenter"
-        android:src="@drawable/znz" />
+        />
 </LinearLayout>

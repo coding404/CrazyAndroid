@@ -14,6 +14,9 @@ import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.adapter.MyExpandableListViewAdapter;
 import com.liushu.crazyandroid.bean.CatalogBean;
 import com.liushu.crazyandroid.ui.stage01.chapter12.activity.Demo120200Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter12.activity.Demo120201Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter12.activity.Demo120300Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter12.activity.Demo120301Activity;
 import com.liushu.crazyandroid.utils.FileUtil;
 
 import java.util.ArrayList;
@@ -46,7 +49,7 @@ public class Chapter12Fragment extends Fragment {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 //界面跳转
-                 JumpActivity(groupPosition,childPosition);
+                JumpActivity(groupPosition, childPosition);
                 //Toast.makeText(getContext(),"groupPosition="+groupPosition+",childPosition="+childPosition,Toast.LENGTH_SHORT).show();
                 return true;
             }
@@ -55,71 +58,62 @@ public class Chapter12Fragment extends Fragment {
 
     private void JumpActivity(int groupPosition, int childPosition) {
 
-        switch (groupPosition){
+        switch (groupPosition) {
             case 0:
-                if (childPosition==0){
+                if (childPosition == 0) {
 
 
-                }else if (childPosition==1){
+                } else if (childPosition == 1) {
 
 
-                }else if(childPosition==2){
+                } else if (childPosition == 2) {
 
 
                 }
                 break;
             case 1:
-                if (childPosition==0){
+                if (childPosition == 0) {
 
 
-                }else if (childPosition==1){
+                } else if (childPosition == 1) {
 
 
-                }else if(childPosition==2){
+                } else if (childPosition == 2) {
 
 
-                }else if (childPosition==3){
+                } else if (childPosition == 3) {
 
 
-                }else if (childPosition==4){
+                } else if (childPosition == 4) {
 
 
                 }
                 break;
             case 2:
-                if (childPosition==0){
+                if (childPosition == 0) {
                     //绘制平面上的多边形
                     Intent intent = new Intent(getContext(), Demo120200Activity.class);
                     startActivity(intent);
 
-                }else if (childPosition==1){
+                } else if (childPosition == 1) {
 
-
-                }else if(childPosition==2){
-
-
-                }else if (childPosition==3) {
-
-
-                }else if (childPosition==4){
-
-
-                }else if (childPosition==5){
-
-
-                }else if (childPosition==6){
-
-
+                    //旋转
+                    Intent intent = new Intent(getContext(), Demo120201Activity.class);
+                    startActivity(intent);
                 }
                 break;
             case 3:
-                if (childPosition==0){
+                if (childPosition == 0) {
+                    //构建3D图形
+                    Intent intent = new Intent(getContext(), Demo120300Activity.class);
+                    startActivity(intent);
 
+                } else if (childPosition == 1) {
+                    //应用纹理贴图
+                    Intent intent = new Intent(getContext(), Demo120301Activity.class);
+                    startActivity(intent);
 
-                }else if (childPosition==1){
-
-
-                }else if(childPosition==2){
+                } else if (childPosition == 2) {
 
 
                 }
@@ -129,14 +123,12 @@ public class Chapter12Fragment extends Fragment {
         }
 
 
-
-
     }
 
     private void initData() {
         mBeen = new ArrayList<>();
         String s = FileUtil.readFromAssets(getContext(), "chapter12.txt");
-        Gson gson=new Gson();
+        Gson gson = new Gson();
         CatalogBean catalogBean = gson.fromJson(s, CatalogBean.class);
         mBeen.clear();
         mBeen.addAll(catalogBean.getChapters());

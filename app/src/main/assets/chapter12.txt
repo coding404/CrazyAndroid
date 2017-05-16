@@ -17,13 +17,19 @@
       "paragraphs": [
 {
           "paragraphName": "绘制平面上的多边形"
-        }
+        },{
+                    "paragraphName": "旋转"
+                  }
       ]
     },
     {
       "chapterName": "12.4绘制3D图形",
       "paragraphs": [
-
+{
+                    "paragraphName": "构建3D图形"
+                  },{
+                                        "paragraphName": "应用纹理贴图"
+                                      }
       ]
     }
   ]

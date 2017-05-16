@@ -14,6 +14,8 @@ import com.jaydenxiao.common.commonutils.ToastUitl;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.adapter.MyExpandableListViewAdapter;
 import com.liushu.crazyandroid.bean.CatalogBean;
+import com.liushu.crazyandroid.ui.stage01.chapter15.activity.Demo150000Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter15.activity.Demo150100Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter15.activity.Demo150200Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter15.activity.Demo150201Activity;
 import com.liushu.crazyandroid.utils.FileUtil;
@@ -60,7 +62,9 @@ public class Chapter15Fragment extends Fragment {
         switch (groupPosition){
             case 0:
                 if (childPosition==0){
-
+                    ToastUitl.showShort("加速传感器");
+                    Intent intent = new Intent(getContext(), Demo150000Activity.class);
+                    startActivity(intent);
 
                 }else if (childPosition==1){
 
@@ -72,7 +76,9 @@ public class Chapter15Fragment extends Fragment {
                 break;
             case 1:
                 if (childPosition==0){
-
+                    ToastUitl.showShort("常用传感器");
+                    Intent intent = new Intent(getContext(), Demo150100Activity.class);
+                    startActivity(intent);
 
                 }else if (childPosition==1){
 

@@ -9,7 +9,11 @@
     {
       "chapterName": "16.2获取LocationProvider",
       "paragraphs": [
-
+{
+          "paragraphName": "获取所有可用的LocationProvider"
+        },{
+                    "paragraphName": "根据Criteria获得LocationProvider"
+                  }
       ]
     },
     {
