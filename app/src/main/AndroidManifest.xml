@@ -9,7 +9,8 @@
     <uses-permission android:name="android.permission.MOUNT_FORMAT_FILESYSTEMS"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!-- 授权获取定位信息 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
     <application
         android:name=".app.AppApplication"
         android:allowBackup="true"
@@ -210,6 +211,9 @@
         </activity>
         <activity android:name=".ui.stage01.chapter16.activity.Demo160200Activity">
         </activity>
+        <activity android:name=".ui.stage01.chapter10.activity.Demo100000Activity">
+        </activity>
+        <service android:name=".widget.BindService"/>
     </application>
 
 </manifest>

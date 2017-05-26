@@ -14,6 +14,7 @@ import com.jaydenxiao.common.commonutils.ToastUitl;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.adapter.MyExpandableListViewAdapter;
 import com.liushu.crazyandroid.bean.CatalogBean;
+import com.liushu.crazyandroid.ui.stage01.chapter10.activity.Demo100000Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter10.activity.Demo100100Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter10.activity.Demo100101Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter10.activity.Demo100200Activity;
@@ -68,7 +69,9 @@ public class Chapter10Fragment extends Fragment {
         switch (groupPosition) {
             case 0:
                 if (childPosition == 0) {
-
+                    //绑定本地service并与之通信
+                    Intent intent = new Intent(getContext(), Demo100000Activity.class);
+                    startActivity(intent);
 
                 } else if (childPosition == 1) {
 

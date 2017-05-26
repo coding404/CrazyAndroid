@@ -7,10 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.andexert.calendarlistview.library.DatePickerController;
+import com.andexert.calendarlistview.library.DayPickerView;
+import com.andexert.calendarlistview.library.SimpleMonthAdapter;
+import com.google.gson.Gson;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.bean.CatalogBean;
-import com.google.gson.Gson;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -20,21 +24,26 @@ import java.io.InputStreamReader;
  * Created by liushu on 2017/2/3.
  */
 
-public class Chapter01Fragment extends Fragment{
+public class Chapter01Fragment extends Fragment implements DatePickerController{
 
     private TextView mTextView;
+    private DayPickerView dayPickerView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_chape01,null);
         mTextView= (TextView) view.findViewById(R.id.tv_chape01);
+        dayPickerView= (DayPickerView) view.findViewById(R.id.day_picker);
         return view;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        readFromAssets();
+       // readFromAssets();
+        dayPickerView.setController(this);
+
+
     }
 
     /**
@@ -69,5 +78,25 @@ public class Chapter01Fragment extends Fragment{
             buffer.append("\n");
         }
         return buffer.toString();
+    }
+
+    @Override
+    public int getMaxYear() {
+        return 2020;
+    }
+
+    @Override
+    public void onDayOfMonthSelected(int year, int month, int day) {
+
+    }
+
+    @Override
+    public void onHourSelected(String ourString) {
+
+    }
+
+    @Override
+    public void onDateRangeSelected(SimpleMonthAdapter.SelectedDays<SimpleMonthAdapter.CalendarDay> selectedDays) {
+        Toast.makeText(getContext(), selectedDays.getFirst().toString() + " --> " + selectedDays.getLast().toString(), Toast.LENGTH_SHORT).show();
     }
 }

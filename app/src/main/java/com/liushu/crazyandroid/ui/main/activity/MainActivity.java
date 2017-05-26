@@ -139,7 +139,6 @@ public class MainActivity extends BaseActivity {
         LogUtils.logd("主页菜单position" + position);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         switch (position) {
-            //首页
             case 0:
                 transaction.hide(mSecondFragment);
                 transaction.hide(mThirdFragment);
@@ -147,7 +146,6 @@ public class MainActivity extends BaseActivity {
                 transaction.show(mFirstFragment);
                 transaction.commitAllowingStateLoss();
                 break;
-            //美女
             case 1:
                 transaction.hide(mFirstFragment);
                 transaction.hide(mThirdFragment);
@@ -155,7 +153,6 @@ public class MainActivity extends BaseActivity {
                 transaction.show(mSecondFragment);
                 transaction.commitAllowingStateLoss();
                 break;
-            //视频
             case 2:
                 transaction.hide(mFirstFragment);
                 transaction.hide(mSecondFragment);
@@ -163,7 +160,6 @@ public class MainActivity extends BaseActivity {
                 transaction.show(mThirdFragment);
                 transaction.commitAllowingStateLoss();
                 break;
-            //关注
             case 3:
                 transaction.hide(mFirstFragment);
                 transaction.hide(mSecondFragment);

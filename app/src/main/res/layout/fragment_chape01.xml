@@ -7,7 +7,11 @@
     <TextView
         android:id="@+id/tv_chape01"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="这是第一章,基础知识，不做代码"/>
+   <com.andexert.calendarlistview.library.DayPickerView
+       android:id="@+id/day_picker"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
 
 </LinearLayout>
