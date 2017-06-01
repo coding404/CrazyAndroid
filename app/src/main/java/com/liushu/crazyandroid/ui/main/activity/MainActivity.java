@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.flyco.tablayout.CommonTabLayout;
@@ -31,6 +32,8 @@ import butterknife.Bind;
 public class MainActivity extends BaseActivity {
     @Bind(R.id.tab_layout)
     CommonTabLayout tabLayout;
+    @Bind(R.id.fl_body)
+    FrameLayout mFlBody;
 
     private String[] mTitles = {"第一阶段", "第二阶段", "第三阶段", "第四阶段"};
     private int[] mIconUnselectIds = {
@@ -45,6 +48,7 @@ public class MainActivity extends BaseActivity {
     private FourFragment mFourFragment;
     private static int tabLayoutHeight;
     private long exitTime = 0;
+
     /**
      * 入口
      *

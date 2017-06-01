@@ -5,6 +5,12 @@
       "paragraphs": [
         {
           "paragraphName": "音乐的示波器、均衡、重低音和音场"
+        },{
+          "paragraphName": "使用soundPool播放音乐"
+        },{
+          "paragraphName": "使用videoView播放视频"
+        },{
+          "paragraphName": "使用mediaPlay和surfaceView播放视频"
         }
       ]
     },

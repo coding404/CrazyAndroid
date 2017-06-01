@@ -15,6 +15,7 @@ import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.adapter.MyExpandableListViewAdapter;
 import com.liushu.crazyandroid.bean.CatalogBean;
 import com.liushu.crazyandroid.ui.stage01.chapter11.activity.Demo110000Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter11.activity.Demo110001Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter11.activity.Demo110100Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter11.activity.Demo110200Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter11.activity.Demo110201Activity;
@@ -62,15 +63,28 @@ public class Chapter11Fragment extends Fragment {
         switch (groupPosition) {
             case 0:
                 if (childPosition == 0) {
-                    ToastUitl.showShort("音乐的示波器、均衡、重低音和音场");
+                    //ToastUitl.showShort("音乐的示波器、均衡、重低音和音场");
                     Intent intent = new Intent(getContext(), Demo110000Activity.class);
                     startActivity(intent);
 
+                }else if (childPosition == 1) {
+                    //ToastUitl.showShort("使用soundPool播放音乐");
+                    Intent intent = new Intent(getContext(), Demo110001Activity.class);
+                    startActivity(intent);
+
+                }else if (childPosition == 2) {
+                    ToastUitl.showShort("待完成");
+                    // TODO: 2017/5/31 使用videoView播放视频
+
+                }else if (childPosition == 3) {
+                    ToastUitl.showShort("待完成");
+                    // TODO: 2017/5/31 使用mediaPlay和surfaceView播放视频
                 }
                 break;
             case 1:
                 if (childPosition == 0) {
                     ToastUitl.showShort("录制音乐");
+                    // TODO: 2017/5/31 录音绘制波形 http://blog.csdn.net/chenzhuo1100/article/details/50673139
                     Intent intent = new Intent(getContext(), Demo110100Activity.class);
                     startActivity(intent);
 

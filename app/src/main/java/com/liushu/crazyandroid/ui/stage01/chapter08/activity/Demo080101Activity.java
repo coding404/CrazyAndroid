@@ -88,7 +88,7 @@ public class Demo080101Activity extends AppCompatActivity {
         });
     }
 
-    private void inflateListView(File[] files)  // ①
+    public void inflateListView(File[] files)  // ①
     {
         // 创建一个List集合，List集合的元素是Map
         List<Map<String, Object>> listItems =
