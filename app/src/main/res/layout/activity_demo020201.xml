@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.stage01.chapter02.activity.Demo020201Activity">
+    <include layout="@layout/head_title_layout"/>
 
     <TableLayout
         android:layout_width="match_parent"

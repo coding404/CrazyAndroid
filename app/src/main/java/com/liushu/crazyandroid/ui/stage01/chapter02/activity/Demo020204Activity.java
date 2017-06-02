@@ -1,27 +1,45 @@
 package com.liushu.crazyandroid.ui.stage01.chapter02.activity;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-public class Demo020204Activity extends AppCompatActivity {
+import butterknife.Bind;
+import butterknife.OnClick;
 
-    private GridLayout mGridLayout;
-    private String[] mStrings=new String[]{
-            "7","8","9","÷",
-            "4","5","6","*",
-            "1","2","3","-",
-            ".","0","=","+",
+public class Demo020204Activity extends BaseActivity {
+
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.gl_test)
+    GridLayout mGlTest;
+    private String[] mStrings = new String[]{
+            "7", "8", "9", "÷",
+            "4", "5", "6", "*",
+            "1", "2", "3", "-",
+            ".", "0", "=", "+",
     };
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo020204);
-        mGridLayout= (GridLayout) findViewById(R.id.activity_demo020204);
+    public int getLayoutId() {
+        return R.layout.activity_demo020204;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("计算器界面");
         for (int i = 0; i < mStrings.length; i++) {
             Button button=new Button(this);
             button.setText(mStrings[i]);
@@ -31,10 +49,13 @@ public class Demo020204Activity extends AppCompatActivity {
             GridLayout.Spec columnSpec=GridLayout.spec(i%4);
             GridLayout.LayoutParams params=new GridLayout.LayoutParams(rawSpec,columnSpec);
             params.setGravity(Gravity.FILL);
-            mGridLayout.addView(button,params);
+            mGlTest.addView(button,params);
 
         }
+    }
 
-
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 }

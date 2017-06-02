@@ -1,28 +1,54 @@
 package com.liushu.crazyandroid.ui.stage01.chapter02.activity;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.IdRes;
+import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-public class Demo020305Activity extends AppCompatActivity {
+import butterknife.Bind;
+import butterknife.OnClick;
 
-    private RadioGroup mRadioGroup;
-    private TextView mTextView;
+public class Demo020305Activity extends BaseActivity {
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.rb_male)
+    RadioButton mRbMale;
+    @Bind(R.id.rb_female)
+    RadioButton mRbFemale;
+    @Bind(R.id.rg)
+    RadioGroup mRg;
+    @Bind(R.id.tv_content)
+    TextView mTvContent;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo020305);
-        mRadioGroup= (RadioGroup) findViewById(R.id.rg);
-        mTextView= (TextView) findViewById(R.id.tv_content);
-        mRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+    public int getLayoutId() {
+        return R.layout.activity_demo020305;
+    }
+
+    @Override
+    public void initPresenter() {
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("利用单选框，复选框获取用户信息");
+        mRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                String string=checkedId==R.id.rb_female?"你是女生":"你是男生";
-                mTextView.setText(string);
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                String string = checkedId == R.id.rb_female ? "你是女生" : "你是男生";
+                mTvContent.setText(string);
             }
         });
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 }

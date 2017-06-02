@@ -7,22 +7,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.stage01.chapter02.activity.Demo020302Activity">
+
+    <include layout="@layout/head_title_layout"/>
+
     <TextView
-        android:textSize="20pt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_border"
+        android:gravity="center"
         android:text="hello world"
         android:textColor="#fff"
-        android:gravity="center"
-        android:background="@drawable/bg_border"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:textSize="20pt"/>
+
     <TextView
-        android:textSize="20pt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_border02"
+        android:gravity="center"
         android:text="从前有座山，三十多撒发顺丰无法五色风"
         android:textColor="#fff"
-        android:gravity="center"
-        android:background="@drawable/bg_border02"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:textSize="20pt"/>
 
 
 </LinearLayout>

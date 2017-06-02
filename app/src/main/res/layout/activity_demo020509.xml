@@ -8,11 +8,13 @@
     android:orientation="vertical"
     tools:context=".ui.stage01.chapter02.activity.Demo020509Activity">
 
+    <include layout="@layout/head_title_layout"/>
+
     <StackView
-        android:loopViews="true"
         android:id="@+id/sv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:loopViews="true"/>
 
     <LinearLayout
         android:layout_width="match_parent"

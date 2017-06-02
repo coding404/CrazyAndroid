@@ -1,33 +1,54 @@
 package com.liushu.crazyandroid.ui.stage01.chapter02.activity;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-public class Demo020102Activity extends AppCompatActivity {
+import butterknife.Bind;
 
-    int[] images = new int[]{R.drawable.back1,
+public class Demo020102Activity extends BaseActivity {
+
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.iv_test)
+    ImageView mIvTest;
+    private int[] images = new int[]{R.drawable.back1,
             R.mipmap.ic_launcher,
             R.drawable.back1};
-    int currentImg = 0;
+    private int currentImg = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo020102);
-        LinearLayout layout = (LinearLayout) findViewById(R.id.activity_demo020102);
-        final ImageView imageView = new ImageView(this);
-        imageView.setImageResource(images[0]);
-        imageView.setOnClickListener(new View.OnClickListener() {
+    public int getLayoutId() {
+        return R.layout.activity_demo020102;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("简单图片浏览器");
+        mIvBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageView.setImageResource(images[++currentImg % images.length]);
+                finish();
             }
         });
-        layout.addView(imageView);
+
+        mIvTest.setImageResource(images[0]);
+        mIvTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mIvTest.setImageResource(images[++currentImg % images.length]);
+            }
+        });
     }
+
 }

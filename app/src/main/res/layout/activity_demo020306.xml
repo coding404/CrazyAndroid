@@ -8,6 +8,8 @@
     android:orientation="vertical"
     tools:context=".ui.stage01.chapter02.activity.Demo020306Activity">
 
+    <include layout="@layout/head_title_layout"/>
+
     <ToggleButton
         android:id="@+id/tb_test"
         android:layout_width="wrap_content"

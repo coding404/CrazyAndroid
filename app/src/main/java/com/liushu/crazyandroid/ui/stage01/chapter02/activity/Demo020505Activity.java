@@ -1,7 +1,5 @@
 package com.liushu.crazyandroid.ui.stage01.chapter02.activity;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -10,21 +8,33 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
+import butterknife.OnClick;
 
-public class Demo020505Activity extends AppCompatActivity {
-
+public class Demo020505Activity extends BaseActivity {
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
     @Bind(R.id.lv_demo020505)
     ListView mLvDemo020505;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo020505);
-        ButterKnife.bind(this);
+    public int getLayoutId() {
+        return R.layout.activity_demo020505;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("扩建BasseAdapter实现不存储列表项的ListView");
         BaseAdapter adapter=new BaseAdapter() {
             @Override
             public int getCount() {
@@ -55,5 +65,10 @@ public class Demo020505Activity extends AppCompatActivity {
             }
         };
         mLvDemo020505.setAdapter(adapter);
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 }

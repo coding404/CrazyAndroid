@@ -104,7 +104,6 @@ public class Chapter02Fragment extends Fragment {
                     //跟随手指的小球
                     Intent intent0002 = new Intent(getContext(), Demo020103Activity.class);
                     startActivity(intent0002);
-
                 }
                 break;
             case 1:
@@ -127,8 +126,6 @@ public class Chapter02Fragment extends Fragment {
                     //计算器界面
                     Intent intent0103 = new Intent(getContext(), Demo020204Activity.class);
                     startActivity(intent0103);
-
-
                 } else if (childPosition == 4) {
                     //登录界面
                     Intent intent0104 = new Intent(getContext(), Demo020205Activity.class);
@@ -141,7 +138,6 @@ public class Chapter02Fragment extends Fragment {
                     //不同颜色、字体、带链接的文本
                     Intent intent0200 = new Intent(getContext(), Demo020301Activity.class);
                     startActivity(intent0200);
-
                 } else if (childPosition == 1) {
                     //圆角边框、渐变背景的textview
                     Intent intent0201 = new Intent(getContext(), Demo020302Activity.class);
@@ -236,6 +232,7 @@ public class Chapter02Fragment extends Fragment {
                 break;
             case 5:
                 //ProgressBar及其子类
+                // TODO: 2017/6/2 功能分开写
                 Intent intent0500 = new Intent(getContext(), Demo020600Activity.class);
                 intent0500.putExtra("groupPosition", groupPosition);
                 intent0500.putExtra("childPosition", childPosition);
@@ -245,6 +242,7 @@ public class Chapter02Fragment extends Fragment {
                 break;
             case 6:
                 //ViewAnimator及其子类
+                // TODO: 2017/6/2 功能分开写
                 Intent intent0600 = new Intent(getContext(), Demo020700Activity.class);
                 intent0600.putExtra("groupPosition", groupPosition);
                 intent0600.putExtra("childPosition", childPosition);
@@ -252,6 +250,7 @@ public class Chapter02Fragment extends Fragment {
                 break;
             case 7:
                 //各种杂项组件
+                // TODO: 2017/6/2 功能分开写
                 Intent intent0700 = new Intent(getContext(), Demo020800Activity.class);
                 intent0700.putExtra("groupPosition", groupPosition);
                 intent0700.putExtra("childPosition", childPosition);
@@ -259,6 +258,7 @@ public class Chapter02Fragment extends Fragment {
                 break;
             case 8:
                 //UI组件，对话框
+                // TODO: 2017/6/2 功能分开写
                 Intent intent0800 = new Intent(getContext(), Demo020900Activity.class);
                 intent0800.putExtra("groupPosition", groupPosition);
                 intent0800.putExtra("childPosition", childPosition);
@@ -266,6 +266,7 @@ public class Chapter02Fragment extends Fragment {
                 break;
             case 9:
                 //菜单
+                // TODO: 2017/6/2 功能分开写
                 Intent intent0900 = new Intent(getContext(), Demo021000Activity.class);
                 intent0900.putExtra("groupPosition", groupPosition);
                 intent0900.putExtra("childPosition", childPosition);
@@ -273,6 +274,7 @@ public class Chapter02Fragment extends Fragment {
                 break;
             case 10:
                 //使用活动条（ActionBar）
+                // TODO: 2017/6/2 功能分开写
                 Intent intent1000 = new Intent(getContext(), Demo021100Activity.class);
                 intent1000.putExtra("groupPosition", groupPosition);
                 intent1000.putExtra("childPosition", childPosition);

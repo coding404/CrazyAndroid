@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.stage01.chapter02.activity.Demo020203Activity">
 
+    <include layout="@layout/head_title_layout"/>
+
 
     <ImageView
         android:id="@+id/image01"

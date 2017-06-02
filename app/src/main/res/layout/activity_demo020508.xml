@@ -7,10 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.stage01.chapter02.activity.Demo020508Activity">
 
+    <include
+        android:id="@+id/include_title"
+        layout="@layout/head_title_layout"/>
+
     <AdapterViewFlipper
         android:id="@+id/avf"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/include_title"
         android:flipInterval="1000"/>
 
     <Button

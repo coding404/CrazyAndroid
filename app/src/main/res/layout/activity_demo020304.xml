@@ -8,6 +8,8 @@
     android:orientation="vertical"
     tools:context=".ui.stage01.chapter02.activity.Demo020304Activity">
 
+    <include layout="@layout/head_title_layout"/>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,17 +18,20 @@
         android:shadowDy="5."
         android:shadowRadius="1"
         android:text="带阴影的按钮"/>
-    <Button
-        android:text="背景图片的按钮"
-        android:background="@mipmap/ic_launcher"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:text="可选择的按钮"
 
-        android:background="@drawable/background_selector01"
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:background="@mipmap/ic_launcher"
+        android:text="背景图片的按钮"/>
+
+    <Button
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_selector01"
+        android:text="可选择的按钮"/>
+
     <CheckBox
         android:id="@+id/cb_remember"
         style="@style/MyToggleButton"

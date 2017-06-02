@@ -7,12 +7,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.stage01.chapter07.activity.Demo070400Activity">
+
+    <include layout="@layout/head_title_layout"/>
+
     <Button
         android:id="@+id/bn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="播放"
         />
+
     <ImageView
         android:id="@+id/flower"
         android:layout_width="wrap_content"

@@ -1,26 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_demo020204"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:columnCount="4"
-    android:rowCount="6"
     tools:context=".ui.stage01.chapter02.activity.Demo020204Activity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_columnSpan="4"
-        android:padding="5dp"
-        android:text="0"
-        android:textSize="20sp"/>
+    <include
+        android:id="@+id/include_title"
+        layout="@layout/head_title_layout"/>
 
-    <Button
-        android:layout_columnSpan="4"
+    <GridLayout
+        android:id="@+id/gl_test"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="清除"/>
+        android:layout_height="match_parent"
+        android:layout_below="@id/include_title"
+        android:columnCount="4"
+        android:rowCount="6">
 
-</GridLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="4"
+            android:padding="5dp"
+            android:text="0"
+            android:textSize="20sp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="4"
+            android:text="清除"/>
+
+
+    </GridLayout>
+
+
+</RelativeLayout>

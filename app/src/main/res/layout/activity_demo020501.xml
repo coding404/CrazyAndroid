@@ -6,11 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.stage01.chapter02.activity.Demo020501Activity">
+
+    <include
+        android:id="@+id/include_title"
+        layout="@layout/head_title_layout"/>
+
     <ListView
-        android:dividerHeight="10dp"
-        android:entries="@array/books"
-        android:divider="#00f"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@id/include_title"
+        android:divider="#00f"
+        android:dividerHeight="10dp"
+        android:entries="@array/books"/>
 
 </RelativeLayout>

@@ -10,30 +10,53 @@ import android.graphics.PorterDuff;
 import android.graphics.RadialGradient;
 import android.graphics.Shader;
 import android.graphics.SweepGradient;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.widget.ShaderView;
 
-public class Demo070202Activity extends AppCompatActivity implements View.OnClickListener {
+import butterknife.Bind;
+import butterknife.OnClick;
 
+public class Demo070202Activity extends BaseActivity {
 
-    // 声明位图渲染对象
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.bn1)
+    Button mBn1;
+    @Bind(R.id.bn2)
+    Button mBn2;
+    @Bind(R.id.bn3)
+    Button mBn3;
+    @Bind(R.id.bn4)
+    Button mBn4;
+    @Bind(R.id.bn5)
+    Button mBn5;
+    @Bind(R.id.sv_test)
+    ShaderView mSvTest;
     private Shader[] shaders = new Shader[5];
     // 声明颜色数组
     private int[] colors;
-    ShaderView ShaderView;
 
-    // 自定义视图类
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo070202);
-        ShaderView = (ShaderView) findViewById(R.id.sv_test);
-        // 获得Bitmap实例
+    public int getLayoutId() {
+        return R.layout.activity_demo070202;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("使用shader填充图形");
         Bitmap bm = BitmapFactory.decodeResource(getResources()
                 , R.drawable.water);
         // 设置渐变的颜色组，也就是按红、绿、蓝的方式渐变
@@ -52,38 +75,37 @@ public class Demo070202Activity extends AppCompatActivity implements View.OnClic
         // 实例化ComposeShader
         shaders[4] = new ComposeShader(shaders[1], shaders[2],
                 PorterDuff.Mode.DARKEN);
-        Button bn1 = (Button) findViewById(R.id.bn1);
-        Button bn2 = (Button) findViewById(R.id.bn2);
-        Button bn3 = (Button) findViewById(R.id.bn3);
-        Button bn4 = (Button) findViewById(R.id.bn4);
-        Button bn5 = (Button) findViewById(R.id.bn5);
-        bn1.setOnClickListener(this);
-        bn2.setOnClickListener(this);
-        bn3.setOnClickListener(this);
-        bn4.setOnClickListener(this);
-        bn5.setOnClickListener(this);
     }
 
-    @Override
-    public void onClick(View source) {
-        switch (source.getId()) {
+
+    @OnClick({R.id.iv_back, R.id.bn1, R.id.bn2, R.id.bn3, R.id.bn4, R.id.bn5})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.iv_back:
+                finish();
+                break;
             case R.id.bn1:
-                ShaderView.paint.setShader(shaders[0]);
+                mSvTest.paint.setShader(shaders[0]);
+                mSvTest.invalidate();
                 break;
             case R.id.bn2:
-                ShaderView.paint.setShader(shaders[1]);
+                mSvTest.paint.setShader(shaders[1]);
+                mSvTest.invalidate();
                 break;
             case R.id.bn3:
-                ShaderView.paint.setShader(shaders[2]);
+                mSvTest.paint.setShader(shaders[2]);
+                mSvTest.invalidate();
                 break;
             case R.id.bn4:
-                ShaderView.paint.setShader(shaders[3]);
+                mSvTest.paint.setShader(shaders[3]);
+                mSvTest.invalidate();
                 break;
             case R.id.bn5:
-                ShaderView.paint.setShader(shaders[4]);
+                mSvTest.paint.setShader(shaders[4]);
+                mSvTest.invalidate();
+                break;
+            default:
                 break;
         }
-        // 重绘界面
-        ShaderView.invalidate();
     }
 }

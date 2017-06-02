@@ -1,40 +1,59 @@
 package com.liushu.crazyandroid.ui.stage01.chapter07.activity;
 
 import android.graphics.drawable.AnimationDrawable;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-public class Demo070300Activity extends AppCompatActivity {
+import butterknife.Bind;
+import butterknife.OnClick;
+
+public class Demo070300Activity extends BaseActivity {
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.play)
+    Button mPlay;
+    @Bind(R.id.stop)
+    Button mStop;
+    @Bind(R.id.anim)
+    ImageView mAnim;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo070300);
-        // 获取两个按钮
-        Button play = (Button) findViewById(R.id.play);
-        Button stop = (Button) findViewById(R.id.stop);
-        ImageView imageView = (ImageView) findViewById(R.id.anim);
-        // 获取AnimationDrawable动画对象
-        final AnimationDrawable anim = (AnimationDrawable) imageView
-                .getBackground();
-        play.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // 开始播放动画
+    public int getLayoutId() {
+        return R.layout.activity_demo070300;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("animationDrawable与逐帧动画");
+    }
+
+    @OnClick({R.id.iv_back, R.id.play, R.id.stop})
+    public void onClick(View view) {
+        final AnimationDrawable anim = (AnimationDrawable) mAnim.getBackground();
+        switch (view.getId()) {
+            case R.id.iv_back:
+                finish();
+                break;
+            case R.id.play:
                 anim.start();
-            }
-        });
-        stop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // 停止播放动画
+                break;
+            case R.id.stop:
                 anim.stop();
-            }
-        });
+                break;
+            default:
+                break;
+        }
     }
 }

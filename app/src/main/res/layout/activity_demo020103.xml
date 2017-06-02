@@ -6,7 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.stage01.chapter02.activity.Demo020103Activity">
+
+    <include
+        android:id="@+id/include_title"
+        layout="@layout/head_title_layout"/>
+
     <com.liushu.crazyandroid.widget.DrawView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/include_title"/>
 </RelativeLayout>

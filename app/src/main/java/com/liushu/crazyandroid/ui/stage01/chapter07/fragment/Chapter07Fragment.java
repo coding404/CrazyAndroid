@@ -60,7 +60,7 @@ public class Chapter07Fragment extends Fragment {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 
-              //  Toast.makeText(getContext(), "groupPosition=" + groupPosition + ",childPosition=" + childPosition, Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(getContext(), "groupPosition=" + groupPosition + ",childPosition=" + childPosition, Toast.LENGTH_SHORT).show();
                 //界面跳转
                 JumpActivity(groupPosition, childPosition);
                 return true;
@@ -126,6 +126,7 @@ public class Chapter07Fragment extends Fragment {
 
                 } else if (childPosition == 1) {
                     //在指定点爆炸
+                    // TODO: 2017/6/2 更换基类
                     Intent intent = new Intent(getContext(), Demo070301Activity.class);
                     startActivity(intent);
                 }
@@ -139,7 +140,7 @@ public class Chapter07Fragment extends Fragment {
                     //蝴蝶飞舞
                     Intent intent = new Intent(getContext(), Demo070401Activity.class);
                     startActivity(intent);
-                }else if (childPosition ==2) {
+                } else if (childPosition == 2) {
                     //自定义补间动画
                     Intent intent = new Intent(getContext(), Demo070402Activity.class);
                     startActivity(intent);
@@ -158,7 +159,7 @@ public class Chapter07Fragment extends Fragment {
                     //surfaceView的绘图机制
                     Intent intent = new Intent(getContext(), Demo070600Activity.class);
                     startActivity(intent);
-                }else if (childPosition == 1) {
+                } else if (childPosition == 1) {
                     //基于SurfaceView开发示波器
                     Intent intent = new Intent(getContext(), Demo070601Activity.class);
                     startActivity(intent);

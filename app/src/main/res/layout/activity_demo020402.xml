@@ -7,10 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.stage01.chapter02.activity.Demo020402Activity">
 
+    <include
+        android:id="@+id/include_title"
+        layout="@layout/head_title_layout"/>
+
     <ImageView
         android:id="@+id/iv_normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/include_title"
         android:src="@drawable/blue"/>
 
     <ImageView
@@ -34,10 +39,10 @@
             android:src="@mipmap/ic_launcher"/>
 
         <ZoomButton
-            android:layout_marginLeft="20dp"
             android:id="@+id/zb_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:src="@mipmap/ic_launcher"/>
 
     </LinearLayout>
