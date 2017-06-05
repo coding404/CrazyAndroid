@@ -51,8 +51,6 @@ public class Demo080303Activity extends BaseActivity {
             Toast.makeText(Demo080303Activity.this, "手势文件装载失败！",
                     Toast.LENGTH_SHORT).show();
         }
-        // 获取手势编辑组件
-        mGestureTest = (GestureOverlayView) findViewById(R.id.gesture);
         // 为手势编辑组件绑定事件监听器
         mGestureTest.addOnGesturePerformedListener(
                 new GestureOverlayView.OnGesturePerformedListener() {

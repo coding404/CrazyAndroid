@@ -7,10 +7,9 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.TypedValue;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
+import com.jaydenxiao.common.base.BaseFragment;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.adapter.MyPagerAdapter;
 import com.liushu.crazyandroid.ui.stage01.chapter01.fragment.Chapter01Fragment;
@@ -35,39 +34,48 @@ import com.liushu.crazyandroid.widget.PagerSlidingTabStrip;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
+
 
 /**
  * Created by liushu on 2017/1/26.
  */
 
-public class FirstFragment extends Fragment {
+public class FirstFragment extends BaseFragment {
 
+    @Bind(R.id.tab_layout)
+    TabLayout mTabLayout;
+    @Bind(R.id.vp_first)
+    ViewPager mVpFirst;
     private PagerSlidingTabStrip ta111bs;
-    private ViewPager mPager;
     private MyPagerAdapter mPagerAdapter;
     private Drawable oldBackground = null;
     private int currentColor;
     private List<Fragment> mFragments;
-    private TabLayout mTabLayout;
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_first, null);
+    protected int getLayoutResource() {
+        return R.layout.fragment_first;
+    }
 
-        mPager = (ViewPager) view.findViewById(R.id.vp_first);
-        mTabLayout= (TabLayout) view.findViewById(R.id.tab_layout);
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    protected void initView() {
+
         mFragments = new ArrayList<>();
         mPagerAdapter = new MyPagerAdapter(getChildFragmentManager(), mFragments);
-        mPager.setAdapter(mPagerAdapter);
-        mPager.setOffscreenPageLimit(8);
-        mTabLayout.setupWithViewPager(mPager);
+        mVpFirst.setAdapter(mPagerAdapter);
+        mVpFirst.setOffscreenPageLimit(8);
+        mTabLayout.setupWithViewPager(mVpFirst);
         MyUtils.dynamicSetTabLayoutMode(mTabLayout);
         final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getResources()
                 .getDisplayMetrics());
-        mPager.setPageMargin(pageMargin);
-        mPager.setCurrentItem(0);
-        return view;
+        mVpFirst.setPageMargin(pageMargin);
+        mVpFirst.setCurrentItem(0);
     }
 
     @Override
@@ -112,6 +120,4 @@ public class FirstFragment extends Fragment {
         Chapter16Fragment chapter16Fragment = new Chapter16Fragment();
         mFragments.add(chapter16Fragment);
     }
-
-
 }

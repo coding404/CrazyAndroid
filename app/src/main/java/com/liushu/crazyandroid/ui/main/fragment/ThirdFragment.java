@@ -1,24 +1,26 @@
 package com.liushu.crazyandroid.ui.main.fragment;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
+import com.jaydenxiao.common.base.BaseFragment;
 import com.liushu.crazyandroid.R;
 
 /**
  * Created by liushu on 2017/1/26.
  */
 
-public class ThirdFragment extends Fragment {
+public class ThirdFragment extends BaseFragment {
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.fragment_third,null);
-        return view;
+    protected int getLayoutResource() {
+        return R.layout.fragment_third;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    protected void initView() {
+
     }
 }

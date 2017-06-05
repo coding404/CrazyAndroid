@@ -3,13 +3,13 @@ package com.liushu.crazyandroid.ui.stage01.chapter02.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
 import com.google.gson.Gson;
+import com.jaydenxiao.common.base.BaseFragment;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.adapter.MyExpandableListViewAdapter;
 import com.liushu.crazyandroid.bean.CatalogBean;
@@ -51,22 +51,34 @@ import com.liushu.crazyandroid.utils.FileUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
  * Created by liushu on 2017/2/3.
  */
 
-public class Chapter02Fragment extends Fragment {
+public class Chapter02Fragment extends BaseFragment {
 
-    private ExpandableListView mElv_chapter02;
+
+    @Bind(R.id.expendlist_chapter02)
+    ExpandableListView mExpendlistChapter02;
     private MyExpandableListViewAdapter mViewAdapter;
     private List<CatalogBean.ChaptersBean> mBeen;
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_chape02, null);
-        mElv_chapter02 = (ExpandableListView) view.findViewById(R.id.expendlist_chapter02);
-        return view;
+    protected int getLayoutResource() {
+        return R.layout.fragment_chape02;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    protected void initView() {
+
     }
 
     @Override
@@ -74,8 +86,8 @@ public class Chapter02Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         initData();
         mViewAdapter = new MyExpandableListViewAdapter(mBeen);
-        mElv_chapter02.setAdapter(mViewAdapter);
-        mElv_chapter02.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+        mExpendlistChapter02.setAdapter(mViewAdapter);
+        mExpendlistChapter02.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 //界面跳转
@@ -294,5 +306,19 @@ public class Chapter02Fragment extends Fragment {
         CatalogBean catalogBean = gson.fromJson(s, CatalogBean.class);
         mBeen.clear();
         mBeen.addAll(catalogBean.getChapters());
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.bind(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
     }
 }

@@ -24,8 +24,6 @@ public class Demo080302Activity extends BaseActivity {
     ImageView mIvBack;
     @Bind(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.gesture)
-    GestureOverlayView mGesture;
     @Bind(R.id.gesture_test)
     GestureOverlayView mGestureTest;
 

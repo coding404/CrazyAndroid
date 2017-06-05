@@ -3,13 +3,11 @@ package com.liushu.crazyandroid.ui.stage01.chapter11.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
 import com.google.gson.Gson;
+import com.jaydenxiao.common.base.BaseFragment;
 import com.jaydenxiao.common.commonutils.ToastUitl;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.adapter.MyExpandableListViewAdapter;
@@ -23,21 +21,32 @@ import com.liushu.crazyandroid.utils.FileUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
  * Created by liushu on 2017/2/3.
  */
 
-public class Chapter11Fragment extends Fragment {
-    private ExpandableListView mElv_chapter11;
+public class Chapter11Fragment extends BaseFragment {
+    @Bind(R.id.expendlist_chapter11)
+    ExpandableListView mElv_chapter11;
     private MyExpandableListViewAdapter mViewAdapter;
     private List<CatalogBean.ChaptersBean> mBeen;
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_chape11, null);
-        mElv_chapter11 = (ExpandableListView) view.findViewById(R.id.expendlist_chapter11);
-        return view;
+    protected int getLayoutResource() {
+        return R.layout.fragment_chape11;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    protected void initView() {
+
     }
 
     @Override
@@ -92,7 +101,7 @@ public class Chapter11Fragment extends Fragment {
                 break;
             case 2:
                 if (childPosition == 0) {
-                  //  ToastUitl.showShort("拍照时自动对焦");
+                    //  ToastUitl.showShort("拍照时自动对焦");
                     Intent intent = new Intent(getContext(), Demo110200Activity.class);
                     startActivity(intent);
 
@@ -130,5 +139,11 @@ public class Chapter11Fragment extends Fragment {
         CatalogBean catalogBean = gson.fromJson(s, CatalogBean.class);
         mBeen.clear();
         mBeen.addAll(catalogBean.getChapters());
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
     }
 }

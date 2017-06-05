@@ -2,13 +2,11 @@ package com.liushu.crazyandroid.ui.stage01.chapter09.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
 import com.google.gson.Gson;
+import com.jaydenxiao.common.base.BaseFragment;
 import com.jaydenxiao.common.commonutils.ToastUitl;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.adapter.MyExpandableListViewAdapter;
@@ -18,22 +16,33 @@ import com.liushu.crazyandroid.utils.FileUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
  * Created by liushu on 2017/2/3.
  */
 
-public class Chapter09Fragment extends Fragment {
+public class Chapter09Fragment extends BaseFragment {
 
-    private ExpandableListView mElv_chapter09;
+    @Bind(R.id.expendlist_chapter09)
+    ExpandableListView mElv_chapter09;
     private MyExpandableListViewAdapter mViewAdapter;
     private List<CatalogBean.ChaptersBean> mBeen;
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_chape09, null);
-        mElv_chapter09 = (ExpandableListView) view.findViewById(R.id.expendlist_chapter09);
-        return view;
+    protected int getLayoutResource() {
+        return R.layout.fragment_chape09;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    protected void initView() {
+
     }
 
     @Override
@@ -125,5 +134,11 @@ public class Chapter09Fragment extends Fragment {
         CatalogBean catalogBean = gson.fromJson(s, CatalogBean.class);
         mBeen.clear();
         mBeen.addAll(catalogBean.getChapters());
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
     }
 }

@@ -2,17 +2,14 @@ package com.liushu.crazyandroid.ui.stage01.chapter01.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.andexert.calendarlistview.library.DatePickerController;
 import com.andexert.calendarlistview.library.DayPickerView;
 import com.andexert.calendarlistview.library.SimpleMonthAdapter;
 import com.google.gson.Gson;
+import com.jaydenxiao.common.base.BaseFragment;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.bean.CatalogBean;
 
@@ -20,30 +17,38 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
  * Created by liushu on 2017/2/3.
  */
 
-public class Chapter01Fragment extends Fragment implements DatePickerController{
+public class Chapter01Fragment extends BaseFragment implements DatePickerController {
 
-    private TextView mTextView;
-    private DayPickerView dayPickerView;
-    @Nullable
+    @Bind(R.id.day_picker)
+    DayPickerView mDayPicker;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_chape01,null);
-        mTextView= (TextView) view.findViewById(R.id.tv_chape01);
-        dayPickerView= (DayPickerView) view.findViewById(R.id.day_picker);
-        return view;
+    protected int getLayoutResource() {
+        return R.layout.fragment_chape01;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    protected void initView() {
+
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-       // readFromAssets();
-        dayPickerView.setController(this);
-
-
+        // readFromAssets();
+        mDayPicker.setController(this);
     }
 
     /**
@@ -54,13 +59,13 @@ public class Chapter01Fragment extends Fragment implements DatePickerController{
             InputStream is = getActivity().getAssets().open("chapter02.txt");
             String text = readTextFromSDcard(is);
 
-            Gson gson=new Gson();
+            Gson gson = new Gson();
             CatalogBean catalogBean02 = gson.fromJson(text, CatalogBean.class);
-            mTextView.setText(catalogBean02.getChapters().get(0).getChapterName());
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     /**
      * 按行读取txt
      *
@@ -98,5 +103,11 @@ public class Chapter01Fragment extends Fragment implements DatePickerController{
     @Override
     public void onDateRangeSelected(SimpleMonthAdapter.SelectedDays<SimpleMonthAdapter.CalendarDay> selectedDays) {
         Toast.makeText(getContext(), selectedDays.getFirst().toString() + " --> " + selectedDays.getLast().toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
     }
 }
