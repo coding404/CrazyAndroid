@@ -8,6 +8,8 @@
     android:orientation="vertical"
     tools:context="com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080400Activity">
 
+    <include layout="@layout/head_title_layout"/>
+
     <EditText
         android:id="@+id/txt"
         android:layout_width="match_parent"

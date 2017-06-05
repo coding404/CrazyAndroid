@@ -1,23 +1,40 @@
 package com.liushu.crazyandroid.ui.stage01.chapter07.activity;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.widget.MyAnimation;
 
-public class Demo070402Activity extends AppCompatActivity {
+import butterknife.Bind;
+import butterknife.OnClick;
+
+public class Demo070402Activity extends BaseActivity {
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.list)
+    ListView mList;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo070402);
-// 获取ListView组件
-        ListView list = (ListView) findViewById(R.id.list);
+    public int getLayoutId() {
+        return R.layout.activity_demo070402;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("自定义补间动画");
         WindowManager windowManager = (WindowManager)
                 getSystemService(WINDOW_SERVICE);
         Display display = windowManager.getDefaultDisplay();
@@ -25,7 +42,11 @@ public class Demo070402Activity extends AppCompatActivity {
         // 获取屏幕的宽和高
         display.getMetrics(metrice);
         // 设置对ListView组件应用动画
-        list.setAnimation(new MyAnimation(metrice.xdpi / 2
-                , metrice.ydpi / 2, 3500));
+        mList.setAnimation(new MyAnimation(metrice.xdpi / 2, metrice.ydpi / 2, 3500));
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 }

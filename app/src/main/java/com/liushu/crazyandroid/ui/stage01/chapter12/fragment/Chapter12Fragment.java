@@ -96,7 +96,6 @@ public class Chapter12Fragment extends Fragment {
                     startActivity(intent);
 
                 } else if (childPosition == 1) {
-
                     //旋转
                     Intent intent = new Intent(getContext(), Demo120201Activity.class);
                     startActivity(intent);

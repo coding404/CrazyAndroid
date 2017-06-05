@@ -1,15 +1,15 @@
 package com.liushu.crazyandroid.ui.stage01.chapter08.activity;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
 import java.io.File;
@@ -19,74 +19,24 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Demo080101Activity extends AppCompatActivity {
-    ListView listView;
-    TextView textView;
+import butterknife.Bind;
+import butterknife.OnClick;
+
+public class Demo080101Activity extends BaseActivity {
     // 记录当前的父文件夹
     File currentParent;
     // 记录当前路径下的所有文件的文件数组
     File[] currentFiles;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo080101);
-        // 获取列出全部文件的ListView
-        listView = (ListView) findViewById(R.id.list);
-        textView = (TextView) findViewById(R.id.path);
-        // 获取系统的SD卡的目录
-        File root = new File("/mnt/sdcard/");
-        // 如果 SD卡存在
-        if (root.exists()) {
-            currentParent = root;
-            currentFiles = root.listFiles();
-            // 使用当前目录下的全部文件、文件夹来填充ListView
-            inflateListView(currentFiles);
-        }
-        // 为ListView的列表项的单击事件绑定监听器
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                // 用户单击了文件，直接返回，不做任何处理
-                if (currentFiles[position].isFile()) return;
-                // 获取用户点击的文件夹下的所有文件
-                File[] tmp = currentFiles[position].listFiles();
-                if (tmp == null || tmp.length == 0) {
-                    Toast.makeText(Demo080101Activity.this
-                            , "当前路径不可访问或该路径下没有文件",
-                            Toast.LENGTH_SHORT).show();
-                } else {
-                    // 获取用户单击的列表项对应的文件夹，设为当前的父文件夹
-                    currentParent = currentFiles[position]; // ②
-                    // 保存当前的父文件夹内的全部文件和文件夹
-                    currentFiles = tmp;
-                    // 再次更新ListView
-                    inflateListView(currentFiles);
-                }
-            }
-        });
-        // 获取上一级目录的按钮
-        Button parent = (Button) findViewById(R.id.parent);
-        parent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View source) {
-                try {
-                    if (!currentParent.getCanonicalPath()
-                            .equals("/mnt/sdcard")) {
-                        // 获取上一级目录
-                        currentParent = currentParent.getParentFile();
-                        // 列出当前目录下所有文件
-                        currentFiles = currentParent.listFiles();
-                        // 再次更新ListView
-                        inflateListView(currentFiles);
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.path)
+    TextView mPath;
+    @Bind(R.id.list)
+    ListView mList;
+    @Bind(R.id.parent)
+    Button mParent;
 
     public void inflateListView(File[] files)  // ①
     {
@@ -112,12 +62,84 @@ public class Demo080101Activity extends AppCompatActivity {
                 , new String[]{"icon", "fileName"}
                 , new int[]{R.id.icon, R.id.file_name});
         // 为ListView设置Adapter
-        listView.setAdapter(simpleAdapter);
+        mList.setAdapter(simpleAdapter);
         try {
-            textView.setText("当前路径为："
+            mPath.setText("当前路径为："
                     + currentParent.getCanonicalPath());
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_demo080101;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("SD卡文件浏览器");
+        // 获取系统的SD卡的目录
+        File root = new File("/mnt/sdcard/");
+        // 如果 SD卡存在
+        if (root.exists()) {
+            currentParent = root;
+            currentFiles = root.listFiles();
+            // 使用当前目录下的全部文件、文件夹来填充ListView
+            inflateListView(currentFiles);
+        }
+        // 为ListView的列表项的单击事件绑定监听器
+        mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                // 用户单击了文件，直接返回，不做任何处理
+                if (currentFiles[position].isFile()) return;
+                // 获取用户点击的文件夹下的所有文件
+                File[] tmp = currentFiles[position].listFiles();
+                if (tmp == null || tmp.length == 0) {
+                    Toast.makeText(Demo080101Activity.this
+                            , "当前路径不可访问或该路径下没有文件",
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    // 获取用户单击的列表项对应的文件夹，设为当前的父文件夹
+                    currentParent = currentFiles[position]; // ②
+                    // 保存当前的父文件夹内的全部文件和文件夹
+                    currentFiles = tmp;
+                    // 再次更新ListView
+                    inflateListView(currentFiles);
+                }
+            }
+        });
+
+    }
+
+    @OnClick({R.id.iv_back, R.id.parent})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.iv_back:
+                finish();
+                break;
+            case R.id.parent:
+                try {
+                    if (!currentParent.getCanonicalPath()
+                            .equals("/mnt/sdcard")) {
+                        // 获取上一级目录
+                        currentParent = currentParent.getParentFile();
+                        // 列出当前目录下所有文件
+                        currentFiles = currentParent.listFiles();
+                        // 再次更新ListView
+                        inflateListView(currentFiles);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
         }
     }
 }

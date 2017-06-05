@@ -18,7 +18,6 @@ import com.liushu.crazyandroid.ui.stage01.chapter11.activity.Demo110000Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter11.activity.Demo110001Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter11.activity.Demo110100Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter11.activity.Demo110200Activity;
-import com.liushu.crazyandroid.ui.stage01.chapter11.activity.Demo110201Activity;
 import com.liushu.crazyandroid.utils.FileUtil;
 
 import java.util.ArrayList;
@@ -64,19 +63,20 @@ public class Chapter11Fragment extends Fragment {
             case 0:
                 if (childPosition == 0) {
                     //ToastUitl.showShort("音乐的示波器、均衡、重低音和音场");
+                    // TODO: 2017/6/5 更换基类
                     Intent intent = new Intent(getContext(), Demo110000Activity.class);
                     startActivity(intent);
 
-                }else if (childPosition == 1) {
+                } else if (childPosition == 1) {
                     //ToastUitl.showShort("使用soundPool播放音乐");
                     Intent intent = new Intent(getContext(), Demo110001Activity.class);
                     startActivity(intent);
 
-                }else if (childPosition == 2) {
+                } else if (childPosition == 2) {
                     ToastUitl.showShort("待完成");
                     // TODO: 2017/5/31 使用videoView播放视频
 
-                }else if (childPosition == 3) {
+                } else if (childPosition == 3) {
                     ToastUitl.showShort("待完成");
                     // TODO: 2017/5/31 使用mediaPlay和surfaceView播放视频
                 }
@@ -92,14 +92,15 @@ public class Chapter11Fragment extends Fragment {
                 break;
             case 2:
                 if (childPosition == 0) {
-                    ToastUitl.showShort("拍照时自动对焦");
+                  //  ToastUitl.showShort("拍照时自动对焦");
                     Intent intent = new Intent(getContext(), Demo110200Activity.class);
                     startActivity(intent);
 
                 } else if (childPosition == 1) {
                     ToastUitl.showShort("录制生活短片");
-                    Intent intent = new Intent(getContext(), Demo110201Activity.class);
-                    startActivity(intent);
+                    // TODO: 2017/6/5  录制生活短片
+                   /* Intent intent = new Intent(getContext(), Demo110201Activity.class);
+                    startActivity(intent);*/
 
                 }
                 break;

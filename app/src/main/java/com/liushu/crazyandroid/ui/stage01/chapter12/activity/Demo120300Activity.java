@@ -1,21 +1,44 @@
 package com.liushu.crazyandroid.ui.stage01.chapter12.activity;
 
 import android.opengl.GLSurfaceView;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.widget.MyRenderer3D;
 
-public class Demo120300Activity extends AppCompatActivity {
+import butterknife.Bind;
+import butterknife.OnClick;
+
+public class Demo120300Activity extends BaseActivity {
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.gl_view)
+    GLSurfaceView mGlView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo120300);
-        GLSurfaceView surfaceView= (GLSurfaceView) findViewById(R.id.gl_view);
+    public int getLayoutId() {
+        return R.layout.activity_demo120300;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("构建3D图形");
         MyRenderer3D myRender = new MyRenderer3D();
         // 为GLSurfaceView设置绘制器
-        surfaceView.setRenderer(myRender);
+        mGlView.setRenderer(myRender);
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 }

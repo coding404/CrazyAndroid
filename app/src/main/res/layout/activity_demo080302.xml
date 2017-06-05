@@ -8,13 +8,15 @@
     android:orientation="vertical"
     tools:context="com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080302Activity">
 
+    <include layout="@layout/head_title_layout"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="请在下面屏幕上绘制手势"/>
     <!-- 使用手势绘制组件 -->
     <android.gesture.GestureOverlayView
-        android:id="@+id/gesture"
+        android:id="@+id/gesture_test"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gestureStrokeType="multiple"/>

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080303Activity">
+
+    <include layout="@layout/head_title_layout"/>
     <!-- 使用手势编辑组件 -->
     <android.gesture.GestureOverlayView
-        android:id="@+id/gesture"
+        android:id="@+id/gesture_test"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gestureStrokeType="multiple" />
+        android:gestureStrokeType="multiple"/>
 </LinearLayout>

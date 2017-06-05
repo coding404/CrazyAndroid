@@ -1,53 +1,34 @@
 package com.liushu.crazyandroid.ui.stage01.chapter08.activity;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-public class Demo080301Activity extends AppCompatActivity implements GestureDetector.OnGestureListener {
+import butterknife.Bind;
+import butterknife.OnClick;
 
-    // ViewFlipper实例
-    ViewFlipper flipper;
+public class Demo080301Activity extends BaseActivity implements GestureDetector.OnGestureListener {
+
     // 定义手势检测器实例
     GestureDetector detector;
     // 定义一个动画数组，用于为ViewFlipper指定切换动画效果
     Animation[] animations = new Animation[4];
     // 定义手势动作两点之间的最小距离
     final int FLIP_DISTANCE = 50;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo080301);
-        // 创建手势检测器
-        detector = new GestureDetector(this, this);
-        // 获得ViewFlipper实例
-        flipper = (ViewFlipper) this.findViewById(R.id.flipper);
-        // 为ViewFlipper添加5个ImageView组件
-        flipper.addView(addImageView(R.drawable.java));
-        flipper.addView(addImageView(R.drawable.javaee));
-        flipper.addView(addImageView(R.drawable.ajax));
-        flipper.addView(addImageView(R.drawable.android));
-        flipper.addView(addImageView(R.drawable.html));
-        flipper.addView(addImageView(R.drawable.swift));
-        // 初始化Animation数组
-        animations[0] = AnimationUtils.loadAnimation(
-                this, R.anim.left_in);
-        animations[1] = AnimationUtils.loadAnimation(
-                this, R.anim.left_out);
-        animations[2] = AnimationUtils.loadAnimation(
-                this, R.anim.right_in);
-        animations[3] = AnimationUtils.loadAnimation(
-                this, R.anim.right_out);
-    }
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.flipper)
+    ViewFlipper mFlipper;
 
     // 定义添加ImageView的工具方法
     private View addImageView(int resId) {
@@ -63,18 +44,18 @@ public class Demo080301Activity extends AppCompatActivity implements GestureDete
         // 也就是手势从右向左滑
         if (event1.getX() - event2.getX() > FLIP_DISTANCE) {
             // 为flipper设置切换的的动画效果
-            flipper.setInAnimation(animations[0]);
-            flipper.setOutAnimation(animations[1]);
-            flipper.showPrevious();
+            mFlipper.setInAnimation(animations[0]);
+            mFlipper.setOutAnimation(animations[1]);
+            mFlipper.showPrevious();
             return true;
         }
         // 如果第二个触点事件的X坐标大于第一个触点事件的X坐标超过FLIP_DISTANCE
         // 也就是手势从右向左滑
         else if (event2.getX() - event1.getX() > FLIP_DISTANCE) {
             // 为flipper设置切换的动画效果
-            flipper.setInAnimation(animations[2]);
-            flipper.setOutAnimation(animations[3]);
-            flipper.showNext();
+            mFlipper.setInAnimation(animations[2]);
+            mFlipper.setOutAnimation(animations[3]);
+            mFlipper.showNext();
             return true;
         }
         return false;
@@ -107,5 +88,44 @@ public class Demo080301Activity extends AppCompatActivity implements GestureDete
     @Override
     public boolean onSingleTapUp(MotionEvent event) {
         return false;
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_demo080301;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("");
+        // 创建手势检测器
+        detector = new GestureDetector(this, this);
+        // 获得ViewFlipper实例
+        // 为ViewFlipper添加5个ImageView组件
+        mFlipper.addView(addImageView(R.drawable.java));
+        mFlipper.addView(addImageView(R.drawable.javaee));
+        mFlipper.addView(addImageView(R.drawable.ajax));
+        mFlipper.addView(addImageView(R.drawable.android));
+        mFlipper.addView(addImageView(R.drawable.html));
+        mFlipper.addView(addImageView(R.drawable.swift));
+        // 初始化Animation数组
+        animations[0] = AnimationUtils.loadAnimation(
+                this, R.anim.left_in);
+        animations[1] = AnimationUtils.loadAnimation(
+                this, R.anim.left_out);
+        animations[2] = AnimationUtils.loadAnimation(
+                this, R.anim.right_in);
+        animations[3] = AnimationUtils.loadAnimation(
+                this, R.anim.right_out);
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 }

@@ -1,21 +1,44 @@
 package com.liushu.crazyandroid.ui.stage01.chapter12.activity;
 
 import android.opengl.GLSurfaceView;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.widget.MyRendererRoate;
 
-public class Demo120201Activity extends AppCompatActivity {
+import butterknife.Bind;
+import butterknife.OnClick;
+
+public class Demo120201Activity extends BaseActivity {
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.gl_view)
+    GLSurfaceView mGlView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo120201);
-        GLSurfaceView surfaceView= (GLSurfaceView) findViewById(R.id.gl_view);
+    public int getLayoutId() {
+        return R.layout.activity_demo120201;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("旋转");
         MyRendererRoate myRender = new MyRendererRoate();
         // 为GLSurfaceView设置绘制器
-        surfaceView.setRenderer(myRender);
+        mGlView.setRenderer(myRender);
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 }

@@ -7,7 +7,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080301Activity">
-    <ViewFlipper android:id="@+id/flipper"
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent"/>
+
+    <include layout="@layout/head_title_layout"/>
+
+    <ViewFlipper
+        android:id="@+id/flipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>

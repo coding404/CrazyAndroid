@@ -14,34 +14,55 @@ import android.graphics.RadialGradient;
 import android.graphics.Shader;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.widget.ShapeHolder;
 
 import java.util.ArrayList;
 
-public class Demo070500Activity extends AppCompatActivity {
+import butterknife.Bind;
+import butterknife.OnClick;
+
+public class Demo070500Activity extends BaseActivity {
     // 定义小球的大小的常量
     static final float BALL_SIZE = 50F;
     // 定义小球从屏幕上方下落到屏幕底端的总时间
     static final float FULL_TIME = 3000;
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.container)
+    LinearLayout mContainer;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo070500);
+    public int getLayoutId() {
+        return R.layout.activity_demo070500;
+    }
 
-        LinearLayout container = (LinearLayout)
-                findViewById(R.id.container);
-        // 设置该窗口显示MyAnimationView组件
-        container.addView(new MyAnimationView(this));
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("大珠小珠落玉盘");
+        mContainer.addView(new MyAnimationView(this));
+
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 
     public class MyAnimationView extends View {

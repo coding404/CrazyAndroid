@@ -1,13 +1,13 @@
 package com.liushu.crazyandroid.ui.stage01.chapter08.activity;
 
-import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
 import java.io.BufferedReader;
@@ -16,36 +16,26 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
 
-public class Demo080100Activity extends AppCompatActivity {
-    final String FILE_NAME = "/crazyit.txt";
+import butterknife.Bind;
+import butterknife.OnClick;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo080100);
-        // 获取两个按钮
-        Button read = (Button) findViewById(R.id.read);
-        Button write = (Button) findViewById(R.id.write);
-        // 获取两个文本框
-        final EditText edit1 = (EditText) findViewById(R.id.edit1);
-        final EditText edit2 = (EditText) findViewById(R.id.edit2);
-        // 为write按钮绑定事件监听器
-        write.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View source) {
-                // 将edit1中的内容写入文件中
-                write(edit1.getText().toString());
-                edit1.setText("");
-            }
-        });
-        read.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // 读取指定文件中的内容，并显示出来
-                edit2.setText(read());
-            }
-        });
-    }
+import static com.liushu.crazyandroid.R.id.edit1;
+import static com.liushu.crazyandroid.R.id.edit2;
+
+public class Demo080100Activity extends BaseActivity {
+    final String FILE_NAME = "/crazyit.txt";
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(edit1)
+    EditText mEdit1;
+    @Bind(R.id.write)
+    Button mWrite;
+    @Bind(edit2)
+    EditText mEdit2;
+    @Bind(R.id.read)
+    Button mRead;
 
     private String read() {
         try {
@@ -91,6 +81,39 @@ public class Demo080100Activity extends AppCompatActivity {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_demo080100;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("读取SD卡上的文件");
+    }
+
+    @OnClick({R.id.iv_back, R.id.write, R.id.read})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.iv_back:
+                finish();
+                break;
+            case R.id.write:
+                // 将edit1中的内容写入文件中
+                write(mEdit1.getText().toString());
+                mEdit1.setText("");
+                break;
+            case R.id.read:
+                // 读取指定文件中的内容，并显示出来
+                mEdit2.setText(read());
+                break;
         }
     }
 }

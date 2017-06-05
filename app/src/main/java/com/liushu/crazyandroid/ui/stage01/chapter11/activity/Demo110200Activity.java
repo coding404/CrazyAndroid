@@ -17,16 +17,15 @@ import android.hardware.camera2.TotalCaptureResult;
 import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.Image;
 import android.media.ImageReader;
-import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.Surface;
 import android.view.TextureView;
-import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.widget.AutoFitTextureView;
 
@@ -39,7 +38,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Demo110200Activity extends AppCompatActivity implements View.OnClickListener {
+import butterknife.Bind;
+import butterknife.OnClick;
+
+public class Demo110200Activity extends BaseActivity {
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
 
     static {
@@ -48,6 +50,11 @@ public class Demo110200Activity extends AppCompatActivity implements View.OnClic
         ORIENTATIONS.append(Surface.ROTATION_180, 270);
         ORIENTATIONS.append(Surface.ROTATION_270, 180);
     }
+
+    @Bind(R.id.texture)
+    AutoFitTextureView mTexture;
+    @Bind(R.id.capture)
+    ImageButton mCapture;
 
     private AutoFitTextureView textureView;
     // 摄像头ID（通常0代表后置摄像头，1代表前置摄像头）
@@ -110,19 +117,29 @@ public class Demo110200Activity extends AppCompatActivity implements View.OnClic
         }
     };
 
-    @Override
+/*    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo110200);
+        setContentView();
         textureView = (AutoFitTextureView) findViewById(R.id.texture);
         // 为该组件设置监听器
         textureView.setSurfaceTextureListener(mSurfaceTextureListener);
         findViewById(R.id.capture).setOnClickListener(this);
+    }*/
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_demo110200;
     }
 
     @Override
-    public void onClick(View view) {
-        captureStillPicture();
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTexture.setSurfaceTextureListener(mSurfaceTextureListener);
     }
 
     private void captureStillPicture() {
@@ -330,6 +347,12 @@ public class Demo110200Activity extends AppCompatActivity implements View.OnClic
             System.out.println("找不到合适的预览尺寸！！！");
             return choices[0];
         }
+    }
+
+
+    @OnClick(R.id.capture)
+    public void onClick() {
+        captureStillPicture();
     }
 
     // 为Size定义一个比较器Comparator

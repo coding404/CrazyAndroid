@@ -2,25 +2,44 @@ package com.liushu.crazyandroid.ui.stage01.chapter16.activity;
 
 import android.content.Context;
 import android.location.LocationManager;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
 import java.util.List;
 
-public class Demo160100Activity extends AppCompatActivity {
+import butterknife.Bind;
+import butterknife.OnClick;
 
-    ListView providers;
+import static com.liushu.crazyandroid.R.id.providers;
+
+public class Demo160100Activity extends BaseActivity {
+
     LocationManager lm;
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(providers)
+    ListView mProviders;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo160100);
-        providers = (ListView) findViewById(R.id.providers);
+    public int getLayoutId() {
+        return R.layout.activity_demo160100;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("获取所有可用的LocationProvider");
         // 获取系统的LocationManager对象
         lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         // 获取系统所有的LocationProvider的名称
@@ -30,6 +49,11 @@ public class Demo160100Activity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1,
                 providerNames);
         // 使用ListView来显示所有可用的LocationProvider
-        providers.setAdapter(adapter);
+        mProviders.setAdapter(adapter);
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 }

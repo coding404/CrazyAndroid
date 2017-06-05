@@ -1,6 +1,5 @@
 package com.liushu.crazyandroid.ui.stage01.chapter09.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,8 +13,6 @@ import com.jaydenxiao.common.commonutils.ToastUitl;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.adapter.MyExpandableListViewAdapter;
 import com.liushu.crazyandroid.bean.CatalogBean;
-import com.liushu.crazyandroid.ui.stage01.chapter09.activity.Demo090100Activity;
-import com.liushu.crazyandroid.ui.stage01.chapter09.activity.Demo090300Activity;
 import com.liushu.crazyandroid.utils.FileUtil;
 
 import java.util.ArrayList;
@@ -73,9 +70,10 @@ public class Chapter09Fragment extends Fragment {
             case 1:
                 if (childPosition == 0) {
                     //使用contentProvider共享生词本数据
+                    // TODO: 2017/6/5  使用contentProvider共享生词本数据
                     ToastUitl.showShort("使用contentProvider共享生词本数据");
-                    Intent intent = new Intent(getContext(), Demo090100Activity.class);
-                    startActivity(intent);
+                   /* Intent intent = new Intent(getContext(), Demo090100Activity.class);
+                    startActivity(intent);*/
 
                 }
                 break;
@@ -106,10 +104,11 @@ public class Chapter09Fragment extends Fragment {
             case 3:
                 if (childPosition == 0) {
                     //监听用户发出的短信
+                    // TODO: 2017/6/5  监听用户发出的短信
                     ToastUitl.showShort("监听用户发出的短信");
-                    Intent intent = new Intent(getContext(), Demo090300Activity.class);
+                  /*  Intent intent = new Intent(getContext(), Demo090300Activity.class);
                     startActivity(intent);
-
+*/
                 }
                 break;
             default:

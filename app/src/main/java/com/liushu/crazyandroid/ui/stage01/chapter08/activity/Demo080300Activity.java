@@ -4,19 +4,21 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-public class Demo080300Activity extends AppCompatActivity implements GestureDetector.OnGestureListener {
+import butterknife.Bind;
+import butterknife.OnClick;
+
+public class Demo080300Activity extends BaseActivity implements GestureDetector.OnGestureListener {
 
     // 定义手势检测器实例
     GestureDetector detector;
-    ImageView imageView;
     // 初始的图片资源
     Bitmap bitmap;
     // 定义图片的宽、高
@@ -25,26 +27,12 @@ public class Demo080300Activity extends AppCompatActivity implements GestureDete
     float currentScale = 1;
     // 控制图片缩放的Matrix对象
     Matrix matrix;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo080300);
-        // 创建手势检测器
-        detector = new GestureDetector(this, this);
-        imageView = (ImageView) findViewById(R.id.show);
-        matrix = new Matrix();
-        // 获取被缩放的源图片
-        bitmap = BitmapFactory.decodeResource(
-                this.getResources(), R.drawable.flower);
-        // 获得位图宽
-        width = bitmap.getWidth();
-        // 获得位图高
-        height = bitmap.getHeight();
-        // 设置ImageView初始化时显示的图片。
-        imageView.setImageBitmap(BitmapFactory.decodeResource(
-                this.getResources(), R.drawable.flower));
-    }
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.show)
+    ImageView mShow;
 
     @Override
     public boolean onTouchEvent(MotionEvent me) {
@@ -66,7 +54,7 @@ public class Demo080300Activity extends AppCompatActivity implements GestureDete
         matrix.reset();
         // 缩放Matrix
         matrix.setScale(currentScale, currentScale, 160, 200);
-        BitmapDrawable tmp = (BitmapDrawable)imageView.getDrawable();
+        BitmapDrawable tmp = (BitmapDrawable) mShow.getDrawable();
         // 如果图片还未回收，先强制回收该图片
         if (!tmp.getBitmap().isRecycled())  // ①
         {
@@ -76,7 +64,7 @@ public class Demo080300Activity extends AppCompatActivity implements GestureDete
         Bitmap bitmap2 = Bitmap.createBitmap(bitmap, 0, 0
                 , width, height, matrix, true);
         // 显示新的位图
-        imageView.setImageBitmap(bitmap2);
+        mShow.setImageBitmap(bitmap2);
         return true;
     }
 
@@ -101,5 +89,37 @@ public class Demo080300Activity extends AppCompatActivity implements GestureDete
     @Override
     public boolean onSingleTapUp(MotionEvent event) {
         return false;
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_demo080300;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        // 创建手势检测器
+        detector = new GestureDetector(this, this);
+        matrix = new Matrix();
+        // 获取被缩放的源图片
+        bitmap = BitmapFactory.decodeResource(
+                this.getResources(), R.drawable.flower);
+        // 获得位图宽
+        width = bitmap.getWidth();
+        // 获得位图高
+        height = bitmap.getHeight();
+        // 设置ImageView初始化时显示的图片。
+        mShow.setImageBitmap(BitmapFactory.decodeResource(
+                this.getResources(), R.drawable.flower));
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 }

@@ -1,34 +1,50 @@
 package com.liushu.crazyandroid.ui.stage01.chapter11.activity;
 
 import android.media.MediaRecorder;
-import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
 import java.io.File;
 
-public class Demo110100Activity extends AppCompatActivity implements View.OnClickListener {
+import butterknife.Bind;
+import butterknife.OnClick;
+
+public class Demo110100Activity extends BaseActivity {
     // 定义界面上的两个按钮
     ImageButton record, stop;
     // 系统的音频文件
     File soundFile;
     MediaRecorder mRecorder;
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.record)
+    ImageButton mRecord;
+    @Bind(R.id.stop)
+    ImageButton mStop;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo110100);
-        // 获取程序界面中的两个按钮
-        record = (ImageButton) findViewById(R.id.record);
-        stop = (ImageButton) findViewById(R.id.stop);
-        // 为两个按钮的单击事件绑定监听器
-        record.setOnClickListener(this);
-        stop.setOnClickListener(this);
+    public int getLayoutId() {
+        return R.layout.activity_demo110100;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("录制音乐");
+
     }
 
     @Override
@@ -43,9 +59,13 @@ public class Demo110100Activity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    @Override
-    public void onClick(View source) {
-        switch (source.getId()) {
+
+    @OnClick({R.id.iv_back, R.id.record, R.id.stop})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.iv_back:
+                finish();
+                break;
             // 单击录音按钮
             case R.id.record:
                 if (!Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED)) {

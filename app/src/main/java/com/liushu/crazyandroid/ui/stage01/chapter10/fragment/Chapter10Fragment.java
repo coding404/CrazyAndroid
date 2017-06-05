@@ -15,16 +15,6 @@ import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.adapter.MyExpandableListViewAdapter;
 import com.liushu.crazyandroid.bean.CatalogBean;
 import com.liushu.crazyandroid.ui.stage01.chapter10.activity.Demo100000Activity;
-import com.liushu.crazyandroid.ui.stage01.chapter10.activity.Demo100100Activity;
-import com.liushu.crazyandroid.ui.stage01.chapter10.activity.Demo100101Activity;
-import com.liushu.crazyandroid.ui.stage01.chapter10.activity.Demo100200Activity;
-import com.liushu.crazyandroid.ui.stage01.chapter10.activity.Demo100201Activity;
-import com.liushu.crazyandroid.ui.stage01.chapter10.activity.Demo100300Activity;
-import com.liushu.crazyandroid.ui.stage01.chapter10.activity.Demo100500Activity;
-import com.liushu.crazyandroid.ui.stage01.chapter10.activity.Demo100600Activity;
-import com.liushu.crazyandroid.ui.stage01.chapter10.activity.Demo100700Activity;
-import com.liushu.crazyandroid.ui.stage01.chapter10.activity.Demo100701Activity;
-import com.liushu.crazyandroid.ui.stage01.chapter10.activity.Demo100702Activity;
 import com.liushu.crazyandroid.utils.FileUtil;
 
 import java.util.ArrayList;
@@ -84,34 +74,39 @@ public class Chapter10Fragment extends Fragment {
             case 1:
                 if (childPosition == 0) {
                     //获取网络和SIM卡信息
+                    // TODO: 2017/6/5  获取网络和SIM卡信息
                     ToastUitl.showShort("获取网络和SIM卡信息");
-                    Intent intent = new Intent(getContext(), Demo100100Activity.class);
-                    startActivity(intent);
+                   /* Intent intent = new Intent(getContext(), Demo100100Activity.class);
+                    startActivity(intent);*/
                 } else if (childPosition == 1) {
+                    // TODO: 2017/6/5  监听手机来电
                     ToastUitl.showShort("监听手机来电");
-                    Intent intent = new Intent(getContext(), Demo100101Activity.class);
-                    startActivity(intent);
+                    /*Intent intent = new Intent(getContext(), Demo100101Activity.class);
+                    startActivity(intent);*/
 
                 }
                 break;
             case 2:
                 if (childPosition == 0) {
                     ToastUitl.showShort("发送短信");
-                    Intent intent = new Intent(getContext(), Demo100200Activity.class);
-                    startActivity(intent);
+                    // TODO: 2017/6/5  发送短信
+                  /*  Intent intent = new Intent(getContext(), Demo100200Activity.class);
+                    startActivity(intent);*/
 
                 } else if (childPosition == 1) {
                     ToastUitl.showShort("短信群发");
-                    Intent intent = new Intent(getContext(), Demo100201Activity.class);
-                    startActivity(intent);
+                    // TODO: 2017/6/5  短信群发
+                   /* Intent intent = new Intent(getContext(), Demo100201Activity.class);
+                    startActivity(intent);*/
 
                 }
                 break;
             case 3:
                 if (childPosition == 0) {
                     ToastUitl.showShort("使用AudioManager控制手机音频");
-                    Intent intent = new Intent(getContext(), Demo100300Activity.class);
-                    startActivity(intent);
+                    // TODO: 2017/6/5  使用AudioManager控制手机音频
+                    /*Intent intent = new Intent(getContext(), Demo100300Activity.class);
+                    startActivity(intent);*/
 
                 }
                 break;
@@ -148,8 +143,9 @@ public class Chapter10Fragment extends Fragment {
             case 5:
                 if (childPosition == 0) {
                     ToastUitl.showShort("定时更换壁纸");
-                    Intent intent = new Intent(getContext(), Demo100500Activity.class);
-                    startActivity(intent);
+                    // TODO: 2017/6/5  定时更换壁纸
+                    /*Intent intent = new Intent(getContext(), Demo100500Activity.class);
+                    startActivity(intent);*/
 
 
                 }
@@ -157,26 +153,30 @@ public class Chapter10Fragment extends Fragment {
             case 6:
                 if (childPosition == 0) {
                     ToastUitl.showShort("基于service的音乐播放器");
-                    Intent intent = new Intent(getContext(), Demo100600Activity.class);
-                    startActivity(intent);
+                    // TODO: 2017/6/5  基于service的音乐播放器
+                   /* Intent intent = new Intent(getContext(), Demo100600Activity.class);
+                    startActivity(intent);*/
 
                 }
                 break;
             case 7:
                 if (childPosition == 0) {
                     ToastUitl.showShort("开机自动运行的service");
-                    Intent intent = new Intent(getContext(), Demo100700Activity.class);
-                    startActivity(intent);
+                    // TODO: 2017/6/5 开机自动运行的service
+                    /*Intent intent = new Intent(getContext(), Demo100700Activity.class);
+                    startActivity(intent);*/
 
                 } else if (childPosition == 1) {
                     ToastUitl.showShort("短信提醒");
-                    Intent intent = new Intent(getContext(), Demo100701Activity.class);
-                    startActivity(intent);
+                    // TODO: 2017/6/5 短信提醒
+                   /* Intent intent = new Intent(getContext(), Demo100701Activity.class);
+                    startActivity(intent);*/
 
                 } else if (childPosition == 2) {
                     ToastUitl.showShort("手机电量提示");
-                    Intent intent = new Intent(getContext(), Demo100702Activity.class);
-                    startActivity(intent);
+                    // TODO: 2017/6/5 手机电量提示
+                   /* Intent intent = new Intent(getContext(), Demo100702Activity.class);
+                    startActivity(intent);*/
 
                 }
                 break;

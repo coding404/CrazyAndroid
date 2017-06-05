@@ -9,26 +9,45 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.jaydenxiao.common.commonutils.ToastUitl;
 import com.liushu.crazyandroid.R;
 
-public class Demo160200Activity extends AppCompatActivity {
+import butterknife.Bind;
+import butterknife.OnClick;
+
+import static com.liushu.crazyandroid.R.id.show;
+
+public class Demo160200Activity extends BaseActivity {
     // 定义LocationManager对象
     LocationManager locManager;
     // 定义程序界面中的EditText组件
-    EditText show;
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(show)
+    EditText mShow;
     private String mProvider;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo160200);
-        // 获取程序界面上的EditText组件
-        show = (EditText) findViewById(R.id.show);
+    public int getLayoutId() {
+        return R.layout.activity_demo160200;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("获取定位数据");
         // 创建LocationManager对象
         locManager = (LocationManager) getSystemService
                 (Context.LOCATION_SERVICE);
@@ -91,25 +110,32 @@ public class Demo160200Activity extends AppCompatActivity {
             sb.append(newLocation.getSpeed());
             sb.append("\n方向：");
             sb.append(newLocation.getBearing());
-            show.setText(sb.toString());
+            mShow.setText(sb.toString());
         } else {
             // 如果传入的Location对象为空则清空EditText
-            show.setText("");
+            mShow.setText("");
         }
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode){
+        switch (requestCode) {
             case 1:
-                if(grantResults.length >= 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                  //  updateView(locManager.getLastKnownLocation(provider));
+                if (grantResults.length >= 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //  updateView(locManager.getLastKnownLocation(provider));
                 } else {
                     //TODO 2017/06/01 授权失败
                     Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            default:break;
+            default:
+                break;
         }
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 }

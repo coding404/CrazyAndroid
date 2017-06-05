@@ -5,11 +5,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.opengl.GLSurfaceView;
 import android.opengl.GLUtils;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
 import java.nio.ByteBuffer;
@@ -19,7 +20,16 @@ import java.nio.FloatBuffer;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-public class Demo120301Activity extends AppCompatActivity implements GestureDetector.OnGestureListener {
+import butterknife.Bind;
+import butterknife.OnClick;
+
+public class Demo120301Activity extends BaseActivity implements GestureDetector.OnGestureListener {
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.gl_view)
+    GLSurfaceView mGlView;
     // 定义旋转角度
     private float anglex = 0f;
     private float angley = 0f;
@@ -28,17 +38,25 @@ public class Demo120301Activity extends AppCompatActivity implements GestureDete
     GestureDetector detector;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo120301);
-        // 创建一个GLSurfaceView，用于显示OpenGL绘制的图形
-        GLSurfaceView glView = (GLSurfaceView) findViewById(R.id.gl_view);
+    public int getLayoutId() {
+        return R.layout.activity_demo120301;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("应用纹理贴图");
         // 创建GLSurfaceView的内容绘制器
         MyRenderer myRender = new MyRenderer(this);
         // 为GLSurfaceView设置绘制器
-        glView.setRenderer(myRender);
+        mGlView.setRenderer(myRender);
         // 创建手势检测器
         detector = new GestureDetector(this, this);
+
     }
 
     @Override
@@ -71,7 +89,7 @@ public class Demo120301Activity extends AppCompatActivity implements GestureDete
     }
 
     @Override
-    public boolean onScroll(MotionEvent event1, MotionEvent event2,float distanceX, float distanceY) {
+    public boolean onScroll(MotionEvent event1, MotionEvent event2, float distanceX, float distanceY) {
         return false;
     }
 
@@ -82,6 +100,11 @@ public class Demo120301Activity extends AppCompatActivity implements GestureDete
     @Override
     public boolean onSingleTapUp(MotionEvent event) {
         return false;
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 
     public class MyRenderer implements GLSurfaceView.Renderer {
@@ -200,7 +223,7 @@ public class Demo120301Activity extends AppCompatActivity implements GestureDete
             Bitmap bitmap = null;
             try {
                 // 加载位图
-                bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.sand);
+                bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.sand);
                 int[] textures = new int[1];
                 // 指定生成N个纹理（第一个参数指定生成一个纹理）
                 // textures数组将负责存储所有纹理的代号

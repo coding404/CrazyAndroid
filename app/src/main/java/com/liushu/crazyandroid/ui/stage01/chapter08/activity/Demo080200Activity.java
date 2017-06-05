@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.widget.MyDatabaseHelper;
 
@@ -17,56 +20,27 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Demo080200Activity extends AppCompatActivity {
-    MyDatabaseHelper dbHelper;
-    Button insert = null;
-    Button search = null;
+import butterknife.Bind;
+import butterknife.OnClick;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo080200);
-        // 创建MyDatabaseHelper对象，指定数据库版本为1，此处使用相对路径即可
-        // 数据库文件自动会保存在程序的数据文件夹的databases目录下
-        dbHelper = new MyDatabaseHelper(this, "myDict.db3", 1);
-        insert = (Button) findViewById(R.id.insert);
-        search = (Button) findViewById(R.id.search);
-        insert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View source) {
-                // 获取用户输入
-                String word = ((EditText) findViewById(R.id.word))
-                        .getText().toString();
-                String detail = ((EditText) findViewById(R.id.detail))
-                        .getText().toString();
-                // 插入生词记录
-                insertData(dbHelper.getReadableDatabase(), word, detail);
-                // 显示提示信息
-                Toast.makeText(Demo080200Activity.this, "添加生词成功！"
-                        , Toast.LENGTH_LONG).show();
-            }
-        });
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View source) {
-                // 获取用户输入
-                String key = ((EditText) findViewById(R.id.key)).getText()
-                        .toString();
-                // 执行查询
-                Cursor cursor = dbHelper.getReadableDatabase().rawQuery(
-                        "select * from dict where word like ? or detail like ?",
-                        new String[]{"%" + key + "%", "%" + key + "%"});
-                // 创建一个Bundle对象
-                Bundle data = new Bundle();
-                data.putSerializable("data", converCursorToList(cursor));
-                // 创建一个Intent
-                Intent intent = new Intent(Demo080200Activity.this, DbResultActivity.class);
-                intent.putExtras(data);
-                // 启动Activity
-                startActivity(intent);
-            }
-        });
-    }
+public class Demo080200Activity extends BaseActivity {
+    MyDatabaseHelper dbHelper;
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.word)
+    EditText mWord;
+    @Bind(R.id.detail)
+    EditText mDetail;
+    @Bind(R.id.insert)
+    Button mInsert;
+    @Bind(R.id.key)
+    EditText mKey;
+    @Bind(R.id.search)
+    Button mSearch;
+    @Bind(R.id.show)
+    ListView mShow;
 
     protected ArrayList<Map<String, String>>
     converCursorToList(Cursor cursor) {
@@ -92,11 +66,64 @@ public class Demo080200Activity extends AppCompatActivity {
     }
 
     @Override
+    public int getLayoutId() {
+        return R.layout.activity_demo080200;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("英文生词本");
+        // 创建MyDatabaseHelper对象，指定数据库版本为1，此处使用相对路径即可
+        // 数据库文件自动会保存在程序的数据文件夹的databases目录下
+        dbHelper = new MyDatabaseHelper(this, "myDict.db3", 1);
+    }
+
+    @Override
     public void onDestroy() {
         super.onDestroy();
         // 退出程序时关闭MyDatabaseHelper里的SQLiteDatabase
         if (dbHelper != null) {
             dbHelper.close();
+        }
+    }
+
+    @OnClick({R.id.iv_back, R.id.insert, R.id.search})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.iv_back:
+                finish();
+                break;
+            case R.id.insert:
+                // 获取用户输入
+                String word = mWord.getText().toString();
+                String detail = mDetail.getText().toString();
+                // 插入生词记录
+                insertData(dbHelper.getReadableDatabase(), word, detail);
+                // 显示提示信息
+                Toast.makeText(Demo080200Activity.this, "添加生词成功！"
+                        , Toast.LENGTH_LONG).show();
+                break;
+            case R.id.search:
+                // 获取用户输入
+                String key = mKey.getText().toString();
+                // 执行查询
+                Cursor cursor = dbHelper.getReadableDatabase().rawQuery(
+                        "select * from dict where word like ? or detail like ?",
+                        new String[]{"%" + key + "%", "%" + key + "%"});
+                // 创建一个Bundle对象
+                Bundle data = new Bundle();
+                data.putSerializable("data", converCursorToList(cursor));
+                // 创建一个Intent
+                Intent intent = new Intent(Demo080200Activity.this, DbResultActivity.class);
+                intent.putExtras(data);
+                // 启动Activity
+                startActivity(intent);
+                break;
         }
     }
 }

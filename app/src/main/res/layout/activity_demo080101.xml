@@ -6,12 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.liushu.crazyandroid.ui.stage01.chapter08.activity.Demo080101Activity">
+
+    <include
+        android:id="@+id/include_title"
+        layout="@layout/head_title_layout"/>
     <!-- 显示当前路径的的文本框 -->
     <TextView
         android:id="@+id/path"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/include_title"
         android:layout_gravity="center_horizontal"/>
     <!-- 列出当前路径下所有文件的ListView -->
     <ListView

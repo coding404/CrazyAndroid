@@ -4,20 +4,36 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
-import android.view.SurfaceHolder.Callback;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Demo070601Activity extends AppCompatActivity {
+import butterknife.Bind;
+import butterknife.OnClick;
+
+import static com.liushu.crazyandroid.R.id.cos;
+import static com.liushu.crazyandroid.R.id.sin;
+
+public class Demo070601Activity extends BaseActivity {
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(sin)
+    Button mSin;
+    @Bind(cos)
+    Button mCos;
+    @Bind(R.id.show)
+    SurfaceView mShow;
     private SurfaceHolder holder;
     private Paint paint;
     final int HEIGHT = 320;
@@ -29,18 +45,39 @@ public class Demo070601Activity extends AppCompatActivity {
     Timer timer = new Timer();
     TimerTask task = null;
 
+    private void drawBack(SurfaceHolder holder) {
+        Canvas canvas = holder.lockCanvas();
+        // 绘制白色背景
+        canvas.drawColor(Color.WHITE);
+        Paint p = new Paint();
+        p.setColor(Color.BLACK);
+        p.setStrokeWidth(2);
+        // 绘制坐标轴
+        canvas.drawLine(X_OFFSET, centerY, WIDTH, centerY, p);
+        canvas.drawLine(X_OFFSET, 40, X_OFFSET, HEIGHT, p);
+        holder.unlockCanvasAndPost(canvas);
+        holder.lockCanvas(new Rect(0, 0, 0, 0));
+        holder.unlockCanvasAndPost(canvas);
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo070601);
-        final SurfaceView surface = (SurfaceView) findViewById(R.id.show);
+    public int getLayoutId() {
+        return R.layout.activity_demo070601;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("基于SurfaceView开发示波器");
         // 初始化SurfaceHolder对象
-        holder = surface.getHolder();
+        holder = mShow.getHolder();
         paint = new Paint();
         paint.setColor(Color.GREEN);
         paint.setStrokeWidth(5);
-        Button sin = (Button) findViewById(R.id.sin);
-        Button cos = (Button) findViewById(R.id.cos);
         View.OnClickListener listener = (new View.OnClickListener() {
             @Override
             public void onClick(final View source) {
@@ -51,7 +88,7 @@ public class Demo070601Activity extends AppCompatActivity {
                 }
                 task = new TimerTask() {
                     public void run() {
-                        int cy = source.getId() == R.id.sin ? centerY
+                        int cy = source.getId() == sin ? centerY
                                 - (int) (100 * Math.sin((cx - 5) * 2
                                 * Math.PI / 150))
                                 : centerY - (int) (100 * Math.cos((cx - 5)
@@ -70,11 +107,11 @@ public class Demo070601Activity extends AppCompatActivity {
                 timer.schedule(task, 0, 30);
             }
         });
-        sin.setOnClickListener(listener);
-        cos.setOnClickListener(listener);
-        holder.addCallback(new Callback() {
+        mSin.setOnClickListener(listener);
+        mCos.setOnClickListener(listener);
+        holder.addCallback(new SurfaceHolder.Callback() {
             @Override
-            public void surfaceChanged(SurfaceHolder holder, int format,int width, int height) {
+            public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
                 drawBack(holder);
             }
 
@@ -87,20 +124,11 @@ public class Demo070601Activity extends AppCompatActivity {
                 timer.cancel();
             }
         });
+
     }
 
-    private void drawBack(SurfaceHolder holder) {
-        Canvas canvas = holder.lockCanvas();
-        // 绘制白色背景
-        canvas.drawColor(Color.WHITE);
-        Paint p = new Paint();
-        p.setColor(Color.BLACK);
-        p.setStrokeWidth(2);
-        // 绘制坐标轴
-        canvas.drawLine(X_OFFSET, centerY, WIDTH, centerY, p);
-        canvas.drawLine(X_OFFSET, 40, X_OFFSET, HEIGHT, p);
-        holder.unlockCanvasAndPost(canvas);
-        holder.lockCanvas(new Rect(0, 0, 0, 0));
-        holder.unlockCanvasAndPost(canvas);
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 }

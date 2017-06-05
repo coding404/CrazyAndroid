@@ -8,6 +8,8 @@
     android:orientation="vertical"
     tools:context="com.liushu.crazyandroid.ui.stage01.chapter07.activity.Demo070601Activity">
 
+    <include layout="@layout/head_title_layout"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

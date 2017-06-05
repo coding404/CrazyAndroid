@@ -9,6 +9,8 @@
     android:orientation="horizontal"
     tools:context=".ui.stage01.chapter11.activity.Demo110100Activity">
 
+    <include layout="@layout/head_title_layout"/>
+
     <ImageButton
         android:id="@+id/record"
         android:layout_width="wrap_content"

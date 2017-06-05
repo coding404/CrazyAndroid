@@ -8,32 +8,47 @@ import android.gesture.GestureLibrary;
 import android.gesture.GestureOverlayView;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-public class Demo080302Activity extends AppCompatActivity {
-    EditText editText;
-    GestureOverlayView gestureView;
+import butterknife.Bind;
+import butterknife.OnClick;
+
+public class Demo080302Activity extends BaseActivity {
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.gesture)
+    GestureOverlayView mGesture;
+    @Bind(R.id.gesture_test)
+    GestureOverlayView mGestureTest;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo080302);
-        // 获取文本编辑框
-        editText = (EditText) findViewById(R.id.gesture_name);
-        // 获取手势编辑视图
-        gestureView = (GestureOverlayView)findViewById(R.id.gesture);
+    public int getLayoutId() {
+        return R.layout.activity_demo080302;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("添加手势");
+
         // 设置手势的绘制颜色
-        gestureView.setGestureColor(Color.RED);
+        mGestureTest.setGestureColor(Color.RED);
         // 设置手势的绘制宽度
-        gestureView.setGestureStrokeWidth(4);
+        mGestureTest.setGestureStrokeWidth(4);
         // 为gesture的手势完成事件绑定事件监听器
-        gestureView.addOnGesturePerformedListener(
+        mGestureTest.addOnGesturePerformedListener(
                 new GestureOverlayView.OnGesturePerformedListener() {
                     @Override
                     public void onGesturePerformed(GestureOverlayView overlay,
@@ -45,14 +60,14 @@ public class Demo080302Activity extends AppCompatActivity {
                         // 获取saveDialog里的gesture_name组件
                         final EditText gestureName = (EditText) saveDialog.findViewById(R.id.gesture_name);
                         // 根据Gesture包含的手势创建一个位图
-                        Bitmap bitmap = gesture.toBitmap(128,128, 10, 0xffff0000);
+                        Bitmap bitmap = gesture.toBitmap(128, 128, 10, 0xffff0000);
                         imageView.setImageBitmap(bitmap);
                         // 使用对话框显示saveDialog组件
                         new AlertDialog.Builder(Demo080302Activity.this)
                                 .setView(saveDialog)
                                 .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                                     @Override
-                                    public void onClick(DialogInterface dialog,int which) {
+                                    public void onClick(DialogInterface dialog, int which) {
                                         // 获取指定文件对应的手势库
                                         GestureLibrary gestureLib = GestureLibraries.fromFile("/mnt/sdcard/mygestures");
                                         // 添加手势
@@ -63,6 +78,11 @@ public class Demo080302Activity extends AppCompatActivity {
                                 }).setNegativeButton("取消", null).show();
                     }
                 });
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 }
 

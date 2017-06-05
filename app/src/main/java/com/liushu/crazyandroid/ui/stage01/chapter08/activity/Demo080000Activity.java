@@ -1,19 +1,39 @@
 package com.liushu.crazyandroid.ui.stage01.chapter08.activity;
 
 import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-public class Demo080000Activity extends AppCompatActivity {
+import butterknife.Bind;
+import butterknife.OnClick;
+
+public class Demo080000Activity extends BaseActivity {
 
     SharedPreferences preferences;
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title_name)
+    TextView mTvTitleName;
+    @Bind(R.id.textView)
+    TextView mTextView;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo080000);
+    public int getLayoutId() {
+        return R.layout.activity_demo080000;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitleName.setText("记录应用程序的使用次数");
         preferences = getSharedPreferences("count", MODE_PRIVATE);
         // 读取SharedPreferences里的count数据
         int count = preferences.getInt("count", 0);
@@ -24,5 +44,10 @@ public class Demo080000Activity extends AppCompatActivity {
         editor.putInt("count", ++count);
         // 提交修改
         editor.commit();
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick() {
+        finish();
     }
 }

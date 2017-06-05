@@ -151,7 +151,6 @@ public class Chapter07Fragment extends Fragment {
                     //大珠小珠落玉盘
                     Intent intent = new Intent(getContext(), Demo070500Activity.class);
                     startActivity(intent);
-
                 }
                 break;
             case 6:
