@@ -12,6 +12,10 @@ import android.widget.LinearLayout;
 
 import com.liushu.crazyandroid.R;
 import com.jaydenxiao.common.commonutils.ToastUitl;
+import com.liushu.crazyandroid.widget.OneChioceDialog;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -106,7 +110,7 @@ public class Demo020900Activity extends AppCompatActivity {
     private void initData5() {
     }
 
-    @OnClick({R.id.btn_show_message, R.id.btn_simple_list, R.id.btn_onechioce_list, R.id.btn_morechioce_list, R.id.btn_custom_list, R.id.btn_custom_view})
+    @OnClick({R.id.btn_show_message, R.id.btn_simple_list, R.id.btn_onechioce_list, R.id.btn_onechioce_self, R.id.btn_morechioce_list, R.id.btn_custom_list, R.id.btn_custom_view})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_show_message:
@@ -127,7 +131,39 @@ public class Demo020900Activity extends AppCompatActivity {
             case R.id.btn_custom_view:
                 showDialog5();
                 break;
+            case R.id.btn_onechioce_self:
+                showDialog6();
+                break;
         }
+    }
+
+    private void showDialog6() {
+
+        final OneChioceDialog.Builder builder = new OneChioceDialog.Builder(Demo020900Activity.this);
+        builder.setTitle("需要填写的标题");
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add("这是第" + i + "条");
+        }
+        builder.setList(list);
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                String contact = builder.getContact();
+
+                ToastUitl.showShort(contact);
+            }
+        });
+        builder.create().show();
+
+
     }
 
     private void showDialog0() {

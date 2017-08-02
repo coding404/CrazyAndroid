@@ -3,9 +3,7 @@ package com.liushu.crazyandroid.ui.stage01.chapter02.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
 import com.google.gson.Gson;
@@ -59,7 +57,6 @@ import butterknife.ButterKnife;
  */
 
 public class Chapter02Fragment extends BaseFragment {
-
 
     @Bind(R.id.expendlist_chapter02)
     ExpandableListView mExpendlistChapter02;
@@ -308,13 +305,6 @@ public class Chapter02Fragment extends BaseFragment {
         mBeen.addAll(catalogBean.getChapters());
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        ButterKnife.bind(this, rootView);
-        return rootView;
-    }
 
     @Override
     public void onDestroyView() {

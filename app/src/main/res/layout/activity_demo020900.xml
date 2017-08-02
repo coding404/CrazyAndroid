@@ -50,6 +50,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="单选列表项对话框"/>
+
+        <Button
+            android:id="@+id/btn_onechioce_self"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义单选对话框"/>
     </LinearLayout>
 
     <LinearLayout
