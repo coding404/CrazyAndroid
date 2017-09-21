@@ -157,13 +157,10 @@ public class Demo020900Activity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
                 String contact = builder.getContact();
-
                 ToastUitl.showShort(contact);
             }
         });
         builder.create().show();
-
-
     }
 
     private void showDialog0() {
