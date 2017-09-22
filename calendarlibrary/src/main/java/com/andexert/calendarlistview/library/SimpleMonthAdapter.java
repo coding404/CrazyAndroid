@@ -26,6 +26,7 @@ package com.andexert.calendarlistview.library;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
@@ -65,6 +66,7 @@ public class SimpleMonthAdapter extends RecyclerView.Adapter<SimpleMonthAdapter.
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
+        // viewHolder.setIsRecyclable(false);
         final SimpleMonthView v = viewHolder.simpleMonthView;
         final HashMap<String, Integer> drawingParams = new HashMap<String, Integer>();
         int month;
@@ -83,7 +85,7 @@ public class SimpleMonthAdapter extends RecyclerView.Adapter<SimpleMonthAdapter.
         int hourListTime = -1;
         int isFirstHourVisiable = -1;
         int isLastHourVisiable = -1;
-        int lineVisiable = -1;
+        int lineVisiable;
 
         if (selectedDays.getFirst() != null) {
             selectedFirstDay = selectedDays.getFirst().day;
@@ -92,8 +94,6 @@ public class SimpleMonthAdapter extends RecyclerView.Adapter<SimpleMonthAdapter.
             hourFirstTime = selectedDays.getFirst().getHourTime();
             isFirstHourVisiable = selectedDays.getFirst().getIsHourVisiable();
             calendar.set(selectedFirstYear, selectedFirstMonth, selectedFirstDay);
-
-
         }
 
         if (selectedDays.getLast() != null) {
@@ -197,11 +197,39 @@ public class SimpleMonthAdapter extends RecyclerView.Adapter<SimpleMonthAdapter.
     private void setSelectedHour(int position) {
 
         if (selectedDays.getFirst() != null && selectedDays.getLast() == null) {
-            selectedDays.getFirst().setHourTime(position);
-        } else if (selectedDays.getLast() != null) {
+            if (selectedDays.getFirst().getHourTime() != -1 && selectedDays.getFirst().getHourTime() < position) {
 
-            selectedDays.getLast().setHourTime(position);
-            mController.onDateRangeSelected(selectedDays);
+                selectedDays.getFirst().setIsHourVisiable(-1);
+                CalendarDay first = selectedDays.getFirst();
+                CalendarDay calendarDay = new CalendarDay();
+                calendarDay.set(first);
+                calendarDay.setIsHourVisiable(1);
+                calendarDay.setHourTime(position);
+                selectedDays.setLast(calendarDay);
+                mController.onDateRangeSelected(selectedDays);
+            } else {
+                selectedDays.getFirst().setHourTime(position);
+            }
+        } else if (selectedDays.getFirst() != null && selectedDays.getLast() != null) {
+            if (selectedDays.getLast().getHourTime() == -1 &&
+                    (selectedDays.getFirst().year > selectedDays.getLast().year ||
+                            (selectedDays.getFirst().year == selectedDays.getLast().year && selectedDays.getFirst().month > selectedDays.getLast().month) ||
+                            (selectedDays.getFirst().year == selectedDays.getLast().year && selectedDays.getFirst().month == selectedDays.getLast().month &&
+                                    selectedDays.getFirst().day > selectedDays.getLast().day))) {
+                selectedDays.getLast().setHourTime(position);
+                CalendarDay last = selectedDays.getLast();
+                CalendarDay calendarDay = new CalendarDay();
+                calendarDay.set(last);
+                calendarDay.setIsHourVisiable(1);
+                calendarDay.setHourTime(position);
+                selectedDays.setFirst(calendarDay);
+                selectedDays.setLast(null);
+
+            } else {
+                Log.e("POSITION", "position=" + position);
+                selectedDays.getLast().setHourTime(position);
+                mController.onDateRangeSelected(selectedDays);
+            }
         }
 
         notifyDataSetChanged();
@@ -216,27 +244,36 @@ public class SimpleMonthAdapter extends RecyclerView.Adapter<SimpleMonthAdapter.
     public void setSelectedDay(CalendarDay calendarDay) {
 
         if (selectedDays.getFirst() != null && selectedDays.getLast() == null) {
-            selectedDays.getFirst().setIsHourVisiable(-1);
-            selectedDays.setLast(calendarDay);
-            selectedDays.getLast().setIsHourVisiable(1);
-            selectedDays.getLast().setHourTime(0);
-
-            if (selectedDays.getFirst().month < calendarDay.month) {
-                for (int i = 0; i < selectedDays.getFirst().month - calendarDay.month - 1; ++i) {
-                    mController.onDayOfMonthSelected(selectedDays.getFirst().year, selectedDays.getFirst().month + i, selectedDays.getFirst().day);
-                }
+            CalendarDay first = selectedDays.getFirst();
+            if (first.year == calendarDay.year && first.month == calendarDay.month && first.day == calendarDay.day) {
+                return;
+            }
+            if (first.getHourTime() == -1) {
+                selectedDays.setFirst(calendarDay);
+                selectedDays.getFirst().setIsHourVisiable(1);
+                selectedDays.getFirst().setHourTime(-1);
+                selectedDays.setLast(null);
+            } else {
+                selectedDays.getFirst().setIsHourVisiable(-1);
+                selectedDays.setLast(calendarDay);
+                selectedDays.getLast().setIsHourVisiable(1);
+                selectedDays.getLast().setHourTime(-1);
             }
 
-            // mController.onDateRangeSelected(selectedDays);
         } else if (selectedDays.getLast() != null) {
-            selectedDays.setFirst(calendarDay);
-            selectedDays.getFirst().setIsHourVisiable(1);
-            selectedDays.getFirst().setHourTime(0);
-            selectedDays.setLast(null);
+            if (selectedDays.getFirst().year == calendarDay.year && selectedDays.getFirst().month == calendarDay.month && selectedDays.getFirst().day == calendarDay.day) {
+                selectedDays.getFirst().setIsHourVisiable(1);
+                selectedDays.setLast(null);
+            } else {
+                selectedDays.setLast(calendarDay);
+                selectedDays.getLast().setHourTime(-1);
+                selectedDays.getFirst().setIsHourVisiable(-1);
+                selectedDays.getLast().setIsHourVisiable(1);
+            }
         } else {
             selectedDays.setFirst(calendarDay);
             selectedDays.getFirst().setIsHourVisiable(1);
-            selectedDays.getFirst().setHourTime(0);
+            selectedDays.getFirst().setHourTime(-1);
             selectedDays.setLast(null);
         }
 
@@ -250,7 +287,6 @@ public class SimpleMonthAdapter extends RecyclerView.Adapter<SimpleMonthAdapter.
         int day;
         int month;
         int year;
-        //添加小时数 刘数 20170518
         int hourTime;
         int isHourVisiable;
 
@@ -314,7 +350,8 @@ public class SimpleMonthAdapter extends RecyclerView.Adapter<SimpleMonthAdapter.
             if (calendar == null) {
                 calendar = Calendar.getInstance();
             }
-            calendar.set(year, month, day);
+            calendar.set(year, month, day, hourTime, 0);
+
             return calendar.getTime();
         }
 

@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="normal_day">#ff999999</color>
-    <color name="selected_day_background">#FAAF19</color>
-    <color name="middle_day_background">#FFFFCF</color>
-    <color name="selected_day_text">#fff2f2f2</color>
-    <color name="selected_hour_text">#FAAF19</color>
-    <color name="unselected_hour_text">#8F949A</color>
-    <color name="background_hour_bg">#aaaa</color>
-    <color name="background_hour_line">#8F949A</color>
+  <color name="normal_day">#ff181914</color>
+  <color name="unselected_day">#ffB3B3B3</color>
+  <color name="selected_day_background">#FAAF19</color>
+  <color name="hour_corner_text">#FAAF19</color>
+  <color name="middle_day_background">#FFFFCF</color>
+  <color name="selected_day_text">#fff2f2f2</color>
+  <color name="selected_hour_text">#FAAF19</color>
+  <color name="unselected_hour_text">#8F949A</color>
+  <color name="background_hour_bg">#EEEEEE</color>
+  <color name="background_hour_line">#E4E4E4</color>
+  <color name="circle_today_point">#6780C9</color>
 </resources>

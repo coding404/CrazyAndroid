@@ -1,1 +1,1 @@
-include ':app', ':common', ':calendarlibrary'
+include ':app', ':common', ':calendarlibrary', ':tagcloudlib'

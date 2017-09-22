@@ -17,5 +17,8 @@
     <color name="color05">#0FF</color>
     <color name="color06">#F0F</color>
 
+    <color name="tagLight">#b1c914</color>
+    <color name="tagDark">#206fa1</color>
+
     <drawable name="toolbar_bg">#30000000</drawable>
 </resources>

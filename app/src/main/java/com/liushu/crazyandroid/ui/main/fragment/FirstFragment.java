@@ -75,7 +75,8 @@ public class FirstFragment extends BaseFragment {
         final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getResources()
                 .getDisplayMetrics());
         mVpFirst.setPageMargin(pageMargin);
-        mVpFirst.setCurrentItem(0);
+        int position=getActivity().getIntent().getIntExtra("position",0);
+        mVpFirst.setCurrentItem(position);
     }
 
     @Override
