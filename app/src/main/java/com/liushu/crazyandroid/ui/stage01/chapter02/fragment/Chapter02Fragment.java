@@ -89,7 +89,6 @@ public class Chapter02Fragment extends BaseFragment {
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 //界面跳转
                 JumpActivity(groupPosition, childPosition);
-                //  Toast.makeText(getContext(),"groupPosition="+groupPosition+",childPosition="+childPosition,Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
@@ -264,6 +263,40 @@ public class Chapter02Fragment extends BaseFragment {
                 intent0700.putExtra("groupPosition", groupPosition);
                 intent0700.putExtra("childPosition", childPosition);
                 startActivity(intent0700);
+
+               /* if (childPosition == 0) {
+                    //带图片的消息提示
+                    Intent intent0200 = new Intent(getContext(), Demo020801Activity.class);
+                    startActivity(intent0200);
+                } else if (childPosition == 1) {
+                    //选择您的生日
+                    Intent intent0201 = new Intent(getContext(), Demo020802Activity.class);
+                    startActivity(intent0201);
+                } else if (childPosition == 2) {
+                    //用户选择日期、时间
+                    Intent intent0202 = new Intent(getContext(), Demo020803Activity.class);
+                    startActivity(intent0202);
+                } else if (childPosition == 3) {
+                    //选择您意向的价格范围
+                    Intent intent0203 = new Intent(getContext(), Demo020804Activity.class);
+                    startActivity(intent0203);
+                } else if (childPosition == 4) {
+                    //搜索
+                    Intent intent0204 = new Intent(getContext(), Demo020805Activity.class);
+                    startActivity(intent0204);
+                } else if (childPosition == 5) {
+                    //通话记录界面
+                    Intent intent0205 = new Intent(getContext(), Demo020806Activity.class);
+                    startActivity(intent0205);
+                } else if (childPosition == 6) {
+                    //可垂直和水平滚动的视图
+                    Intent intent0206 = new Intent(getContext(), Demo020807Activity.class);
+                    startActivity(intent0206);
+                } else if (childPosition == 7) {
+                    //加薪通知
+                    Intent intent0206 = new Intent(getContext(), Demo020808Activity.class);
+                    startActivity(intent0206);
+                }*/
                 break;
             case 8:
                 //UI组件，对话框
@@ -298,7 +331,7 @@ public class Chapter02Fragment extends BaseFragment {
 
     private void initData() {
         mBeen = new ArrayList<>();
-        String s = FileUtil.readFromAssets(getContext(), "chapter02.txt");
+        String s = FileUtil.readFromAssets(getContext(), "chapter02.json");
         Gson gson = new Gson();
         CatalogBean catalogBean = gson.fromJson(s, CatalogBean.class);
         mBeen.clear();

@@ -12,7 +12,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 5
-        versionName "1.0"
+        versionName "2.0.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -50,6 +50,7 @@ dependencies {
     compile project(':common')
     //view注解
     compile project(':calendarlibrary')
+    compile project(':tagcloudlib')
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.8@aar'
@@ -58,5 +59,4 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
     testCompile 'junit:junit:4.12'
-    compile project(':tagcloudlib')
 }

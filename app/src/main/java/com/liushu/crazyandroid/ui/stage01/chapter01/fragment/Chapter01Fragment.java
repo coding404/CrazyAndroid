@@ -56,7 +56,7 @@ public class Chapter01Fragment extends BaseFragment implements DatePickerControl
      */
     private void readFromAssets() {
         try {
-            InputStream is = getActivity().getAssets().open("chapter02.txt");
+            InputStream is = getActivity().getAssets().open("chapter02.json");
             String text = readTextFromSDcard(is);
 
             Gson gson = new Gson();

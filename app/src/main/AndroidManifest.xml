@@ -227,6 +227,22 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020801Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020802Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020803Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020804Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020805Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020806Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020807Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020808Activity">
+        </activity>
     </application>
 
 </manifest>

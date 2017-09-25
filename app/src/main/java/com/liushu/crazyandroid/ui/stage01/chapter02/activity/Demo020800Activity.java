@@ -3,11 +3,12 @@ package com.liushu.crazyandroid.ui.stage01.chapter02.activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.os.Build;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -27,16 +28,18 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.jaydenxiao.common.commonutils.ToastUitl;
 import com.liushu.crazyandroid.R;
+import com.liushu.crazyandroid.utils.NotificationsUtils;
+import com.liushu.crazyandroid.widget.SimpleShowDialog;
 
 import java.util.Calendar;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Demo020800Activity extends AppCompatActivity {
+public class Demo020800Activity extends BaseActivity {
 
     @Bind(R.id.btn_test0_simple)
     Button mBtnTest0Simple;
@@ -104,10 +107,17 @@ public class Demo020800Activity extends AppCompatActivity {
     private String[] mStrings = {"aaaa", "bbbbbbbbb", "ccccccc"};
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo020800);
-        ButterKnife.bind(this);
+    public int getLayoutId() {
+        return R.layout.activity_demo020800;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
         mGroupPosition = getIntent().getIntExtra("groupPosition", -1);
         mChildPosition = getIntent().getIntExtra("childPosition", -1);
         initView(mChildPosition);
@@ -117,33 +127,89 @@ public class Demo020800Activity extends AppCompatActivity {
         switch (childPosition) {
             case 0:
                 mLlDemo020800Test0.setVisibility(View.VISIBLE);
+                mLlDemo020800Test1.setVisibility(View.GONE);
+                mLlDemo020800Test2.setVisibility(View.GONE);
+                mLlDemo020800Test3.setVisibility(View.GONE);
+                mLlDemo020800Test4.setVisibility(View.GONE);
+                mLlDemo020800Test5.setVisibility(View.GONE);
+                mLlDemo020800Test6.setVisibility(View.GONE);
+                mLlDemo020800Test7.setVisibility(View.GONE);
                 initData0();
                 break;
             case 1:
+                mLlDemo020800Test0.setVisibility(View.GONE);
                 mLlDemo020800Test1.setVisibility(View.VISIBLE);
+                mLlDemo020800Test2.setVisibility(View.GONE);
+                mLlDemo020800Test3.setVisibility(View.GONE);
+                mLlDemo020800Test4.setVisibility(View.GONE);
+                mLlDemo020800Test5.setVisibility(View.GONE);
+                mLlDemo020800Test6.setVisibility(View.GONE);
+                mLlDemo020800Test7.setVisibility(View.GONE);
                 initData1();
                 break;
             case 2:
+                mLlDemo020800Test0.setVisibility(View.GONE);
+                mLlDemo020800Test1.setVisibility(View.GONE);
                 mLlDemo020800Test2.setVisibility(View.VISIBLE);
+                mLlDemo020800Test3.setVisibility(View.GONE);
+                mLlDemo020800Test4.setVisibility(View.GONE);
+                mLlDemo020800Test5.setVisibility(View.GONE);
+                mLlDemo020800Test6.setVisibility(View.GONE);
+                mLlDemo020800Test7.setVisibility(View.GONE);
                 initData2();
                 break;
             case 3:
+                mLlDemo020800Test0.setVisibility(View.GONE);
+                mLlDemo020800Test1.setVisibility(View.GONE);
+                mLlDemo020800Test2.setVisibility(View.GONE);
                 mLlDemo020800Test3.setVisibility(View.VISIBLE);
+                mLlDemo020800Test4.setVisibility(View.GONE);
+                mLlDemo020800Test5.setVisibility(View.GONE);
+                mLlDemo020800Test6.setVisibility(View.GONE);
+                mLlDemo020800Test7.setVisibility(View.GONE);
                 initData3();
                 break;
             case 4:
+                mLlDemo020800Test0.setVisibility(View.GONE);
+                mLlDemo020800Test1.setVisibility(View.GONE);
+                mLlDemo020800Test2.setVisibility(View.GONE);
+                mLlDemo020800Test3.setVisibility(View.GONE);
                 mLlDemo020800Test4.setVisibility(View.VISIBLE);
+                mLlDemo020800Test5.setVisibility(View.GONE);
+                mLlDemo020800Test6.setVisibility(View.GONE);
+                mLlDemo020800Test7.setVisibility(View.GONE);
                 initData4();
                 break;
             case 5:
+                mLlDemo020800Test0.setVisibility(View.GONE);
+                mLlDemo020800Test1.setVisibility(View.GONE);
+                mLlDemo020800Test2.setVisibility(View.GONE);
+                mLlDemo020800Test3.setVisibility(View.GONE);
+                mLlDemo020800Test4.setVisibility(View.GONE);
                 mLlDemo020800Test5.setVisibility(View.VISIBLE);
+                mLlDemo020800Test6.setVisibility(View.GONE);
+                mLlDemo020800Test7.setVisibility(View.GONE);
                 initData5();
                 break;
             case 6:
+                mLlDemo020800Test0.setVisibility(View.GONE);
+                mLlDemo020800Test1.setVisibility(View.GONE);
+                mLlDemo020800Test2.setVisibility(View.GONE);
+                mLlDemo020800Test3.setVisibility(View.GONE);
+                mLlDemo020800Test4.setVisibility(View.GONE);
+                mLlDemo020800Test5.setVisibility(View.GONE);
                 mLlDemo020800Test6.setVisibility(View.VISIBLE);
+                mLlDemo020800Test7.setVisibility(View.GONE);
                 initData6();
                 break;
             case 7:
+                mLlDemo020800Test0.setVisibility(View.GONE);
+                mLlDemo020800Test1.setVisibility(View.GONE);
+                mLlDemo020800Test2.setVisibility(View.GONE);
+                mLlDemo020800Test3.setVisibility(View.GONE);
+                mLlDemo020800Test4.setVisibility(View.GONE);
+                mLlDemo020800Test5.setVisibility(View.GONE);
+                mLlDemo020800Test6.setVisibility(View.GONE);
                 mLlDemo020800Test7.setVisibility(View.VISIBLE);
                 initData7();
                 break;
@@ -311,40 +377,79 @@ public class Demo020800Activity extends AppCompatActivity {
                 toast.show();
                 break;
             case R.id.btn_test8_send:
-                ToastUitl.showShort("2222222");
-// 创建一个启动其他Activity的Intent
-                Intent intent = new Intent(this, OtherActivity.class);
-                PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
-                Notification notify = new Notification.Builder(this)
-                        // 设置打开该通知，该通知自动消失
-                        .setAutoCancel(true)
-                        // 设置显示在状态栏的通知提示信息
-                        .setTicker("有新消息")
-                        // 设置通知的图标
-                        .setSmallIcon(R.drawable.notify)
-                        // 设置通知内容的标题
-                        .setContentTitle("一条新通知")
-                        // 设置通知内容
-                        .setContentText("恭喜你，您加薪了，工资增加20%!")
-                        // 设置使用系统默认的声音、默认LED灯
-                        // .setDefaults(Notification.DEFAULT_SOUND
-                        // |Notification.DEFAULT_LIGHTS)
-                        // 设置通知的自定义声音
-                        .setSound(Uri.parse("android.resource://org.crazyit.ui/"
-                                + R.raw.msg))
-                        .setWhen(System.currentTimeMillis())
-                        // 设改通知将要启动程序的Intent
-                        .setContentIntent(pi)  // ①
-                        .build();
-                // 发送通知
-                nm.notify(NOTIFICATION_ID, notify);
-
+                if (!NotificationsUtils.isNotificationEnabled(mContext)) {
+                    initMessageNotify();
+                }else {
+                    // 创建一个启动其他Activity的Intent
+                    Intent intent = new Intent(this, OtherActivity.class);
+                    PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
+                    Notification notify = new Notification.Builder(this)
+                            // 设置打开该通知，该通知自动消失
+                            .setAutoCancel(true)
+                            // 设置显示在状态栏的通知提示信息
+                            .setTicker("有新消息")
+                            // 设置通知的图标
+                            .setSmallIcon(R.drawable.notify)
+                            // 设置通知内容的标题
+                            .setContentTitle("一条新通知")
+                            // 设置通知内容
+                            .setContentText("恭喜你，您加薪了，工资增加20%!")
+                            // 设置使用系统默认的声音、默认LED灯
+                            .setDefaults(Notification.DEFAULT_SOUND|Notification.DEFAULT_LIGHTS)
+                            // 设置通知的自定义声音
+                            .setSound(Uri.parse("android.resource://org.crazyit.ui/"
+                                    + R.raw.msg))
+                            .setWhen(System.currentTimeMillis())
+                            // 设改通知将要启动程序的Intent
+                            .setContentIntent(pi)  // ①
+                            .build();
+                    // 发送通知
+                    nm.notify(NOTIFICATION_ID, notify);
+                }
                 break;
             case R.id.btn_test8_receive:
 // 取消通知
                 nm.cancel(NOTIFICATION_ID);
 
                 break;
+        }
+    }
+
+    private void initMessageNotify() {
+        SimpleShowDialog.Builder builder = new SimpleShowDialog.Builder(mContext);
+        builder.setStringOrder("您暂未开通物泊消息通知的权限\n请前往设置");
+        builder.setPositiveButton("下次再说", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setNegativeButton("去设置", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                requestPermission();
+            }
+        });
+        builder.create().show();
+    }
+
+    protected void requestPermission() {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Intent intent = new Intent();
+            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+            intent.putExtra("app_package", getPackageName());
+            intent.putExtra("app_uid", getApplicationInfo().uid);
+            startActivity(intent);
+        } else if (android.os.Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
+            Intent intent = new Intent();
+            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            intent.addCategory(Intent.CATEGORY_DEFAULT);
+            intent.setData(Uri.parse("package:" + getPackageName()));
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(Settings.ACTION_SETTINGS);
+            startActivity(intent);
         }
     }
 }

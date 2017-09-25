@@ -124,7 +124,7 @@ public class Chapter15Fragment extends BaseFragment {
 
     private void initData() {
         mBeen = new ArrayList<>();
-        String s = FileUtil.readFromAssets(getContext(), "chapter15.txt");
+        String s = FileUtil.readFromAssets(getContext(), "chapter15.json");
         Gson gson = new Gson();
         CatalogBean catalogBean = gson.fromJson(s, CatalogBean.class);
         mBeen.clear();
