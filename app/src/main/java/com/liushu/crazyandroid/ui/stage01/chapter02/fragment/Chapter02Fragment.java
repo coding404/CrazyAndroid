@@ -40,7 +40,13 @@ import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020508Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020509Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020600Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020700Activity;
-import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020800Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020801Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020802Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020803Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020804Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020805Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020806Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020807Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020900Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo021000Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo021100Activity;
@@ -258,13 +264,7 @@ public class Chapter02Fragment extends BaseFragment {
                 break;
             case 7:
                 //各种杂项组件
-                // TODO: 2017/6/2 功能分开写
-                Intent intent0700 = new Intent(getContext(), Demo020800Activity.class);
-                intent0700.putExtra("groupPosition", groupPosition);
-                intent0700.putExtra("childPosition", childPosition);
-                startActivity(intent0700);
-
-               /* if (childPosition == 0) {
+                if (childPosition == 0) {
                     //带图片的消息提示
                     Intent intent0200 = new Intent(getContext(), Demo020801Activity.class);
                     startActivity(intent0200);
@@ -285,18 +285,14 @@ public class Chapter02Fragment extends BaseFragment {
                     Intent intent0204 = new Intent(getContext(), Demo020805Activity.class);
                     startActivity(intent0204);
                 } else if (childPosition == 5) {
-                    //通话记录界面
+                    //可垂直和水平滚动的视图
                     Intent intent0205 = new Intent(getContext(), Demo020806Activity.class);
                     startActivity(intent0205);
                 } else if (childPosition == 6) {
-                    //可垂直和水平滚动的视图
+                    //加薪通知
                     Intent intent0206 = new Intent(getContext(), Demo020807Activity.class);
                     startActivity(intent0206);
-                } else if (childPosition == 7) {
-                    //加薪通知
-                    Intent intent0206 = new Intent(getContext(), Demo020808Activity.class);
-                    startActivity(intent0206);
-                }*/
+                }
                 break;
             case 8:
                 //UI组件，对话框
