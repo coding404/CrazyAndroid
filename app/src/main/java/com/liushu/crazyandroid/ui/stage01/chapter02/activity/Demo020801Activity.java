@@ -37,7 +37,8 @@ public class Demo020801Activity extends BaseActivity {
 
     @Override
     public void initView() {
-        mTvTitle.setText("带图片的消息提示");
+        mTvTitle.setText("Toast工具类");
+     //   ToastUitl.showShort("");
     }
 
 

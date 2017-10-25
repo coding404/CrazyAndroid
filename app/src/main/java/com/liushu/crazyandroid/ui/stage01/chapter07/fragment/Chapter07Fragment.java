@@ -135,7 +135,6 @@ public class Chapter07Fragment extends BaseFragment {
 
                 } else if (childPosition == 1) {
                     //在指定点爆炸
-                    // TODO: 2017/6/2 更换基类
                     Intent intent = new Intent(getContext(), Demo070301Activity.class);
                     startActivity(intent);
                 }

@@ -138,7 +138,7 @@
       "chapterName": "2.8各种杂项组件",
       "paragraphs": [
         {
-          "paragraphName": "带图片的消息提示"
+          "paragraphName": "Toast工具类"
         },
         {
           "paragraphName": "选择您的生日"
@@ -156,7 +156,7 @@
           "paragraphName": "可垂直和水平滚动的视图"
         },
         {
-          "paragraphName": "加薪通知"
+          "paragraphName": "消息通知工具类"
         }
       ]
     },
@@ -164,22 +164,10 @@
       "chapterName": "2.9第七组UI组件，对话框",
       "paragraphs": [
         {
-          "paragraphName": "显示提示消息的对话框"
+          "paragraphName": "Dialog的使用方法"
         },
         {
-          "paragraphName": "简单列表项对话框"
-        },
-        {
-          "paragraphName": "单选列表项对话框"
-        },
-        {
-          "paragraphName": "多选列表项对话框"
-        },
-        {
-          "paragraphName": "自定义列表项对话框"
-        },
-        {
-          "paragraphName": "自定义View对话框"
+          "paragraphName": "dialogfragment的使用方法"
         }
       ]
     },

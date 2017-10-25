@@ -47,7 +47,8 @@ import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020804Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020805Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020806Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020807Activity;
-import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020900Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020901Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo020902Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo021000Activity;
 import com.liushu.crazyandroid.ui.stage01.chapter02.activity.Demo021100Activity;
 import com.liushu.crazyandroid.utils.FileUtil;
@@ -265,7 +266,7 @@ public class Chapter02Fragment extends BaseFragment {
             case 7:
                 //各种杂项组件
                 if (childPosition == 0) {
-                    //带图片的消息提示
+                    //Toast工具类
                     Intent intent0200 = new Intent(getContext(), Demo020801Activity.class);
                     startActivity(intent0200);
                 } else if (childPosition == 1) {
@@ -289,18 +290,22 @@ public class Chapter02Fragment extends BaseFragment {
                     Intent intent0205 = new Intent(getContext(), Demo020806Activity.class);
                     startActivity(intent0205);
                 } else if (childPosition == 6) {
-                    //加薪通知
+                    //消息通知工具类
                     Intent intent0206 = new Intent(getContext(), Demo020807Activity.class);
                     startActivity(intent0206);
                 }
                 break;
             case 8:
-                //UI组件，对话框
-                // TODO: 2017/6/2 功能分开写
-                Intent intent0800 = new Intent(getContext(), Demo020900Activity.class);
-                intent0800.putExtra("groupPosition", groupPosition);
-                intent0800.putExtra("childPosition", childPosition);
-                startActivity(intent0800);
+                if (childPosition == 0) {
+                    //Dialog的使用方法
+                    Intent intent0801 = new Intent(getContext(), Demo020901Activity.class);
+                    startActivity(intent0801);
+                } else {
+                    // TODO: 2017/9/29 Dialogfragment的用法
+                    Intent intent0802 = new Intent(mContext, Demo020902Activity.class);
+                    startActivity(intent0802);
+                }
+
                 break;
             case 9:
                 //菜单

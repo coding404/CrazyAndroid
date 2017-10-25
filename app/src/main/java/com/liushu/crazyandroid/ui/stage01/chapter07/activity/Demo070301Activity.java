@@ -1,6 +1,5 @@
 package com.liushu.crazyandroid.ui.stage01.chapter07.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.AnimationDrawable;
@@ -9,13 +8,13 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
 import java.lang.reflect.Field;
 
-public class Demo070301Activity extends Activity {
+public class Demo070301Activity extends BaseActivity {
 
    /* @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +29,17 @@ public class Demo070301Activity extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
+    public int getLayoutId() {
+        return -1;
+    }
+
+    @Override
+    public View getLayoutView() {
+
         // 使用FrameLayout布局管理器，它允许组件自己控制位置
         FrameLayout frame = new FrameLayout(this);
         setContentView(frame);
@@ -65,10 +75,21 @@ public class Demo070301Activity extends Activity {
                 return false;
             }
         });
+        return frame;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+
     }
 
     // 定义一个自定义View，该自定义View用于播放“爆炸”效果
-    class MyView extends ImageView {
+    class MyView extends android.support.v7.widget.AppCompatImageView {
         public MyView(Context context) {
             super(context);
         }

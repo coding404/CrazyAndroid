@@ -1,16 +1,21 @@
 package com.liushu.crazyandroid.ui.stage01.chapter06.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.jaydenxiao.common.base.BaseFragment;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.adapter.MyExpandableListViewAdapter;
 import com.liushu.crazyandroid.bean.CatalogBean;
+import com.liushu.crazyandroid.ui.stage01.chapter06.activity.Demo060401Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter06.activity.Demo060402Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter06.activity.Demo060403Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter06.activity.Demo060404Activity;
+import com.liushu.crazyandroid.ui.stage01.chapter06.activity.Demo060501Activity;
 import com.liushu.crazyandroid.utils.FileUtil;
 
 import java.util.ArrayList;
@@ -54,8 +59,8 @@ public class Chapter06Fragment extends BaseFragment {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 //界面跳转
-                //  JumpActivity(groupPosition,childPosition);
-                Toast.makeText(getContext(), "groupPosition=" + groupPosition + ",childPosition=" + childPosition, Toast.LENGTH_SHORT).show();
+                JumpActivity(groupPosition, childPosition);
+                // Toast.makeText(getContext(), "groupPosition=" + groupPosition + ",childPosition=" + childPosition, Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
@@ -65,98 +70,38 @@ public class Chapter06Fragment extends BaseFragment {
 
         switch (groupPosition) {
             case 0:
-                if (childPosition == 0) {
 
-
-                } else if (childPosition == 1) {
-
-
-                } else if (childPosition == 2) {
-
-
-                }
                 break;
             case 1:
-                if (childPosition == 0) {
 
-
-                } else if (childPosition == 1) {
-
-
-                } else if (childPosition == 2) {
-
-
-                } else if (childPosition == 3) {
-
-
-                } else if (childPosition == 4) {
-
-
-                }
                 break;
             case 2:
-                if (childPosition == 0) {
 
-
-                } else if (childPosition == 1) {
-
-
-                } else if (childPosition == 2) {
-
-
-                } else if (childPosition == 3) {
-
-
-                } else if (childPosition == 4) {
-
-
-                } else if (childPosition == 5) {
-
-
-                } else if (childPosition == 6) {
-
-
-                }
                 break;
             case 3:
                 if (childPosition == 0) {
-
-
+                    //ToastUitl.showShort("高亮显示正在输入的文本框");
+                    Intent intent = new Intent(mContext, Demo060401Activity.class);
+                    startActivity(intent);
                 } else if (childPosition == 1) {
-
-
+                    //  ToastUitl.showShort("定制拖动条的外观");
+                    Intent intent = new Intent(mContext, Demo060402Activity.class);
+                    startActivity(intent);
                 } else if (childPosition == 2) {
-
-
+                    // ToastUitl.showShort("椭圆形渐变背景的文本框");
+                    Intent intent = new Intent(mContext, Demo060403Activity.class);
+                    startActivity(intent);
+                } else if (childPosition == 3) {
+                    //  ToastUitl.showShort("徐徐展开的风景");
+                    Intent intent = new Intent(mContext, Demo060404Activity.class);
+                    startActivity(intent);
                 }
                 break;
             case 4:
                 if (childPosition == 0) {
-
-
-                } else if (childPosition == 1) {
-
-
-                } else if (childPosition == 2) {
-
-
-                } else if (childPosition == 3) {
-
-
-                } else if (childPosition == 4) {
-
-
-                } else if (childPosition == 5) {
-
-
-                } else if (childPosition == 6) {
-
-
-                } else if (childPosition == 7) {
-
-
-                } else if (childPosition == 8) {
-
+                    //ToastUitl.showShort("不断渐变的背景色");
+                    Intent intent= new Intent(mContext, Demo060501Activity.class);
+                    startActivity(intent);
 
                 }
                 break;

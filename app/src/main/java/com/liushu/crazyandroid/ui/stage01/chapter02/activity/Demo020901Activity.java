@@ -2,27 +2,27 @@ package com.liushu.crazyandroid.ui.stage01.chapter02.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
-import com.liushu.crazyandroid.R;
+import com.jaydenxiao.common.base.BaseActivity;
 import com.jaydenxiao.common.commonutils.ToastUitl;
+import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.widget.OneChioceDialog;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-public class Demo020900Activity extends AppCompatActivity {
+public class Demo020901Activity extends BaseActivity {
     @Bind(R.id.ll020900_test0)
     LinearLayout mLl020900Test0;
     @Bind(R.id.ll020900_test1)
@@ -47,70 +47,21 @@ public class Demo020900Activity extends AppCompatActivity {
     Button mBtnCustomList;
     @Bind(R.id.btn_custom_view)
     Button mBtnCustomView;
-    private int mGroupPosition;
-    private int mChildPosition;
+    @Bind(R.id.iv_back)
+    ImageView mIvBack;
+    @Bind(R.id.tv_title)
+    TextView mTvTitle;
+    @Bind(R.id.btn_onechioce_self)
+    Button mBtnOnechioceSelf;
+    @Bind(R.id.activity_demo020900)
+    LinearLayout mActivityDemo020900;
+
     private String[] mStrings = {"111", "222", "334", "442134", "666"};
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo020900);
-        ButterKnife.bind(this);
-        mGroupPosition = getIntent().getIntExtra("groupPosition", -1);
-        mChildPosition = getIntent().getIntExtra("childPosition", -1);
-        initView(mChildPosition);
-    }
-
-    private void initView(int childPosition) {
-        switch (childPosition) {
-            case 0:
-                mLl020900Test0.setVisibility(View.VISIBLE);
-                initData0();
-                break;
-            case 1:
-                mLl020900Test1.setVisibility(View.VISIBLE);
-                initData1();
-                break;
-            case 2:
-                mLl020900Test2.setVisibility(View.VISIBLE);
-                initData2();
-                break;
-            case 3:
-                mLl020900Test3.setVisibility(View.VISIBLE);
-                initData3();
-                break;
-            case 4:
-                mLl020900Test4.setVisibility(View.VISIBLE);
-                initData4();
-                break;
-            case 5:
-                mLl020900Test5.setVisibility(View.VISIBLE);
-                initData5();
-                break;
-        }
-
-
-    }
-
-    private void initData0() {
-    }
-
-    private void initData1() {
-    }
-
-    private void initData2() {
-    }
-
-    private void initData3() {
-    }
-
-    private void initData4() {
-    }
-
-    private void initData5() {
-    }
-
-    @OnClick({R.id.btn_show_message, R.id.btn_simple_list, R.id.btn_onechioce_list, R.id.btn_onechioce_self, R.id.btn_morechioce_list, R.id.btn_custom_list, R.id.btn_custom_view})
+    @OnClick({R.id.btn_show_message, R.id.btn_simple_list,
+            R.id.btn_onechioce_list, R.id.btn_onechioce_self,
+            R.id.btn_morechioce_list, R.id.btn_custom_list,
+            R.id.btn_custom_view, R.id.iv_back})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_show_message:
@@ -134,12 +85,17 @@ public class Demo020900Activity extends AppCompatActivity {
             case R.id.btn_onechioce_self:
                 showDialog6();
                 break;
+            case R.id.iv_back:
+                finish();
+                break;
+            default:
+                break;
         }
     }
 
     private void showDialog6() {
 
-        final OneChioceDialog.Builder builder = new OneChioceDialog.Builder(Demo020900Activity.this);
+        final OneChioceDialog.Builder builder = new OneChioceDialog.Builder(Demo020901Activity.this);
         builder.setTitle("需要填写的标题");
         List<String> list = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
@@ -298,5 +254,20 @@ public class Demo020900Activity extends AppCompatActivity {
             }
         });
         builder.create().show();
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_demo020901;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
+        mTvTitle.setText("Dialog的使用方法");
     }
 }

@@ -87,7 +87,7 @@
         </activity>
         <activity android:name=".ui.stage01.chapter02.activity.Demo020800Activity">
         </activity>
-        <activity android:name=".ui.stage01.chapter02.activity.Demo020900Activity">
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020901Activity">
         </activity>
         <activity android:name=".ui.stage01.chapter02.activity.Demo021000Activity">
         </activity>
@@ -240,6 +240,18 @@
         <activity android:name=".ui.stage01.chapter02.activity.Demo020806Activity">
         </activity>
         <activity android:name=".ui.stage01.chapter02.activity.Demo020807Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter02.activity.Demo020902Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter06.activity.Demo060401Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter06.activity.Demo060402Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter06.activity.Demo060403Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter06.activity.Demo060404Activity">
+        </activity>
+        <activity android:name=".ui.stage01.chapter06.activity.Demo060501Activity">
         </activity>
     </application>
 
