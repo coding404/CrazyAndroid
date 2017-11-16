@@ -6,14 +6,17 @@ def releaseTime() {
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.liushu.crazyandroid"
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 5
         versionName "2.0.3"
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -22,30 +25,30 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             //apk命名
             android.applicationVariants.all { variant ->
-                variant.outputs.each { output ->
-                    def outputFile = output.outputFile
-                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                        //这里修改apk文件名
-                        def fileName = "crazyAndroid-${defaultConfig.versionCode}-${defaultConfig.versionName}-${releaseTime()}.apk"
-                        output.outputFile = new File(outputFile.parent, fileName)
-                    }
+                variant.outputs.all {
+                    outputFileName = "crazyAndroid-${defaultConfig.versionCode}-${defaultConfig.versionName}-${releaseTime()}.apk"
                 }
             }
-        }
-        debug {
-            buildConfigField "boolean", "LOG_DEBUG", "true"
+            debug {
+                buildConfigField "boolean", "LOG_DEBUG", "true"
+            }
         }
     }
 }
+repositories {
+    maven { url "https://jitpack.io" }
 
+}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+   /* androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
-    })
+    })*/
+
     //gson解析
     //导航栏
-    /*  compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'*/
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+
     //菜单栏
     compile project(':common')
     //view注解
@@ -59,4 +62,5 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
     testCompile 'junit:junit:4.12'
+
 }
