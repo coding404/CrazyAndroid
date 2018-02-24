@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ExpandableListView;
 
+import com.alipay.security.mobile.module.commonutils.CommonUtils;
 import com.google.gson.Gson;
 import com.jaydenxiao.common.base.BaseFragment;
 import com.jaydenxiao.common.commonutils.ToastUitl;
@@ -72,7 +73,6 @@ public class Chapter11Fragment extends BaseFragment {
             case 0:
                 if (childPosition == 0) {
                     //ToastUitl.showShort("音乐的示波器、均衡、重低音和音场");
-                    // TODO: 2017/6/5 更换基类
                     Intent intent = new Intent(getContext(), Demo110000Activity.class);
                     startActivity(intent);
 

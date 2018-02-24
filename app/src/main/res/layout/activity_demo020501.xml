@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_demo020501"
     android:layout_width="match_parent"
@@ -9,7 +8,7 @@
 
     <include
         android:id="@+id/include_title"
-        layout="@layout/head_title_layout"/>
+        layout="@layout/head_title_layout" />
 
     <ListView
         android:layout_width="match_parent"
@@ -17,6 +16,6 @@
         android:layout_below="@id/include_title"
         android:divider="#00f"
         android:dividerHeight="10dp"
-        android:entries="@array/books"/>
+        android:entries="@array/books" />
 
 </RelativeLayout>

@@ -4,8 +4,14 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import com.google.gson.Gson;
+import com.jaydenxiao.common.basebean.BaseParamBean;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 
 /**
  * des:网络管理工具
@@ -66,5 +72,11 @@ public class NetWorkUtils {
             return true;
         }
         return false;
+    }
+
+    public static <T extends BaseParamBean> RequestBody getRequestBody(T parambean){
+        Gson gson=new Gson();
+        //  Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm").create();
+        return  RequestBody.create(MediaType.parse("Content-Type, application/json"),  gson.toJson(parambean));
     }
 }

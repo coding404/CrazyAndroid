@@ -35,9 +35,4 @@ public class Demo020501Activity extends BaseActivity {
         finish();
     }
 
-   /* @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo020501);
-    }*/
 }

@@ -68,36 +68,41 @@ public class Demo020807Activity extends BaseActivity {
         mLvNotify.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 0:
-                        notify_normal_singLine();
-                        break;
-                    case 1:
-                        notify_normal_moreLine();
-                        break;
-                    case 2:
-                        notify_mailbox();
-                        break;
-                    case 3:
-                        notify_bigPic();
-                        break;
-                    case 4:
-                        notify_customview();
-                        break;
-                    case 5:
-                        notify_buttom();
-                        break;
-                    case 6:
-                        notify_progress();
-                        break;
-                    case 7:
-                        notify_headUp();
-                        break;
-                    case 8:
-                        if (currentNotify != null) {
-                            currentNotify.clear();
-                        }
-                        break;
+
+                if (!NotifyUtil.isNotificationEnabled(mContext)) {
+                    initMessageNotify();
+                } else {
+                    switch (position) {
+                        case 0:
+                            notify_normal_singLine();
+                            break;
+                        case 1:
+                            notify_normal_moreLine();
+                            break;
+                        case 2:
+                            notify_mailbox();
+                            break;
+                        case 3:
+                            notify_bigPic();
+                            break;
+                        case 4:
+                            notify_customview();
+                            break;
+                        case 5:
+                            notify_buttom();
+                            break;
+                        case 6:
+                            notify_progress();
+                            break;
+                        case 7:
+                            notify_headUp();
+                            break;
+                        case 8:
+                            if (currentNotify != null) {
+                                currentNotify.clear();
+                            }
+                            break;
+                    }
                 }
             }
         });
@@ -115,7 +120,7 @@ public class Demo020807Activity extends BaseActivity {
                 } else {
                     // 创建一个启动其他Activity的Intent
                     Intent intent = new Intent(this, OtherActivity.class);
-                    PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
+                    PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                     Notification notify = new Notification.Builder(this)
                             // 设置打开该通知，该通知自动消失
                             .setAutoCancel(true)
@@ -397,7 +402,7 @@ public class Demo020807Activity extends BaseActivity {
 
     private void initMessageNotify() {
         SimpleShowDialog.Builder builder = new SimpleShowDialog.Builder(mContext);
-        builder.setStringOrder("您暂未开通物泊消息通知的权限\n请前往设置");
+        builder.setStringOrder("您暂未开通消息通知的权限\n请前往设置");
         builder.setPositiveButton("下次再说", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

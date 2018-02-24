@@ -29,6 +29,7 @@ public class Demo020902Activity extends BaseActivity {
     @Override
     public void initView() {
         mTvTitle.setText("dialogfragment的使用方法");
+        // TODO: 2018/2/24 dialogFragment未完成
     }
 
     @OnClick(R.id.iv_back)

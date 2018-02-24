@@ -3,7 +3,8 @@
           xmlns:toos="http://schemas.android.com/apk/res-auto"
           package="com.jaydenxiao.common">
 
-<application
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application
     android:supportsRtl="true"
     android:theme="@style/AppTheme"
     >

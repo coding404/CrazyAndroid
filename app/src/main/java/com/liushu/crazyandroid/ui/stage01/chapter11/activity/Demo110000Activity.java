@@ -24,12 +24,13 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Demo110000Activity extends AppCompatActivity {
+public class Demo110000Activity extends BaseActivity {
     // 定义播放声音的MediaPlayer
     private MediaPlayer mPlayer;
     // 定义系统的示波器
@@ -45,14 +46,17 @@ public class Demo110000Activity extends AppCompatActivity {
     private List<String> reverbVals = new ArrayList<String>();
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // 设置控制音乐声音
-        setVolumeControlStream(AudioManager.STREAM_MUSIC);
-        layout = new LinearLayout(this);
-        layout.setOrientation(LinearLayout.VERTICAL);
-        setContentView(layout);
-        // setContentView(R.layout.activity_demo110000);
+    public int getLayoutId() {
+        return -1;
+    }
+
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
         // 创建MediaPlayer对象
         mPlayer = MediaPlayer.create(this, R.raw.beautiful);
         // 初始化示波器
@@ -65,6 +69,15 @@ public class Demo110000Activity extends AppCompatActivity {
         setupPresetReverb();
         // 开发播放音乐
         mPlayer.start();
+    }
+
+    @Override
+    public View getLayoutView() {
+
+        setVolumeControlStream(AudioManager.STREAM_MUSIC);
+        layout = new LinearLayout(this);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        return layout;
     }
 
     private void setupVisualizer() {

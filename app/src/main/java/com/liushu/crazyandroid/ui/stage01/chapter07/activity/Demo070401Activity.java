@@ -30,9 +30,11 @@ public class Demo070401Activity extends BaseActivity {
     // 记录蝴蝶ImageView下一个位置的坐标
     float nextX = 0;
     float nextY = 0;
-    Handler handler = new Handler() {
+    private Timer mTimer;
+    private Handler handler = new Handler(new Handler.Callback() {
+
         @Override
-        public void handleMessage(Message msg) {
+        public boolean handleMessage(Message msg) {
             if (msg.what == 0x123) {
                 // 横向上一直向右飞
                 if (nextX > 320) {
@@ -50,8 +52,9 @@ public class Demo070401Activity extends BaseActivity {
                 // 开始位移动画
                 mButterfly.startAnimation(anim); // ①
             }
+            return false;
         }
-    };
+    });
 
     @Override
     public int getLayoutId() {
@@ -66,6 +69,7 @@ public class Demo070401Activity extends BaseActivity {
     @Override
     public void initView() {
         mTvTitleName.setText("蝴蝶飞舞");
+        mTimer = new Timer();
     }
 
     @OnClick({R.id.iv_back, R.id.butterfly})
@@ -76,10 +80,8 @@ public class Demo070401Activity extends BaseActivity {
                 break;
             case R.id.butterfly:
                 AnimationDrawable butterfly = (AnimationDrawable) mButterfly.getBackground();
-                // 开始播放蝴蝶振翅的逐帧动画
-                butterfly.start();  // ②
-                // 通过定制器控制每0.2秒运行一次TranslateAnimation动画
-                new Timer().schedule(new TimerTask() {
+                butterfly.start();
+                mTimer.schedule(new TimerTask() {
                     @Override
                     public void run() {
                         handler.sendEmptyMessage(0x123);
@@ -87,5 +89,11 @@ public class Demo070401Activity extends BaseActivity {
                 }, 0, 200);
                 break;
         }
+    }
+
+    @Override
+    protected void onStop() {
+        mTimer.cancel();
+        super.onStop();
     }
 }
