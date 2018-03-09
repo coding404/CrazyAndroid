@@ -17,6 +17,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <!-- 授予该程序使用摄像头的权限 -->
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name=".app.AppApplication"
@@ -84,8 +85,6 @@
         <activity android:name=".ui.stage01.chapter02.activity.Demo020600Activity">
         </activity>
         <activity android:name=".ui.stage01.chapter02.activity.Demo020700Activity">
-        </activity>
-        <activity android:name=".ui.stage01.chapter02.activity.Demo020800Activity">
         </activity>
         <activity android:name=".ui.stage01.chapter02.activity.Demo020901Activity">
         </activity>
