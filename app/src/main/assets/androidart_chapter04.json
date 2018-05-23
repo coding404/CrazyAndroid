@@ -1,0 +1,54 @@
+{
+  "chapters": [
+    {
+      "chapterName": "4.1 初始ViewRoot和DectorView",
+      "paragraphs": [
+        {
+          "paragraphName": "初始ViewRoot和DectorView"
+        }
+      ]
+    },
+    {
+      "chapterName": "4.2 理解MeasureSpec",
+      "paragraphs": [
+        {
+          "paragraphName": "MeasureSpec"
+        },
+        {
+          "paragraphName": "MeasureSpec和LayoutParams的对应关系"
+        }
+      ]
+    },
+    {
+      "chapterName": "4.3 View的工作流程",
+      "paragraphs": [
+        {
+          "paragraphName": "measure过程"
+        },
+        {
+          "paragraphName": "layout过程"
+        },
+        {
+          "paragraphName": "draw过程"
+        }
+      ]
+    },
+    {
+      "chapterName": "4.4 自定义View",
+      "paragraphs": [
+        {
+          "paragraphName": "自定义View的分类"
+        },
+        {
+          "paragraphName": "自定义View须知"
+        },
+        {
+          "paragraphName": "自定义View示例"
+        },
+        {
+          "paragraphName": "自定义View的思想"
+        }
+      ]
+    }
+  ]
+}

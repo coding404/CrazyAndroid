@@ -1,0 +1,52 @@
+{
+  "chapters": [
+    {
+      "chapterName": "7.1 View动画",
+      "paragraphs": [
+        {
+          "paragraphName": "View动画的种类"
+        }
+      ]
+    },
+    {
+      "chapterName": "6.2 Drawable的分类",
+      "paragraphs": [
+        {
+          "paragraphName": "BitmapDrawable"
+        },
+        {
+          "paragraphName": "ShapeDrawable"
+        },
+        {
+          "paragraphName": "LayerDrawable"
+        },
+        {
+          "paragraphName": "StateListDrawable"
+        },
+        {
+          "paragraphName": "LevelListdrawable"
+        },
+        {
+          "paragraphName": "TransitionDrawable"
+        },
+        {
+          "paragraphName": "InsetDrawable"
+        },
+        {
+          "paragraphName": "ScaleDrawable"
+        },
+        {
+          "paragraphName": "ClipDrawable"
+        }
+      ]
+    },
+    {
+      "chapterName": "6.3 自定义Drawable",
+      "paragraphs": [
+        {
+          "paragraphName": "自定义Drawable"
+        }
+      ]
+    }
+  ]
+}

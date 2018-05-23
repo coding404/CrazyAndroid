@@ -1,0 +1,34 @@
+{
+  "chapters": [
+    {
+      "chapterName": "1.1 Activity的生命周期全面分析",
+      "paragraphs": [
+        {
+          "paragraphName": "典型情况下的生命周期分析"
+        },
+        {
+          "paragraphName": "异常情况下的生命周期分析"
+        }
+      ]
+    },
+    {
+      "chapterName": "1.2 Activity的启动模式",
+      "paragraphs": [
+        {
+          "paragraphName": "Activity的launchMode"
+        },
+        {
+          "paragraphName": "Activity的Flags"
+        }
+      ]
+    },
+    {
+      "chapterName": "1.3 IntentFilter的匹配规则",
+      "paragraphs": [
+        {
+          "paragraphName": "IntentFilter的匹配规则"
+        }
+      ]
+    }
+  ]
+}

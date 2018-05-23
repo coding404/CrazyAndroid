@@ -5,7 +5,7 @@ apply plugin: 'com.android.library'
 version = "1.2.1"
 android {
     compileSdkVersion 23
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '27.0.3'
     defaultConfig {
         minSdkVersion 11
         targetSdkVersion 23
@@ -20,8 +20,8 @@ android {
     }
 }
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:support-annotations:23.2.1'
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api 'com.android.support:support-annotations:23.2.1'
 }
 def siteUrl = 'https://github.com/misakuo/3dTagCloudAndroid'      // 项目的主页
 def gitUrl = 'https://github.com/misakuo/3dTagCloudAndroid.git'   // Git仓库的url
@@ -77,13 +77,13 @@ artifacts {
 
 Properties properties = new Properties()
 File file = project.rootProject.file('local.properties')
-if(file != null && file.exists()) {
+if (file != null && file.exists()) {
     println("\nBuilding on local machine......")
     properties.load(file.newDataInputStream())
 } else {
     println("\nBuilding on Travis......")
-    properties.put("bintray.user",System.getenv("USER"))
-    properties.put("bintray.apikey",System.getenv("TOKEN"))
+    properties.put("bintray.user", System.getenv("USER"))
+    properties.put("bintray.apikey", System.getenv("TOKEN"))
 }
 
 /*bintray {

@@ -1,0 +1,76 @@
+{
+  "chapters": [
+    {
+      "chapterName": "2.1 Activity IPC简介",
+      "paragraphs": [
+        {
+          "paragraphName": "Activity IPC简介"
+        }
+      ]
+    },
+    {
+      "chapterName": "2.2 Activity中的多进程模式",
+      "paragraphs": [
+        {
+          "paragraphName": "开启多进程模式"
+        },
+        {
+          "paragraphName": "多进程模式的运行机制"
+        }
+      ]
+    },
+    {
+      "chapterName": "2.3 IPC基础概念介绍",
+      "paragraphs": [
+        {
+          "paragraphName": "Serializable接口"
+        },
+        {
+          "paragraphName": "Parcelable接口"
+        },
+        {
+          "paragraphName": "Binder"
+        }
+      ]
+    },
+    {
+      "chapterName": "2.4 Android中的IPC方式",
+      "paragraphs": [
+        {
+          "paragraphName": "使用Bundle"
+        },
+        {
+          "paragraphName": "使用文件共享"
+        },
+        {
+          "paragraphName": "使用Messager"
+        },
+        {
+          "paragraphName": "使用AIDL"
+        },
+        {
+          "paragraphName": "使用ContentProvider"
+        },
+        {
+          "paragraphName": "使用Socket"
+        }
+      ]
+    },
+    {
+      "chapterName": "2.5 Binder连接池",
+      "paragraphs": [
+        {
+          "paragraphName": "Binder连接池"
+        }
+      ]
+    },
+    {
+      "chapterName": "2.6 选用合适的IPC方式",
+      "paragraphs": [
+        {
+          "paragraphName": "选用合适的IPC方式"
+        }
+      ]
+    }
+  ]
+}

@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity {
     @Bind(R.id.fl_body)
     FrameLayout mFlBody;
 
-    private String[] mTitles = {"第一阶段", "第二阶段", "第三阶段", "关于我"};
+    private String[] mTitles = {"疯狂android讲义", "android开发艺术探索", "第三阶段", "关于我"};
     private int[] mIconUnselectIds = {
             R.mipmap.ic_home_normal, R.mipmap.ic_girl_normal, R.mipmap.ic_video_normal, R.mipmap.ic_care_normal};
     private int[] mIconSelectIds = {

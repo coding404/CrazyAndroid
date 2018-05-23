@@ -1,0 +1,32 @@
+{
+  "chapters": [
+    {
+      "chapterName": "5.1 RemoteViews的应用",
+      "paragraphs": [
+        {
+          "paragraphName": "RemoteViews在通知栏上的应用"
+        },{
+          "paragraphName": "RemoteViews在桌面小部件上的应用"
+        },{
+          "paragraphName": "PendingIntent概述"
+        }
+      ]
+    },
+    {
+      "chapterName": "5.2 RemoteViews的内部机制",
+      "paragraphs": [
+        {
+          "paragraphName": "RemoteViews的内部机制"
+        }
+      ]
+    },
+    {
+      "chapterName": "5.3 RemoteViews的意义",
+      "paragraphs": [
+        {
+          "paragraphName": "RemoteViews的意义"
+        }
+      ]
+    }
+  ]
+}

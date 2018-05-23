@@ -1,0 +1,75 @@
+{
+  "chapters": [
+    {
+      "chapterName": "3.1 View的基础知识",
+      "paragraphs": [
+        {
+          "paragraphName": "什么是View"
+        },
+        {
+          "paragraphName": "View的位置参数"
+        },
+        {
+          "paragraphName": "MotionEvent和TouchSlop"
+        },
+        {
+          "paragraphName": "VelocityTracker、GestureDetector和Scoller"
+        }
+      ]
+    },
+    {
+      "chapterName": "3.2 View的滑动",
+      "paragraphs": [
+        {
+          "paragraphName": "使用scrollerTo和scrollerBy"
+        },
+        {
+          "paragraphName": "使用动画"
+        },
+        {
+          "paragraphName": "改变布局参数"
+        },
+        {
+          "paragraphName": "各种滑动方式的对比"
+        }
+      ]
+    },
+    {
+      "chapterName": "3.3 弹性滑动",
+      "paragraphs": [
+        {
+          "paragraphName": "使用Scroller"
+        },
+        {
+          "paragraphName": "通过动画"
+        },
+        {
+          "paragraphName": "使用延时策略"
+        }
+      ]
+    },
+    {
+      "chapterName": "3.4 View的事件分发机制",
+      "paragraphs": [
+        {
+          "paragraphName": "点击事件的传递规则"
+        },
+        {
+          "paragraphName": "事件分发的源码解析"
+        }
+      ]
+    },
+    {
+      "chapterName": "3.5 View的滑动冲突",
+      "paragraphs": [
+        {
+          "paragraphName": "常见的滑动冲突场景"
+        },{
+          "paragraphName": "滑动冲突的处理规则"
+        },{
+          "paragraphName": "滑动冲突的解决方式"
+        }
+      ]
+    }
+  ]
+}
