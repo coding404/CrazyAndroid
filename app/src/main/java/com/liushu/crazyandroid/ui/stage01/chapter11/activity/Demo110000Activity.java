@@ -51,11 +51,6 @@ public class Demo110000Activity extends BaseActivity {
     }
 
     @Override
-    public void initPresenter() {
-
-    }
-
-    @Override
     public void initView() {
         // 创建MediaPlayer对象
         mPlayer = MediaPlayer.create(this, R.raw.beautiful);

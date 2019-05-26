@@ -17,22 +17,22 @@ import com.liushu.crazyandroid.R;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 import static com.liushu.crazyandroid.R.id.cos;
 import static com.liushu.crazyandroid.R.id.sin;
 
 public class Demo070601Activity extends BaseActivity {
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(sin)
+    @BindView(sin)
     Button mSin;
-    @Bind(cos)
+    @BindView(cos)
     Button mCos;
-    @Bind(R.id.show)
+    @BindView(R.id.show)
     SurfaceView mShow;
     private SurfaceHolder holder;
     private Paint paint;
@@ -63,11 +63,6 @@ public class Demo070601Activity extends BaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo070601;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

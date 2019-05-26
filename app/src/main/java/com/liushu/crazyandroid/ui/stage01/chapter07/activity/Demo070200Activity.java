@@ -10,25 +10,20 @@ import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.widget.AircraftView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo070200Activity extends BaseActivity {
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.av_test)
+    @BindView(R.id.av_test)
     AircraftView mAvTest;
 
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo070200;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

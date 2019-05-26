@@ -11,28 +11,23 @@ import android.widget.Toast;
 import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo020801Activity extends BaseActivity {
 
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView mTvTitle;
-    @Bind(R.id.btn_simple)
+    @BindView(R.id.btn_simple)
     Button mBtnSimple;
-    @Bind(R.id.btn_image)
+    @BindView(R.id.btn_image)
     Button mBtnImage;
 
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo020801;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override
@@ -49,7 +44,7 @@ public class Demo020801Activity extends BaseActivity {
                 finish();
                 break;
             case R.id.btn_simple:
-                Toast.makeText(mContext, "简单的提示", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getMContext(), "简单的提示", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_image:
                 Toast toast = new Toast(this);

@@ -11,26 +11,26 @@ import com.liushu.crazyandroid.R;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo020202Activity extends BaseActivity {
 
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.view01)
+    @BindView(R.id.view01)
     TextView mView01;
-    @Bind(R.id.view02)
+    @BindView(R.id.view02)
     TextView mView02;
-    @Bind(R.id.view03)
+    @BindView(R.id.view03)
     TextView mView03;
-    @Bind(R.id.view04)
+    @BindView(R.id.view04)
     TextView mView04;
-    @Bind(R.id.view05)
+    @BindView(R.id.view05)
     TextView mView05;
-    @Bind(R.id.view06)
+    @BindView(R.id.view06)
     TextView mView06;
     private int currentColor = 0;
     private int[] colors = new int[]{
@@ -68,10 +68,6 @@ public class Demo020202Activity extends BaseActivity {
         return R.layout.activity_demo020202;
     }
 
-    @Override
-    public void initPresenter() {
-
-    }
 
     @Override
     public void initView() {

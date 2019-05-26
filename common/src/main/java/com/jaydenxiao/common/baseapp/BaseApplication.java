@@ -20,10 +20,6 @@ public class BaseApplication extends Application {
     }
 
     public static Context getAppContext() {
-        if (baseApplication==null){
-
-            Log.e("6666","22222222222222222");
-        }
 
         return baseApplication;
     }

@@ -13,15 +13,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo020504Activity extends BaseActivity {
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.lv_test)
+    @BindView(R.id.lv_test)
     ListView mLvTest;
     private String[] names = {"虎头", "弄玉", "李清照", "李白"};
     private String[] descs = {"一个可爱的女孩", "一个擅长音乐的女孩", "一个擅长文学的女性", "一个浪漫主义诗人"};
@@ -32,10 +32,6 @@ public class Demo020504Activity extends BaseActivity {
         return R.layout.activity_demo020504;
     }
 
-    @Override
-    public void initPresenter() {
-
-    }
 
     @Override
     public void initView() {

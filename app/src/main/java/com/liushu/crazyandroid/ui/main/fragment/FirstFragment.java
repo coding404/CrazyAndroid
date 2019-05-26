@@ -34,7 +34,7 @@ import com.liushu.crazyandroid.widget.PagerSlidingTabStrip;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 
 /**
@@ -43,9 +43,9 @@ import butterknife.Bind;
 
 public class FirstFragment extends BaseFragment {
 
-    @Bind(R.id.tab_layout)
+    @BindView(R.id.tab_layout)
     TabLayout mTabLayout;
-    @Bind(R.id.vp_first)
+    @BindView(R.id.vp_first)
     ViewPager mVpFirst;
     private PagerSlidingTabStrip ta111bs;
     private MyPagerAdapter mPagerAdapter;

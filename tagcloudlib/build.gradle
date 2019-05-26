@@ -4,11 +4,11 @@ apply plugin: 'com.android.library'
 
 version = "1.2.1"
 android {
-    compileSdkVersion 23
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
     defaultConfig {
-        minSdkVersion 11
-        targetSdkVersion 23
+        minSdkVersion 18
+        targetSdkVersion 28
         versionCode 1
         versionName version
     }
@@ -21,7 +21,7 @@ android {
 }
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-    api 'com.android.support:support-annotations:23.2.1'
+    api 'com.android.support:support-annotations:28.0.0'
 }
 def siteUrl = 'https://github.com/misakuo/3dTagCloudAndroid'      // 项目的主页
 def gitUrl = 'https://github.com/misakuo/3dTagCloudAndroid.git'   // Git仓库的url

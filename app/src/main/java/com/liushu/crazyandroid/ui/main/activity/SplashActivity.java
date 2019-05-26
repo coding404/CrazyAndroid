@@ -14,18 +14,18 @@ import com.moxun.tagcloudlib.view.TagCloudView;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class SplashActivity extends BaseActivity {
 
-    @Bind(R.id.tag_cloud)
+    @BindView(R.id.tag_cloud)
     TagCloudView mTagCloud;
-    @Bind(R.id.tag_text)
+    @BindView(R.id.tag_text)
     Button mTagText;
-    @Bind(R.id.tag_view)
+    @BindView(R.id.tag_view)
     Button mTagView;
-    @Bind(R.id.tag_vector)
+    @BindView(R.id.tag_vector)
     Button mTagVector;
 
     private TextTagsAdapter textTagsAdapter;
@@ -37,11 +37,6 @@ public class SplashActivity extends BaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_splash;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

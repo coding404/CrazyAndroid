@@ -37,8 +37,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo110200Activity extends BaseActivity {
@@ -51,9 +50,9 @@ public class Demo110200Activity extends BaseActivity {
         ORIENTATIONS.append(Surface.ROTATION_270, 180);
     }
 
-    @Bind(R.id.texture)
+    @BindView(R.id.texture)
     AutoFitTextureView mTexture;
-    @Bind(R.id.capture)
+    @BindView(R.id.capture)
     ImageButton mCapture;
 
     private AutoFitTextureView textureView;
@@ -130,11 +129,6 @@ public class Demo110200Activity extends BaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo110200;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

@@ -11,8 +11,7 @@ import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
 import java.util.List;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 import static com.liushu.crazyandroid.R.id.providers;
@@ -20,21 +19,16 @@ import static com.liushu.crazyandroid.R.id.providers;
 public class Demo160100Activity extends BaseActivity {
 
     LocationManager lm;
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(providers)
+    @BindView(providers)
     ListView mProviders;
 
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo160100;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

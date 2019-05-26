@@ -15,28 +15,22 @@ import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
 import java.util.ArrayList;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo080303Activity extends BaseActivity {
     // 记录手机上已有的手势库
     GestureLibrary gestureLibrary;
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.gesture_test)
+    @BindView(R.id.gesture_test)
     GestureOverlayView mGestureTest;
 
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo080303;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

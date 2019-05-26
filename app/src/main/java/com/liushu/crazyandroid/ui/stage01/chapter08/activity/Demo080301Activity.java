@@ -11,8 +11,7 @@ import android.widget.ViewFlipper;
 
 import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo080301Activity extends BaseActivity implements GestureDetector.OnGestureListener {
@@ -23,11 +22,11 @@ public class Demo080301Activity extends BaseActivity implements GestureDetector.
     Animation[] animations = new Animation[4];
     // 定义手势动作两点之间的最小距离
     final int FLIP_DISTANCE = 50;
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.flipper)
+    @BindView(R.id.flipper)
     ViewFlipper mFlipper;
 
     // 定义添加ImageView的工具方法
@@ -93,11 +92,6 @@ public class Demo080301Activity extends BaseActivity implements GestureDetector.
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo080301;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

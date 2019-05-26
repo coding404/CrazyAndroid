@@ -10,17 +10,17 @@ import android.widget.TextView;
 import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo020307Activity extends BaseActivity {
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.chronometer_test)
+    @BindView(R.id.chronometer_test)
     Chronometer mChronometerTest;
-    @Bind(R.id.btn_test)
+    @BindView(R.id.btn_test)
     Button mBtnTest;
 
     @Override
@@ -28,10 +28,6 @@ public class Demo020307Activity extends BaseActivity {
         return R.layout.activity_demo020307;
     }
 
-    @Override
-    public void initPresenter() {
-
-    }
 
     @Override
     public void initView() {

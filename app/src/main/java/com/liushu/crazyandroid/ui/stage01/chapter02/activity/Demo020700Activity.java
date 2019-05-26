@@ -27,35 +27,35 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class Demo020700Activity extends AppCompatActivity {
 
-    @Bind(R.id.vs_test01)
+    @BindView(R.id.vs_test01)
     ViewSwitcher mVsTest01;
-    @Bind(R.id.btn_prev)
+    @BindView(R.id.btn_prev)
     Button mBtnPrev;
-    @Bind(R.id.btn_next)
+    @BindView(R.id.btn_next)
     Button mBtnNext;
-    @Bind(R.id.rl_test01)
+    @BindView(R.id.rl_test01)
     RelativeLayout mRlTest01;
-    @Bind(R.id.is_test)
+    @BindView(R.id.is_test)
     ImageSwitcher mIsTest;
-    @Bind(R.id.ll_test02)
+    @BindView(R.id.ll_test02)
     LinearLayout mLlTest02;
-    @Bind(R.id.gl_test)
+    @BindView(R.id.gl_test)
     GridView mGlTest;
-    @Bind(R.id.vf_test)
+    @BindView(R.id.vf_test)
     ViewFlipper mVfTest;
-    @Bind(R.id.btn_pre02)
+    @BindView(R.id.btn_pre02)
     Button mBtnPre02;
-    @Bind(R.id.btn_auto02)
+    @BindView(R.id.btn_auto02)
     Button mBtnAuto02;
-    @Bind(R.id.btn_next02)
+    @BindView(R.id.btn_next02)
     Button mBtnNext02;
-    @Bind(R.id.rv_test03)
+    @BindView(R.id.rv_test03)
     RelativeLayout mRvTest03;
     private int mGroupPosition;
     private int mChildPosition;

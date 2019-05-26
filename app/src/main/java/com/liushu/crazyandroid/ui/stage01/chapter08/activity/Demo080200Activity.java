@@ -20,26 +20,26 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo080200Activity extends BaseActivity {
     MyDatabaseHelper dbHelper;
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.word)
+    @BindView(R.id.word)
     EditText mWord;
-    @Bind(R.id.detail)
+    @BindView(R.id.detail)
     EditText mDetail;
-    @Bind(R.id.insert)
+    @BindView(R.id.insert)
     Button mInsert;
-    @Bind(R.id.key)
+    @BindView(R.id.key)
     EditText mKey;
-    @Bind(R.id.search)
+    @BindView(R.id.search)
     Button mSearch;
-    @Bind(R.id.show)
+    @BindView(R.id.show)
     ListView mShow;
 
     protected ArrayList<Map<String, String>>
@@ -68,11 +68,6 @@ public class Demo080200Activity extends BaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo080200;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

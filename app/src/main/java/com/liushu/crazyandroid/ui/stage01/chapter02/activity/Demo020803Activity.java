@@ -11,20 +11,20 @@ import com.liushu.crazyandroid.R;
 
 import java.util.Calendar;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo020803Activity extends BaseActivity {
 
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView mTvTitle;
-    @Bind(R.id.date_picker)
+    @BindView(R.id.date_picker)
     DatePicker mDatePicker;
-    @Bind(R.id.time_picker)
+    @BindView(R.id.time_picker)
     TimePicker mTimePicker;
-    @Bind(R.id.et_test03)
+    @BindView(R.id.et_test03)
     EditText mEtTest03;
 
     private int mYear;
@@ -38,10 +38,6 @@ public class Demo020803Activity extends BaseActivity {
         return R.layout.activity_demo020803;
     }
 
-    @Override
-    public void initPresenter() {
-
-    }
 
     @Override
     public void initView() {

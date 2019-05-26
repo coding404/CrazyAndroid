@@ -15,22 +15,22 @@ import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.widget.BindService;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo100000Activity extends BaseActivity {
     Button bind, unbind, getServiceStatus;
     // 保持所启动的Service的IBinder对象
     BindService.MyBinder binder;
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.bind)
+    @BindView(R.id.bind)
     Button mBind;
-    @Bind(R.id.unbind)
+    @BindView(R.id.unbind)
     Button mUnbind;
-    @Bind(R.id.getServiceStatus)
+    @BindView(R.id.getServiceStatus)
     Button mGetServiceStatus;
     // 定义一个ServiceConnection对象
     private ServiceConnection conn = new ServiceConnection() {
@@ -53,11 +53,6 @@ public class Demo100000Activity extends BaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo100000;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

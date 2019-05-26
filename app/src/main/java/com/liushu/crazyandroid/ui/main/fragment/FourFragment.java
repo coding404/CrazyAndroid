@@ -18,7 +18,7 @@ import android.widget.TextView;
 import com.jaydenxiao.common.base.BaseFragment;
 import com.liushu.crazyandroid.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -29,11 +29,11 @@ import butterknife.OnClick;
 public class FourFragment extends BaseFragment {
 
 
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView mTvTitle;
-    @Bind(R.id.webView)
+    @BindView(R.id.webView)
     WebView mWebView;
     private WebSettings settings;
 

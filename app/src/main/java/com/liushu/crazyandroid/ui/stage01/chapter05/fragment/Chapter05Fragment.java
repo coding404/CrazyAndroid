@@ -18,7 +18,7 @@ import com.liushu.crazyandroid.utils.FileUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -26,7 +26,7 @@ import butterknife.ButterKnife;
  */
 
 public class Chapter05Fragment extends BaseFragment {
-    @Bind(R.id.expendlist_chapter05)
+    @BindView(R.id.expendlist_chapter05)
     ExpandableListView mElv_chapter05;
     private MyExpandableListViewAdapter mViewAdapter;
     private List<CatalogBean.ChaptersBean> mBeen;
@@ -277,11 +277,5 @@ public class Chapter05Fragment extends BaseFragment {
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this, rootView);
         return rootView;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }

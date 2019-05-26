@@ -14,28 +14,28 @@ import android.widget.SeekBar;
 
 import com.liushu.crazyandroid.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class Demo020600Activity extends AppCompatActivity {
 
-    @Bind(R.id.pb_01)
+    @BindView(R.id.pb_01)
     ProgressBar mPb01;
-    @Bind(R.id.pb_02)
+    @BindView(R.id.pb_02)
     ProgressBar mPb02;
-    @Bind(R.id.ll_progressbardemo01)
+    @BindView(R.id.ll_progressbardemo01)
     LinearLayout mLlProgressbardemo01;
-    @Bind(R.id.iv_lijiang)
+    @BindView(R.id.iv_lijiang)
     ImageView mIvLijiang;
-    @Bind(R.id.seekb_test)
+    @BindView(R.id.seekb_test)
     SeekBar mSeekbTest;
-    @Bind(R.id.ll_progressbardemo02)
+    @BindView(R.id.ll_progressbardemo02)
     LinearLayout mLlProgressbardemo02;
-    @Bind(R.id.iv_lijiang02)
+    @BindView(R.id.iv_lijiang02)
     ImageView mIvLijiang02;
-    @Bind(R.id.rb_test)
+    @BindView(R.id.rb_test)
     RatingBar mRbTest;
-    @Bind(R.id.ll_progressbardemo03)
+    @BindView(R.id.ll_progressbardemo03)
     LinearLayout mLlProgressbardemo03;
     private int mGroupPosition;
     private int mChildPosition;

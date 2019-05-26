@@ -1,7 +1,9 @@
 package com.liushu.crazyandroid.ui.stage01.chapter02.activity;
 
+import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -9,30 +11,29 @@ import android.widget.TextView;
 import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-import butterknife.Bind;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class Demo020305Activity extends BaseActivity {
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.rb_male)
+    @BindView(R.id.rb_male)
     RadioButton mRbMale;
-    @Bind(R.id.rb_female)
+    @BindView(R.id.rb_female)
     RadioButton mRbFemale;
-    @Bind(R.id.rg)
+    @BindView(R.id.rg)
     RadioGroup mRg;
-    @Bind(R.id.tv_content)
+    @BindView(R.id.tv_content)
     TextView mTvContent;
+
 
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo020305;
-    }
-
-    @Override
-    public void initPresenter() {
     }
 
     @Override
@@ -51,4 +52,5 @@ public class Demo020305Activity extends BaseActivity {
     public void onClick() {
         finish();
     }
+
 }

@@ -13,31 +13,25 @@ import com.liushu.crazyandroid.R;
 
 import java.io.File;
 import java.util.Locale;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo080400Activity extends BaseActivity {
     TextToSpeech tts;
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.txt)
+    @BindView(R.id.txt)
     EditText mTxt;
-    @Bind(R.id.speech)
+    @BindView(R.id.speech)
     Button mSpeech;
-    @Bind(R.id.record)
+    @BindView(R.id.record)
     Button mRecord;
 
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo080400;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

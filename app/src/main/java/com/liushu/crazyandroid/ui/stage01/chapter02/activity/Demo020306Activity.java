@@ -10,31 +10,26 @@ import android.widget.ToggleButton;
 import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo020306Activity extends BaseActivity {
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.tb_test)
+    @BindView(R.id.tb_test)
     ToggleButton mTbTest;
-    @Bind(R.id.switch_test)
+    @BindView(R.id.switch_test)
     Switch mSwitchTest;
-    @Bind(R.id.ll_test)
+    @BindView(R.id.ll_test)
     LinearLayout mLlTest;
-    @Bind(R.id.activity_demo020306)
+    @BindView(R.id.activity_demo020306)
     LinearLayout mActivityDemo020306;
 
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo020306;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

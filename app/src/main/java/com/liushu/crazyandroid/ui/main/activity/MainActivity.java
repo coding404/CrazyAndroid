@@ -27,12 +27,12 @@ import com.liushu.crazyandroid.ui.main.fragment.ThirdFragment;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class MainActivity extends BaseActivity {
-    @Bind(R.id.tab_layout)
+    @BindView(R.id.tab_layout)
     CommonTabLayout tabLayout;
-    @Bind(R.id.fl_body)
+    @BindView(R.id.fl_body)
     FrameLayout mFlBody;
 
     private String[] mTitles = {"疯狂android讲义", "android开发艺术探索", "第三阶段", "关于我"};
@@ -66,10 +66,6 @@ public class MainActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
-    @Override
-    public void initPresenter() {
-
-    }
 
     @Override
     public void initView() {

@@ -18,6 +18,7 @@ import com.jaydenxiao.common.commonutils.ToastUitl;
 import com.jaydenxiao.common.commonwidget.LoadingDialog;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 
 /**
@@ -70,6 +71,7 @@ public abstract  class BaseTitleFragment<F extends BasePresenter, E extends  Bas
     private boolean isFirst = true;
     private boolean islazyLoad;
 
+    public Unbinder bind;
     protected void setTitle(String str) {
         rl_title.setVisibility(View.VISIBLE);
         textView.setText(str);
@@ -89,11 +91,11 @@ public abstract  class BaseTitleFragment<F extends BasePresenter, E extends  Bas
 
 
         mRxManager=new RxManager();
-        ButterKnife.bind(this, rootView);
+        bind= ButterKnife.bind(this, rootView);
         mPresenter = TUtil.getT(this, 0);
         mModel= TUtil.getT(this,1);
         if(mPresenter!=null){
-            mPresenter.mContext=this.getActivity();
+            mPresenter.setMContext(this.getActivity());
         }
 
         initPresenter();
@@ -242,7 +244,7 @@ public abstract  class BaseTitleFragment<F extends BasePresenter, E extends  Bas
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        bind.unbind();
         if (mPresenter != null)
             mPresenter.onDestroy();
         mRxManager.clear();

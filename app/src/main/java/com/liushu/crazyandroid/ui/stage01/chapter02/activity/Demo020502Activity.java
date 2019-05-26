@@ -8,17 +8,17 @@ import android.widget.TextView;
 import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo020502Activity extends BaseActivity {
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.lv_num01)
+    @BindView(R.id.lv_num01)
     ListView mLvNum01;
-    @Bind(R.id.lv_num02)
+    @BindView(R.id.lv_num02)
     ListView mLvNum02;
 
     @Override
@@ -26,10 +26,6 @@ public class Demo020502Activity extends BaseActivity {
         return R.layout.activity_demo020502;
     }
 
-    @Override
-    public void initPresenter() {
-
-    }
 
     @Override
     public void initView() {

@@ -11,25 +11,20 @@ import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.widget.MyAnimation;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo070402Activity extends BaseActivity {
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.list)
+    @BindView(R.id.list)
     ListView mList;
 
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo070402;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

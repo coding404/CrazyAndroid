@@ -15,8 +15,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 import static com.liushu.crazyandroid.R.id.edit1;
@@ -24,17 +23,17 @@ import static com.liushu.crazyandroid.R.id.edit2;
 
 public class Demo080100Activity extends BaseActivity {
     final String FILE_NAME = "/crazyit.txt";
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(edit1)
+    @BindView(edit1)
     EditText mEdit1;
-    @Bind(R.id.write)
+    @BindView(R.id.write)
     Button mWrite;
-    @Bind(edit2)
+    @BindView(edit2)
     EditText mEdit2;
-    @Bind(R.id.read)
+    @BindView(R.id.read)
     Button mRead;
 
     private String read() {
@@ -87,11 +86,6 @@ public class Demo080100Activity extends BaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo080100;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

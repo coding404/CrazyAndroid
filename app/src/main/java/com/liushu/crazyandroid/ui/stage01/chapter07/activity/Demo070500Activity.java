@@ -27,8 +27,7 @@ import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.widget.ShapeHolder;
 
 import java.util.ArrayList;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo070500Activity extends BaseActivity {
@@ -36,11 +35,11 @@ public class Demo070500Activity extends BaseActivity {
     static final float BALL_SIZE = 50F;
     // 定义小球从屏幕上方下落到屏幕底端的总时间
     static final float FULL_TIME = 3000;
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.container)
+    @BindView(R.id.container)
     LinearLayout mContainer;
 
     @Override
@@ -48,10 +47,6 @@ public class Demo070500Activity extends BaseActivity {
         return R.layout.activity_demo070500;
     }
 
-    @Override
-    public void initPresenter() {
-
-    }
 
     @Override
     public void initView() {

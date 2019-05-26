@@ -12,17 +12,16 @@ import android.widget.TextView;
 
 import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo060501Activity extends BaseActivity {
 
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView mTvTitle;
-    @Bind(R.id.ll_test)
+    @BindView(R.id.ll_test)
     LinearLayout mLlTest;
 
     @Override
@@ -31,15 +30,9 @@ public class Demo060501Activity extends BaseActivity {
     }
 
     @Override
-    public void initPresenter() {
-
-
-    }
-
-    @Override
     public void initView() {
         mTvTitle.setText("不断渐变的背景色");
-        mLlTest.addView(new MyAnimalView(mContext));
+        mLlTest.addView(new MyAnimalView(getMContext()));
     }
 
     @OnClick(R.id.iv_back)

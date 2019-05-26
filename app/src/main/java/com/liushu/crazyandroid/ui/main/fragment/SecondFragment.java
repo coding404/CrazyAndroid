@@ -16,7 +16,6 @@ import android.widget.TextView;
 import com.jaydenxiao.common.base.BaseFragment;
 import com.liushu.crazyandroid.R;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**

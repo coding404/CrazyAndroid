@@ -14,18 +14,17 @@ import com.liushu.crazyandroid.R;
 
 import java.util.Timer;
 import java.util.TimerTask;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo070400Activity extends BaseActivity {
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.bn)
+    @BindView(R.id.bn)
     Button mBn;
-    @Bind(R.id.flower)
+    @BindView(R.id.flower)
     ImageView mFlower;
     Handler handler = new Handler() {
         @Override
@@ -44,11 +43,6 @@ public class Demo070400Activity extends BaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo070400;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

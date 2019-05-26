@@ -12,21 +12,21 @@ import android.widget.TextView;
 import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo020508Activity extends BaseActivity {
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.avf)
+    @BindView(R.id.avf)
     AdapterViewFlipper mAvf;
-    @Bind(R.id.btn_next)
+    @BindView(R.id.btn_next)
     Button mBtnNext;
-    @Bind(R.id.btn_before)
+    @BindView(R.id.btn_before)
     Button mBtnBefore;
-    @Bind(R.id.btn_auto)
+    @BindView(R.id.btn_auto)
     Button mBtnAuto;
     private int[] mInts = {R.drawable.chunv, R.drawable.shuangyu, R.drawable.shuangzi, R.drawable.baiyang, R.drawable.shizi, R.drawable.mojie,
             R.drawable.juxie, R.drawable.tianxie, R.drawable.tiancheng, R.drawable.sheshou, R.drawable.jinniu, R.drawable.shuiping};
@@ -34,11 +34,6 @@ public class Demo020508Activity extends BaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo020508;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

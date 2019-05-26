@@ -18,42 +18,42 @@ import com.liushu.crazyandroid.widget.OneChioceDialog;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 
 public class Demo020901Activity extends BaseActivity {
-    @Bind(R.id.ll020900_test0)
+    @BindView(R.id.ll020900_test0)
     LinearLayout mLl020900Test0;
-    @Bind(R.id.ll020900_test1)
+    @BindView(R.id.ll020900_test1)
     LinearLayout mLl020900Test1;
-    @Bind(R.id.ll020900_test2)
+    @BindView(R.id.ll020900_test2)
     LinearLayout mLl020900Test2;
-    @Bind(R.id.ll020900_test3)
+    @BindView(R.id.ll020900_test3)
     LinearLayout mLl020900Test3;
-    @Bind(R.id.ll020900_test4)
+    @BindView(R.id.ll020900_test4)
     LinearLayout mLl020900Test4;
-    @Bind(R.id.ll020900_test5)
+    @BindView(R.id.ll020900_test5)
     LinearLayout mLl020900Test5;
-    @Bind(R.id.btn_show_message)
+    @BindView(R.id.btn_show_message)
     Button mBtnShowMessage;
-    @Bind(R.id.btn_simple_list)
+    @BindView(R.id.btn_simple_list)
     Button mBtnSimpleList;
-    @Bind(R.id.btn_onechioce_list)
+    @BindView(R.id.btn_onechioce_list)
     Button mBtnOnechioceList;
-    @Bind(R.id.btn_morechioce_list)
+    @BindView(R.id.btn_morechioce_list)
     Button mBtnMorechioceList;
-    @Bind(R.id.btn_custom_list)
+    @BindView(R.id.btn_custom_list)
     Button mBtnCustomList;
-    @Bind(R.id.btn_custom_view)
+    @BindView(R.id.btn_custom_view)
     Button mBtnCustomView;
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView mTvTitle;
-    @Bind(R.id.btn_onechioce_self)
+    @BindView(R.id.btn_onechioce_self)
     Button mBtnOnechioceSelf;
-    @Bind(R.id.activity_demo020900)
+    @BindView(R.id.activity_demo020900)
     LinearLayout mActivityDemo020900;
 
     private String[] mStrings = {"111", "222", "334", "442134", "666"};
@@ -259,11 +259,6 @@ public class Demo020901Activity extends BaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo020901;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

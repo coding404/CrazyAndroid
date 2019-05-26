@@ -19,26 +19,26 @@ import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.widget.ShaderView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo070202Activity extends BaseActivity {
 
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.bn1)
+    @BindView(R.id.bn1)
     Button mBn1;
-    @Bind(R.id.bn2)
+    @BindView(R.id.bn2)
     Button mBn2;
-    @Bind(R.id.bn3)
+    @BindView(R.id.bn3)
     Button mBn3;
-    @Bind(R.id.bn4)
+    @BindView(R.id.bn4)
     Button mBn4;
-    @Bind(R.id.bn5)
+    @BindView(R.id.bn5)
     Button mBn5;
-    @Bind(R.id.sv_test)
+    @BindView(R.id.sv_test)
     ShaderView mSvTest;
     private Shader[] shaders = new Shader[5];
     // 声明颜色数组
@@ -49,10 +49,6 @@ public class Demo070202Activity extends BaseActivity {
         return R.layout.activity_demo070202;
     }
 
-    @Override
-    public void initPresenter() {
-
-    }
 
     @Override
     public void initView() {

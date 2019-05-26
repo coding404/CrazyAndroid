@@ -25,7 +25,7 @@ public class SPUtils {
         if (sp == null) {
             init(context);
         }
-        sp.edit().putInt(key, value).commit();
+        sp.edit().putInt(key, value).apply();
     }
 
     public static int getSharedIntData(Context context, String key) {
@@ -39,14 +39,14 @@ public class SPUtils {
         if (sp == null) {
             init(context);
         }
-        sp.edit().putLong(key, value).commit();
+        sp.edit().putLong(key, value).apply();
     }
 
     public static long getSharedlongData(Context context, String key) {
         if (sp == null) {
             init(context);
         }
-        return sp.getLong(key, 0l);
+        return sp.getLong(key, 0L);
     }
 
     public static void setSharedFloatData(Context context, String key,
@@ -54,7 +54,7 @@ public class SPUtils {
         if (sp == null) {
             init(context);
         }
-        sp.edit().putFloat(key, value).commit();
+        sp.edit().putFloat(key, value).apply();
     }
 
     public static Float getSharedFloatData(Context context, String key) {
@@ -69,7 +69,7 @@ public class SPUtils {
         if (sp == null) {
             init(context);
         }
-        sp.edit().putBoolean(key, value).commit();
+        sp.edit().putBoolean(key, value).apply();
     }
 
     public static Boolean getSharedBooleanData(Context context, String key) {
@@ -83,7 +83,7 @@ public class SPUtils {
         if (sp == null) {
             init(context);
         }
-        sp.edit().putString(key, value).commit();
+        sp.edit().putString(key, value).apply();
     }
 
     public static String getSharedStringData(Context context, String key) {

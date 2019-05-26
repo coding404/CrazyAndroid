@@ -9,31 +9,26 @@ import com.jaydenxiao.common.base.BaseActivity;
 import com.jaydenxiao.common.commonutils.ToastUitl;
 import com.liushu.crazyandroid.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo020804Activity extends BaseActivity {
 
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView mTvTitle;
-    @Bind(R.id.number_pick_low)
+    @BindView(R.id.number_pick_low)
     NumberPicker mNumberPickLow;
-    @Bind(R.id.number_pick_high)
+    @BindView(R.id.number_pick_high)
     NumberPicker mNumberPickHigh;
-    @Bind(R.id.ll_demo020800_test3)
+    @BindView(R.id.ll_demo020800_test3)
     LinearLayout mLlDemo020800Test3;
     private int minPrice = 25;
     private int maxPrice = 75;
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo020804;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

@@ -8,27 +8,22 @@ import android.widget.Toast;
 import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo080000Activity extends BaseActivity {
 
     SharedPreferences preferences;
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.textView)
+    @BindView(R.id.textView)
     TextView mTextView;
 
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo080000;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

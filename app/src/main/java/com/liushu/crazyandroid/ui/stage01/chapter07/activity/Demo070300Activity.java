@@ -9,19 +9,19 @@ import android.widget.TextView;
 import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo070300Activity extends BaseActivity {
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.play)
+    @BindView(R.id.play)
     Button mPlay;
-    @Bind(R.id.stop)
+    @BindView(R.id.stop)
     Button mStop;
-    @Bind(R.id.anim)
+    @BindView(R.id.anim)
     ImageView mAnim;
 
     @Override
@@ -29,10 +29,6 @@ public class Demo070300Activity extends BaseActivity {
         return R.layout.activity_demo070300;
     }
 
-    @Override
-    public void initPresenter() {
-
-    }
 
     @Override
     public void initView() {

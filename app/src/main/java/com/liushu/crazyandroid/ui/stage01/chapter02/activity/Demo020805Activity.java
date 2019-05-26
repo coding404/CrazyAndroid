@@ -11,18 +11,18 @@ import com.jaydenxiao.common.base.BaseActivity;
 import com.jaydenxiao.common.commonutils.ToastUitl;
 import com.liushu.crazyandroid.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo020805Activity extends BaseActivity {
 
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView mTvTitle;
-    @Bind(R.id.sv)
+    @BindView(R.id.sv)
     SearchView mSv;
-    @Bind(R.id.lv_test5)
+    @BindView(R.id.lv_test5)
     ListView mLvTest5;
 
     private String[] mStrings = {"aaaa", "bbbbbbbbb", "ccccccc"};
@@ -30,11 +30,6 @@ public class Demo020805Activity extends BaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo020805;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

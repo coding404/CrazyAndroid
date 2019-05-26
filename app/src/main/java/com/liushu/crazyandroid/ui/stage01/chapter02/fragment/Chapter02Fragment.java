@@ -56,7 +56,7 @@ import com.liushu.crazyandroid.utils.FileUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -65,7 +65,7 @@ import butterknife.ButterKnife;
 
 public class Chapter02Fragment extends BaseFragment {
 
-    @Bind(R.id.expendlist_chapter02)
+    @BindView(R.id.expendlist_chapter02)
     ExpandableListView mExpendlistChapter02;
     private MyExpandableListViewAdapter mViewAdapter;
     private List<CatalogBean.ChaptersBean> mBeen;
@@ -337,12 +337,5 @@ public class Chapter02Fragment extends BaseFragment {
         CatalogBean catalogBean = gson.fromJson(s, CatalogBean.class);
         mBeen.clear();
         mBeen.addAll(catalogBean.getChapters());
-    }
-
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }

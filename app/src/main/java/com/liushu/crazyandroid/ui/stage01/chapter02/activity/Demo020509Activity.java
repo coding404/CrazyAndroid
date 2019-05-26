@@ -15,19 +15,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo020509Activity extends BaseActivity {
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.sv)
+    @BindView(R.id.sv)
     StackView mSv;
-    @Bind(R.id.btn_previous)
+    @BindView(R.id.btn_previous)
     Button mBtnPrevious;
-    @Bind(R.id.btn_next)
+    @BindView(R.id.btn_next)
     Button mBtnNext;
     private int[] mInts = {R.drawable.bomb5, R.drawable.bomb6, R.drawable.bomb7,
             R.drawable.bomb8, R.drawable.bomb9, R.drawable.bomb10, R.drawable.bomb11,
@@ -36,11 +36,6 @@ public class Demo020509Activity extends BaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo020509;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

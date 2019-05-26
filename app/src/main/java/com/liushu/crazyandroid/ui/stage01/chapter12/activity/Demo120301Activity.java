@@ -19,16 +19,15 @@ import java.nio.FloatBuffer;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo120301Activity extends BaseActivity implements GestureDetector.OnGestureListener {
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.gl_view)
+    @BindView(R.id.gl_view)
     GLSurfaceView mGlView;
     // 定义旋转角度
     private float anglex = 0f;
@@ -40,11 +39,6 @@ public class Demo120301Activity extends BaseActivity implements GestureDetector.
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo120301;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

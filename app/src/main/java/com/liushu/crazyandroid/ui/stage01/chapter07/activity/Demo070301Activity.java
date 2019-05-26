@@ -79,11 +79,6 @@ public class Demo070301Activity extends BaseActivity {
     }
 
     @Override
-    public void initPresenter() {
-
-    }
-
-    @Override
     public void initView() {
 
     }

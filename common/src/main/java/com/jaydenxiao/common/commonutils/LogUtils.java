@@ -2,8 +2,9 @@ package com.jaydenxiao.common.commonutils;
 
 
 import com.jaydenxiao.common.baseapp.AppConfig;
-import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
+
+import okhttp3.logging.HttpLoggingInterceptor;
 
 /**
  * 如果用于android平台，将信息记录到“LogCat”。如果用于java平台，将信息记录到“Console”
@@ -16,7 +17,8 @@ public class LogUtils {
      */
     public static void logInit(boolean debug) {
         DEBUG_ENABLE=debug;
-        if (DEBUG_ENABLE) {
+        //todo  Log
+      /*  if (DEBUG_ENABLE) {
             Logger.init(AppConfig.DEBUG_TAG)                 // default PRETTYLOGGER or use just init()
                     .methodCount(2)                 // default 2
                     .logLevel(LogLevel.FULL)        // default LogLevel.FULL
@@ -27,7 +29,7 @@ public class LogUtils {
                     .hideThreadInfo()               // default shown
                     .logLevel(LogLevel.NONE)        // default LogLevel.FULL
                     .methodOffset(2);
-        }
+        }*/
     }
     public static void logd(String tag,String message) {
         if (DEBUG_ENABLE) {

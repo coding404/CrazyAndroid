@@ -10,25 +10,20 @@ import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 import com.liushu.crazyandroid.widget.PinBallView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo070103Activity extends BaseActivity {
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.pbv_test)
+    @BindView(R.id.pbv_test)
     PinBallView mPbvTest;
 
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo070103;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

@@ -26,19 +26,19 @@ import com.liushu.crazyandroid.widget.SimpleShowDialog;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo020807Activity extends BaseActivity {
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView mTvTitle;
-    @Bind(R.id.btn_send)
+    @BindView(R.id.btn_send)
     Button mBtnSend;
-    @Bind(R.id.btn_delete)
+    @BindView(R.id.btn_delete)
     Button mBtnDelete;
-    @Bind(R.id.lv_notify)
+    @BindView(R.id.lv_notify)
     ListView mLvNotify;
     private NotificationManager nm;
     private static final int NOTIFICATION_ID = 0x123;
@@ -54,22 +54,17 @@ public class Demo020807Activity extends BaseActivity {
     }
 
     @Override
-    public void initPresenter() {
-
-    }
-
-    @Override
     public void initView() {
         mTvTitle.setText("消息通知工具类");
         nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         initDatas();
-        mAdapter = new NotifyAdapter(mContext, mDataList);
+        mAdapter = new NotifyAdapter(getMContext(), mDataList);
         mLvNotify.setAdapter(mAdapter);
         mLvNotify.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                if (!NotifyUtil.isNotificationEnabled(mContext)) {
+                if (!NotifyUtil.isNotificationEnabled(getMContext())) {
                     initMessageNotify();
                 } else {
                     switch (position) {
@@ -115,7 +110,7 @@ public class Demo020807Activity extends BaseActivity {
                 finish();
                 break;
             case R.id.btn_send:
-                if (!NotifyUtil.isNotificationEnabled(mContext)) {
+                if (!NotifyUtil.isNotificationEnabled(getMContext())) {
                     initMessageNotify();
                 } else {
                     // 创建一个启动其他Activity的Intent
@@ -206,9 +201,9 @@ public class Demo020807Activity extends BaseActivity {
      */
     private void notify_normal_singLine() {
         //设置想要展示的数据内容
-        Intent intent = new Intent(mContext, OtherActivity.class);
+        Intent intent = new Intent(getMContext(), OtherActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        PendingIntent pIntent = PendingIntent.getActivity(mContext,
+        PendingIntent pIntent = PendingIntent.getActivity(getMContext(),
                 requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         int smallIcon = R.drawable.tb_bigicon;
         String ticker = "您有一条新通知";
@@ -216,7 +211,7 @@ public class Demo020807Activity extends BaseActivity {
         String content = "仿真皮肤充气娃娃，女朋友带回家！";
 
         //实例化工具类，并且调用接口
-        NotifyUtil notify1 = new NotifyUtil(mContext, 1);
+        NotifyUtil notify1 = new NotifyUtil(getMContext(), 1);
         notify1.notify_normal_singline(pIntent, smallIcon, ticker, title, content, true, true, false);
         currentNotify = notify1;
     }
@@ -226,16 +221,16 @@ public class Demo020807Activity extends BaseActivity {
      */
     private void notify_normal_moreLine() {
         //设置想要展示的数据内容
-        Intent intent = new Intent(mContext, OtherActivity.class);
+        Intent intent = new Intent(getMContext(), OtherActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        PendingIntent pIntent = PendingIntent.getActivity(mContext,
+        PendingIntent pIntent = PendingIntent.getActivity(getMContext(),
                 requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         int smallIcon = R.drawable.netease_bigicon;
         String ticker = "您有一条新通知";
         String title = "朱立伦请辞国民党主席 副主席黄敏惠暂代党主席";
         String content = "据台湾“中央社”报道，国民党主席朱立伦今天(18日)向中常会报告，为败选请辞党主席一职，他感谢各位中常委的指教包容，也宣布未来党务工作由副主席黄敏惠暂代，完成未来所有补选工作。";
         //实例化工具类，并且调用接口
-        NotifyUtil notify2 = new NotifyUtil(mContext, 2);
+        NotifyUtil notify2 = new NotifyUtil(getMContext(), 2);
         notify2.notify_normail_moreline(pIntent, smallIcon, ticker, title, content, true, true, false);
         currentNotify = notify2;
     }
@@ -245,9 +240,9 @@ public class Demo020807Activity extends BaseActivity {
      */
     private void notify_mailbox() {
         //设置想要展示的数据内容
-        Intent intent = new Intent(mContext, OtherActivity.class);
+        Intent intent = new Intent(getMContext(), OtherActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        PendingIntent pIntent = PendingIntent.getActivity(mContext,
+        PendingIntent pIntent = PendingIntent.getActivity(getMContext(),
                 requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         int largeIcon = R.drawable.fbb_largeicon;
         int smallIcon = R.drawable.wx_smallicon;
@@ -261,7 +256,7 @@ public class Demo020807Activity extends BaseActivity {
         messageList.add("文明，别不理我！！！");
         String content = "[" + messageList.size() + "条]" + title + ": " + messageList.get(0);
         //实例化工具类，并且调用接口
-        NotifyUtil notify3 = new NotifyUtil(mContext, 3);
+        NotifyUtil notify3 = new NotifyUtil(getMContext(), 3);
         notify3.notify_mailbox(pIntent, smallIcon, largeIcon, messageList, ticker,
                 title, content, true, true, false);
         currentNotify = notify3;
@@ -272,9 +267,9 @@ public class Demo020807Activity extends BaseActivity {
      */
     private void notify_bigPic() {
         //设置想要展示的数据内容
-        Intent intent = new Intent(mContext, OtherActivity.class);
+        Intent intent = new Intent(getMContext(), OtherActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        PendingIntent pIntent = PendingIntent.getActivity(mContext,
+        PendingIntent pIntent = PendingIntent.getActivity(getMContext(),
                 requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         int smallIcon = R.drawable.xc_smaillicon;
         int largePic = R.drawable.screenshot;
@@ -282,7 +277,7 @@ public class Demo020807Activity extends BaseActivity {
         String title = "已经抓取屏幕截图";
         String content = "触摸可查看您的屏幕截图";
         //实例化工具类，并且调用接口
-        NotifyUtil notify4 = new NotifyUtil(mContext, 4);
+        NotifyUtil notify4 = new NotifyUtil(getMContext(), 4);
         notify4.notify_bigPic(pIntent, smallIcon, ticker, title, content, largePic, true, true, false);
         currentNotify = notify4;
     }
@@ -293,21 +288,21 @@ public class Demo020807Activity extends BaseActivity {
      */
     private void notify_customview() {
         //设置想要展示的数据内容
-        Intent intent = new Intent(mContext, OtherActivity.class);
+        Intent intent = new Intent(getMContext(), OtherActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        PendingIntent pIntent = PendingIntent.getActivity(mContext,
+        PendingIntent pIntent = PendingIntent.getActivity(getMContext(),
                 requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         String ticker = "您有一条新通知";
 
         //设置自定义布局中按钮的跳转界面
-        Intent btnIntent = new Intent(mContext, OtherActivity.class);
+        Intent btnIntent = new Intent(getMContext(), OtherActivity.class);
         btnIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         //如果是启动activity，那么就用PendingIntent.getActivity，如果是启动服务，那么是getService
-        PendingIntent Pintent = PendingIntent.getActivity(mContext,
+        PendingIntent Pintent = PendingIntent.getActivity(getMContext(),
                 (int) SystemClock.uptimeMillis(), btnIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         // 自定义布局
-        RemoteViews remoteViews = new RemoteViews(mContext.getPackageName(),
+        RemoteViews remoteViews = new RemoteViews(getMContext().getPackageName(),
                 R.layout.yyb_notification);
         remoteViews.setImageViewResource(R.id.image, R.drawable.yybao_bigicon);
         remoteViews.setTextViewText(R.id.title, "垃圾安装包太多");
@@ -315,7 +310,7 @@ public class Demo020807Activity extends BaseActivity {
         remoteViews.setOnClickPendingIntent(R.id.button, Pintent);//定义按钮点击后的动作
         int smallIcon = R.drawable.yybao_smaillicon;
         //实例化工具类，并且调用接口
-        NotifyUtil notify5 = new NotifyUtil(mContext, 5);
+        NotifyUtil notify5 = new NotifyUtil(getMContext(), 5);
         notify5.notify_customview(remoteViews, pIntent, smallIcon, ticker, true, true, false);
         currentNotify = notify5;
     }
@@ -331,18 +326,18 @@ public class Demo020807Activity extends BaseActivity {
         String lefttext = "以后再说";
         Intent leftIntent = new Intent();
         leftIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        PendingIntent leftPendIntent = PendingIntent.getActivity(mContext,
+        PendingIntent leftPendIntent = PendingIntent.getActivity(getMContext(),
                 requestCode, leftIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         int righticon = R.drawable.android_rightbutton;
         String righttext = "安装";
-        Intent rightIntent = new Intent(mContext, OtherActivity.class);
+        Intent rightIntent = new Intent(getMContext(), OtherActivity.class);
         rightIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        PendingIntent rightPendIntent = PendingIntent.getActivity(mContext,
+        PendingIntent rightPendIntent = PendingIntent.getActivity(getMContext(),
                 requestCode, rightIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         //实例化工具类，并且调用接口
-        NotifyUtil notify6 = new NotifyUtil(mContext, 6);
+        NotifyUtil notify6 = new NotifyUtil(getMContext(), 6);
         notify6.notify_button(smallIcon, lefticon, lefttext, leftPendIntent, righticon, righttext, rightPendIntent, ticker, "系统更新已下载完毕", "Android 6.0.1", true, true, false);
         currentNotify = notify6;
     }
@@ -353,14 +348,14 @@ public class Demo020807Activity extends BaseActivity {
      */
     private void notify_progress() {
         //设置想要展示的数据内容
-        Intent intent = new Intent(mContext, OtherActivity.class);
+        Intent intent = new Intent(getMContext(), OtherActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        PendingIntent rightPendIntent = PendingIntent.getActivity(mContext,
+        PendingIntent rightPendIntent = PendingIntent.getActivity(getMContext(),
                 requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         int smallIcon = R.drawable.android_bigicon;
         String ticker = "您有一条新通知";
         //实例化工具类，并且调用接口
-        NotifyUtil notify7 = new NotifyUtil(mContext, 7);
+        NotifyUtil notify7 = new NotifyUtil(getMContext(), 7);
         notify7.notify_progress(rightPendIntent, smallIcon, ticker, "Android 6.0.1 下载", "正在下载中", true, false, false);
         currentNotify = notify7;
     }
@@ -375,9 +370,9 @@ public class Demo020807Activity extends BaseActivity {
         String ticker = "您有一条新通知";
         String title = "范冰冰";
         String content = "文明，今晚在希尔顿酒店2016号房哈";
-        Intent intent = new Intent(mContext, OtherActivity.class);
+        Intent intent = new Intent(getMContext(), OtherActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(mContext,
+        PendingIntent pendingIntent = PendingIntent.getActivity(getMContext(),
                 requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
 
@@ -385,23 +380,23 @@ public class Demo020807Activity extends BaseActivity {
         String lefttext = "回复";
         Intent leftIntent = new Intent();
         leftIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        PendingIntent leftPendingIntent = PendingIntent.getActivity(mContext,
+        PendingIntent leftPendingIntent = PendingIntent.getActivity(getMContext(),
                 requestCode, leftIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         int righticon = R.drawable.hl_call;
         String righttext = "拨打";
-        Intent rightIntent = new Intent(mContext, OtherActivity.class);
+        Intent rightIntent = new Intent(getMContext(), OtherActivity.class);
         rightIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        PendingIntent rightPendingIntent = PendingIntent.getActivity(mContext,
+        PendingIntent rightPendingIntent = PendingIntent.getActivity(getMContext(),
                 requestCode, rightIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         //实例化工具类，并且调用接口
-        NotifyUtil notify8 = new NotifyUtil(mContext, 8);
+        NotifyUtil notify8 = new NotifyUtil(getMContext(), 8);
         notify8.notify_HeadUp(pendingIntent, smallIcon, largeIcon, ticker, title, content, lefticon, lefttext, leftPendingIntent, righticon, righttext, rightPendingIntent, true, true, false);
         currentNotify = notify8;
     }
 
     private void initMessageNotify() {
-        SimpleShowDialog.Builder builder = new SimpleShowDialog.Builder(mContext);
+        SimpleShowDialog.Builder builder = new SimpleShowDialog.Builder(getMContext());
         builder.setStringOrder("您暂未开通消息通知的权限\n请前往设置");
         builder.setPositiveButton("下次再说", new DialogInterface.OnClickListener() {
             @Override

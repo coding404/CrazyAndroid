@@ -45,8 +45,5 @@ public class Demo021100Activity extends AppCompatActivity {
         SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy.MM.dd HH:mm");
         Date date=new Date(deadLine);
         String endTime = dateFormat.format(date);
-
-        Log.e("22222",deadLine+":"+endTime);
-
     }
 }

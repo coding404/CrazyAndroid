@@ -1,13 +1,15 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 23
+        minSdkVersion 18
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0.0"
 
@@ -37,31 +39,36 @@ dependencies {
     api files('libs/commons-codec-1.6.jar')
     api files('libs/alipaySdk-20160516.jar')
 
-    api 'com.android.support:support-v4:23.+'
-    api 'com.android.support:recyclerview-v7:23.+'
-    api 'com.android.support:support-annotations:23.+'
-    api 'com.android.support:design:23.+'
-    api 'com.android.support:cardview-v7:23.+'
-    api 'com.android.support:appcompat-v7:23.+'
+    api 'com.android.support:support-v4:28.0.0'
+    api 'com.android.support:recyclerview-v7:28.0.0'
+    api 'com.android.support:support-annotations:28.0.0'
+    api 'com.android.support:design:28.0.0'
+    api 'com.android.support:cardview-v7:28.0.0'
+    api 'com.android.support:appcompat-v7:28.0.0'
 
     //retrofit和rxjava
-    api 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
-    api 'com.squareup.okhttp3:logging-interceptor:3.1.2'
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.6.0'
     api 'io.reactivex:rxjava:1.0.1'
     api 'io.reactivex:rxandroid:1.0.1'
-    api 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    api 'com.squareup.retrofit2:converter-gson:2.0.2'
     api 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
 
-    api 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.8@aar'//菜单栏
-    api 'com.android.support:multidex:1.0.2'//分包
-    api 'com.alibaba:fastjson:1.2.8'//json解析封装框架
+    api 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'//菜单栏
+    api 'com.android.support:multidex:1.0.3'//分包
+    api 'com.alibaba:fastjson:1.2.51'//json解析封装框架
     api 'com.commit451:PhotoView:1.2.4'//图片缩放
-    api 'com.orhanobut:logger:1.13'//打印日志
-    api 'com.github.bumptech.glide:glide:3.6.1'//显示图片框架
-    api 'com.jakewharton:butterknife:7.0.1'//view注解
+    api 'com.orhanobut:logger:2.2.0'//打印日志
+    api 'com.github.bumptech.glide:glide:4.9.0'//显示图片框架
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    api 'com.jakewharton:butterknife:8.8.1'//view注解
     api 'com.github.clans:fab:1.6.4'//悬浮动画菜单
     api 'cn.hugeterry.updatefun:updatefun:1.8.6'//fire.im自动更新
-    api 'com.umeng.analytics:analytics:latest.integration'//友盟统计
+    api 'com.umeng.analytics:analytics:6.1.4'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version" //友盟统计
+}
+repositories {
+    mavenCentral()
 }
 
 

@@ -7,25 +7,20 @@ import android.widget.TextView;
 import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo020403Activity extends BaseActivity {
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.qcb_test)
+    @BindView(R.id.qcb_test)
     QuickContactBadge mQcbTest;
 
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo020403;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

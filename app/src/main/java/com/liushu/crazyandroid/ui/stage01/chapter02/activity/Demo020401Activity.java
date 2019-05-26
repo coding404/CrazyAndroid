@@ -14,29 +14,29 @@ import android.widget.TextView;
 import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo020401Activity extends BaseActivity {
 
 
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.btn_01)
+    @BindView(R.id.btn_01)
     Button mBtn01;
-    @Bind(R.id.btn_02)
+    @BindView(R.id.btn_02)
     Button mBtn02;
-    @Bind(R.id.btn_03)
+    @BindView(R.id.btn_03)
     Button mBtn03;
-    @Bind(R.id.ll_button)
+    @BindView(R.id.ll_button)
     LinearLayout mLlButton;
-    @Bind(R.id.iv_big)
+    @BindView(R.id.iv_big)
     ImageView mIvBig;
-    @Bind(R.id.iv_small)
+    @BindView(R.id.iv_small)
     ImageView mIvSmall;
-    @Bind(R.id.activity_demo020401)
+    @BindView(R.id.activity_demo020401)
     RelativeLayout mActivityDemo020401;
     private int[] mInts = new int[]{
             R.drawable.shuangta,
@@ -52,10 +52,6 @@ public class Demo020401Activity extends BaseActivity {
         return R.layout.activity_demo020401;
     }
 
-    @Override
-    public void initPresenter() {
-
-    }
 
     @Override
     public void initView() {

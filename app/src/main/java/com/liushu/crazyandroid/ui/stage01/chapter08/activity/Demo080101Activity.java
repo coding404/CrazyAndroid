@@ -18,8 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo080101Activity extends BaseActivity {
@@ -27,15 +26,15 @@ public class Demo080101Activity extends BaseActivity {
     File currentParent;
     // 记录当前路径下的所有文件的文件数组
     File[] currentFiles;
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.path)
+    @BindView(R.id.path)
     TextView mPath;
-    @Bind(R.id.list)
+    @BindView(R.id.list)
     ListView mList;
-    @Bind(R.id.parent)
+    @BindView(R.id.parent)
     Button mParent;
 
     public void inflateListView(File[] files)  // ①
@@ -74,11 +73,6 @@ public class Demo080101Activity extends BaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo080101;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

@@ -11,33 +11,27 @@ import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
 import java.util.HashMap;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo110001Activity extends BaseActivity {
     // 定义一个SoundPool
     SoundPool mSoundPool;
     HashMap<Integer, Integer> mSoundMap = new HashMap<>();
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.btn_bomb)
+    @BindView(R.id.btn_bomb)
     Button mBtnBomb;
-    @Bind(R.id.btn_shot)
+    @BindView(R.id.btn_shot)
     Button mBtnShot;
-    @Bind(R.id.btn_arrow)
+    @BindView(R.id.btn_arrow)
     Button mBtnArrow;
 
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo110001;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

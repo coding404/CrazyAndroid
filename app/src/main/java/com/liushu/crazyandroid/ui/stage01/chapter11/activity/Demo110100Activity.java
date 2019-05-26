@@ -12,8 +12,7 @@ import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
 
 import java.io.File;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo110100Activity extends BaseActivity {
@@ -22,23 +21,18 @@ public class Demo110100Activity extends BaseActivity {
     // 系统的音频文件
     File soundFile;
     MediaRecorder mRecorder;
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.record)
+    @BindView(R.id.record)
     ImageButton mRecord;
-    @Bind(R.id.stop)
+    @BindView(R.id.stop)
     ImageButton mStop;
 
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo110100;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

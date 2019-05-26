@@ -11,8 +11,7 @@ import android.widget.TextView;
 
 import com.jaydenxiao.common.base.BaseActivity;
 import com.liushu.crazyandroid.R;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo080300Activity extends BaseActivity implements GestureDetector.OnGestureListener {
@@ -27,11 +26,11 @@ public class Demo080300Activity extends BaseActivity implements GestureDetector.
     float currentScale = 1;
     // 控制图片缩放的Matrix对象
     Matrix matrix;
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.show)
+    @BindView(R.id.show)
     ImageView mShow;
 
     @Override
@@ -94,11 +93,6 @@ public class Demo080300Activity extends BaseActivity implements GestureDetector.
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo080300;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override

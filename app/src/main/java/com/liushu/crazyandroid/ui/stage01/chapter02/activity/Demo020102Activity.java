@@ -5,17 +5,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jaydenxiao.common.base.BaseActivity;
+import com.jaydenxiao.common.base.BaseMvpActivity;
 import com.liushu.crazyandroid.R;
+import com.liushu.crazyandroid.ui.stage01.DemoModel;
+import com.liushu.crazyandroid.ui.stage01.DemoPresenter;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
-public class Demo020102Activity extends BaseActivity {
+public class Demo020102Activity extends BaseMvpActivity<DemoPresenter, DemoModel> {
 
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.iv_test)
+    @BindView(R.id.iv_test)
     ImageView mIvTest;
     private int[] images = new int[]{R.drawable.back1,
             R.mipmap.ic_launcher,
@@ -25,11 +28,6 @@ public class Demo020102Activity extends BaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo020102;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override
@@ -51,4 +49,13 @@ public class Demo020102Activity extends BaseActivity {
         });
     }
 
+    @Override
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initMvpView() {
+
+    }
 }

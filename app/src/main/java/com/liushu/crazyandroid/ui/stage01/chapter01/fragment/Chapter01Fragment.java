@@ -17,7 +17,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -26,7 +26,7 @@ import butterknife.ButterKnife;
 
 public class Chapter01Fragment extends BaseFragment implements DatePickerController {
 
-    @Bind(R.id.day_picker)
+    @BindView(R.id.day_picker)
     DayPickerView mDayPicker;
 
     @Override
@@ -105,9 +105,4 @@ public class Chapter01Fragment extends BaseFragment implements DatePickerControl
         Toast.makeText(getContext(), selectedDays.getFirst().toString() + " --> " + selectedDays.getLast().toString(), Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
 }

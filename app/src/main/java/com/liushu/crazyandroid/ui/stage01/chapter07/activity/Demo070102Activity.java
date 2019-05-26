@@ -22,28 +22,28 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Demo070102Activity extends BaseActivity implements DrawPlantView.Callback, Handler.Callback {
 
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mIvBack;
-    @Bind(R.id.tv_title_name)
+    @BindView(R.id.tv_title_name)
     TextView mTvTitleName;
-    @Bind(R.id.palette)
+    @BindView(R.id.palette)
     DrawPlantView mPalette;
-    @Bind(R.id.undo)
+    @BindView(R.id.undo)
     ImageView mUndo;
-    @Bind(R.id.redo)
+    @BindView(R.id.redo)
     ImageView mRedo;
-    @Bind(R.id.pen)
+    @BindView(R.id.pen)
     ImageView mPen;
-    @Bind(R.id.eraser)
+    @BindView(R.id.eraser)
     ImageView mEraser;
-    @Bind(R.id.clear)
+    @BindView(R.id.clear)
     ImageView mClear;
-    @Bind(R.id.iv_save)
+    @BindView(R.id.iv_save)
     ImageView mIvSave;
     private View mUndoView;
     private View mRedoView;
@@ -81,11 +81,6 @@ public class Demo070102Activity extends BaseActivity implements DrawPlantView.Ca
     @Override
     public int getLayoutId() {
         return R.layout.activity_demo070102;
-    }
-
-    @Override
-    public void initPresenter() {
-
     }
 
     @Override
