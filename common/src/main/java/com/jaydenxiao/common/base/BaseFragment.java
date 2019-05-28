@@ -3,6 +3,7 @@ package com.jaydenxiao.common.base;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,7 +12,6 @@ import android.view.ViewGroup;
 
 import com.jaydenxiao.common.R;
 import com.jaydenxiao.common.baserx.RxManager;
-import com.jaydenxiao.common.commonutils.TUtil;
 import com.jaydenxiao.common.commonutils.ToastUitl;
 import com.jaydenxiao.common.commonwidget.LoadingDialog;
 
@@ -56,10 +56,10 @@ import butterknife.Unbinder;
 //    public void initView() {
 //    }
 //}
-public abstract class BaseFragment<F extends BasePresenter, E extends BaseModel> extends Fragment {
+public abstract class BaseFragment extends Fragment {
     protected View rootView;
-    public F mPresenter;
-    public E mModel;
+   // public F mPresenter;
+  //  public E mModel;
     public RxManager mRxManager;
 
     public Context mContext;
@@ -73,16 +73,23 @@ public abstract class BaseFragment<F extends BasePresenter, E extends BaseModel>
             rootView = inflater.inflate(getLayoutResource(), container, false);
         mRxManager = new RxManager();
         bind= ButterKnife.bind(this, rootView);
-        mPresenter = TUtil.getT(this, 0);
+        //todo mvp
+       /* mPresenter = TUtil.getT(this, 0);
         mModel = TUtil.getT(this, 1);
         if (mPresenter != null) {
             mPresenter.setMContext(this.getActivity());
         } else {
             mContext = getActivity();
-        }
+        }*/
+        mContext = getActivity();
         initPresenter();
-        initView();
         return rootView;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initView();
     }
 
     //获取布局文件
@@ -207,8 +214,8 @@ public abstract class BaseFragment<F extends BasePresenter, E extends BaseModel>
     public void onDestroyView() {
         super.onDestroyView();
         bind.unbind();
-        if (mPresenter != null)
-            mPresenter.onDestroy();
+       /* if (mPresenter != null)
+            mPresenter.onDestroy();*/
         mRxManager.clear();
     }
 

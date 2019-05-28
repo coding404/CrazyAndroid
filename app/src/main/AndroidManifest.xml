@@ -28,6 +28,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.main.activity.MainActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".ui.stage01.chapter02.activity.Demo020101Activity"/>
         <activity android:name=".ui.stage01.chapter02.activity.Demo020102Activity">
@@ -220,11 +226,11 @@
         <activity android:name=".ui.stage01.chapter11.activity.Demo110001Activity">
         </activity>
         <activity android:name=".ui.main.activity.SplashActivity">
-            <intent-filter>
+           <!-- <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity android:name=".ui.stage01.chapter02.activity.Demo020801Activity">
         </activity>
